@@ -4,3 +4,7 @@
 @theme {
   --font-display: "Inter", "sans-serif";
 }
+
+body {
+  background-color: #f4da9e;
+}
