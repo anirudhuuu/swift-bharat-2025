@@ -9,7 +9,7 @@ const App = () => {
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: "cover",
-          backgroundPosition: "50% 92%",
+          backgroundPosition: "50% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -73,21 +73,21 @@ const App = () => {
           </div>
         </nav>
         <div className="bg-white/30 rounded-4xl px-8 py-2.5 w-fit mb-2.5">
-          <span className="uppercase text-base text-[#053020]/60">
+          <span className="uppercase text-sm lg:text-base text-[#053020]/60">
             15-17 Sep, 2025
           </span>
         </div>
-        <h1 className=" text-7xl font-bold text-[#053020] mb-4">
+        <h1 className="text-5xl lg:text-7xl font-bold text-[#053020] mb-4">
           Swift Bharat 2025
         </h1>
-        <div className="mb-10 font-light text-xl text-[#053020]/60">
+        <div className="mb-10 font-light text-center text-base lg:text-xl text-[#053020]/60">
           <h3>Meet experts from Apple and the global Swift community.</h3>
           <h3>Learn, build, and connect over three packed days.</h3>
         </div>
         <button className="bg-[#0D3A3F] text-[#FAF8F5] font-medium py-4 px-5 rounded-2xl cursor-pointer mb-4">
           Get Tickets
         </button>
-        <h4 className="mb-10 font-light text-lg text-[#053020]/60">
+        <h4 className="mb-10 font-light text-sm lg:text-lg text-[#053020]/60">
           Bangalore International Convention Center
         </h4>
       </div>
