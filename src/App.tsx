@@ -1,5 +1,7 @@
-import swiftBharatLogo from "./assets/swift-bharat-logo.png";
+import { FaArrowRight } from "react-icons/fa";
+import { IoPin } from "react-icons/io5";
 import heroBackground from "./assets/hero-background.png";
+import swiftBharatLogo from "./assets/swift-bharat-logo.png";
 
 const App = () => {
   return (
@@ -84,10 +86,17 @@ const App = () => {
           <h3>Meet experts from Apple and the global Swift community.</h3>
           <h3>Learn, build, and connect over three packed days.</h3>
         </div>
-        <button className="bg-[#0D3A3F] text-[#FAF8F5] font-medium py-4 px-5 rounded-2xl cursor-pointer mb-4">
-          Get Tickets
+
+        <button className="relative flex items-center bg-[#0D3A3F] text-[#FAF8F5] font-medium py-4 px-6 rounded-2xl cursor-pointer mb-4">
+          <span className="pr-4">Get Tickets</span>
+          <div className="h-8 border-l border-dashed border-[#FAF8F5]/30 mx-2"></div>
+          <FaArrowRight className="text-[#FAF8F5]/60 text-xl" />
+          <div className="absolute top-0 right-[48px] w-2 h-2 bg-[#FAF8F5]/90 rounded-b-full"></div>
+          <div className="absolute bottom-0 right-[48px] w-2 h-2 bg-[#FAF8F5]/90 rounded-t-full"></div>
         </button>
-        <h4 className="mb-10 font-light text-sm lg:text-lg text-[#053020]/60">
+
+        <h4 className="flex items-center mb-10 font-light text-sm lg:text-lg text-[#053020]/60">
+          <IoPin className="transform -scale-x-100 mr-2" />
           Bangalore International Convention Center
         </h4>
       </div>
