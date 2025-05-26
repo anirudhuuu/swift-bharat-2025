@@ -1,5 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import { IoPin } from "react-icons/io5";
+import ticketBackground from "../assets/ticket.svg";
 
 const Hero = () => {
   return (
@@ -17,12 +18,14 @@ const Hero = () => {
         <h3>Learn, build, and connect over three packed days.</h3>
       </div>
 
-      <button className="relative flex items-center gap-4 bg-[#0D3A3F] text-[#FAF8F5] font-medium py-2.5 pl-6 pr-4 rounded-2xl cursor-pointer mb-4">
-        <span>Get Tickets</span>
-        <div className="h-8 border-l border-dashed border-[#FAF8F5]/20"></div>
-        <FaArrowRight className="text-[#FAF8F5]/60 text-xl" />
-        <div className="absolute top-0 right-[48px] w-2.5 h-1.5 bg-[#FAF8F5]/90 rounded-b-full"></div>
-        <div className="absolute bottom-0 right-[48px] w-2.5 h-1.5 bg-[#FAF8F5]/90 rounded-t-full"></div>
+      <button className="relative flex items-center gap-8 text-[#FAF8F5] font-medium py-4 pl-7 pr-18 rounded-2xl cursor-pointer mb-4 overflow-hidden">
+        <img
+          src={ticketBackground}
+          alt="ticket background"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+        />
+        <span className="z-10">Get Tickets</span>
+        <FaArrowRight className="text-[#FAF8F5]/60 text-lg z-10 absolute right-3.5" />
       </button>
 
       <h4 className="flex items-center mb-10 font-light text-sm lg:text-lg text-[#053020]/60">
