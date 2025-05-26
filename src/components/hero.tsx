@@ -6,12 +6,12 @@ const Hero = () => {
   return (
     <>
       <div className="bg-white/30 rounded-4xl px-8 py-1.5 w-fit mt-8 mb-2.5">
-        <span className="uppercase text-sm font-light lg:text-base text-[#053020]/60">
+        <span className="uppercase font-light text-sm lg:text-base text-[#053020]/60">
           15-17 Sep, 2025
         </span>
       </div>
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-[#053020] mb-4">
-        Swift Bharat 2025
+        <span className="tracking-wide">Swift</span> Bharat 2025
       </h1>
       <div className="mb-10 font-light text-center text-base md:text-xl lg:text-2xl text-[#053020]/60">
         <h3>Meet experts from Apple and the global Swift community.</h3>
