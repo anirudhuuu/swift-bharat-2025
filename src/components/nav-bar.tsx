@@ -34,7 +34,7 @@ const Navbar = () => {
         <NavLinks />
       </ul>
 
-      <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
+      <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer">
         Get Tickets
       </Button>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
             <NavLinks />
           </ul>
           <div className="h-6" />
-          <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
+          <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer">
             Get Tickets
           </Button>
         </div>
