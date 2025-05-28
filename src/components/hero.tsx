@@ -20,6 +20,7 @@ const Hero = () => {
         <img
           src={ticketBackground}
           alt="ticket background"
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
         />
         <span className="z-10">Get Tickets</span>

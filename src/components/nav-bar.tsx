@@ -21,6 +21,7 @@ const Navbar = () => {
         <img
           src={swiftBharatLogo}
           alt="Swift Bharat"
+          loading="lazy"
           className="w-[70px] h-[70px]"
         />
         <span className="font-display font-bold text-lg leading-7">
