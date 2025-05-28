@@ -16,7 +16,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex w-full px-28 py-8 mx-auto items-center justify-between relative">
+    <nav className="flex w-full px-10 lg:px-16 py-8 items-center justify-between relative">
       <div className="flex items-center gap-2">
         <img
           src={swiftBharatLogo}
@@ -29,16 +29,16 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex items-center gap-10 text-[#0C0C11] font-light text-lg font-display">
+      <ul className="hidden lg:flex items-center gap-10 text-[#0C0C11] font-light text-lg font-display">
         <NavLinks />
       </ul>
 
-      <Button className="hidden md:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
+      <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
         Get Tickets
       </Button>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <button
           type="button"
           className="text-[#0D3A3F] focus:outline-none"
