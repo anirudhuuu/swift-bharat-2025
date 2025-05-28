@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import heroBackgroundMobile from "./assets/hero-background-mobile.png";
 import heroBackground from "./assets/hero-background.png";
 import paulHudson from "./assets/paul hudson.png";
 import schedulePillar from "./assets/pillar.png";
@@ -7,14 +9,30 @@ import Hero from "./components/hero";
 import NavBar from "./components/nav-bar";
 
 const App = () => {
+  const [bgImage, setBgImage] = useState(
+    window.innerWidth <= 768 ? heroBackgroundMobile : heroBackground
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setBgImage(
+        window.innerWidth <= 768 ? heroBackgroundMobile : heroBackground
+      );
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div
-        className="flex flex-col justify-start items-center font-display h-[1200px] w-full"
+        className="flex flex-col justify-start items-center font-display h-[1280px] w-full"
         style={{
-          backgroundImage: `url(${heroBackground})`,
+          backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "50% 80%",
+          backgroundPosition: "50% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -32,7 +50,7 @@ const App = () => {
             className="h-full object-cover translate-x-[-50%]"
           />
         </div>
-        <div className="absolute right-0 top-0 h-full">
+        <div className="absolute right-0 top-0 h-full overflow-x-hidden">
           <img
             src={schedulePillar}
             alt="Right Pillar"
@@ -51,7 +69,7 @@ const App = () => {
                 <TabsTrigger
                   key={val}
                   value={val}
-                  className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize"
+                  className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
                 >
                   Sep {15 + i}
                 </TabsTrigger>
