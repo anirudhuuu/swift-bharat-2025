@@ -1,41 +1,13 @@
-import { useEffect, useState } from "react";
-import heroBackgroundMobile from "./assets/hero-background-mobile.png";
-import heroBackground from "./assets/hero-background.png";
-import Hero from "./components/hero";
-import NavBar from "./components/nav-bar";
+import Address from "@/components/address";
+import Landing from "@/components/landing";
 
 const App = () => {
-  const [bgImage, setBgImage] = useState(
-    window.innerWidth <= 768 ? heroBackgroundMobile : heroBackground
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setBgImage(
-        window.innerWidth <= 768 ? heroBackgroundMobile : heroBackground
-      );
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <>
-      <div
-        className="flex flex-col justify-start items-center font-display h-[1280px] w-full"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "50% 100%",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <NavBar />
-        <Hero />
-      </div>
-
+      <Landing />
+      <div className="md:h-[48px]" />
+      <Address />
+      <div className="md:h-[150px]" />
       {/* <div className="relative w-full">
         <div className="absolute left-0 top-0 h-full">
           <img
