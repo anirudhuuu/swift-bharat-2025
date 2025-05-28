@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import heroBackgroundMobile from "./assets/hero-background-mobile.png";
 import heroBackground from "./assets/hero-background.png";
-import paulHudson from "./assets/paul hudson.png";
-import schedulePillar from "./assets/pillar.png";
-import speaker2 from "./assets/speaker 2.png";
 import Hero from "./components/hero";
 import NavBar from "./components/nav-bar";
 
@@ -40,9 +36,7 @@ const App = () => {
         <Hero />
       </div>
 
-      <div className="h-16"></div>
-
-      <div className="relative w-full">
+      {/* <div className="relative w-full">
         <div className="absolute left-0 top-0 h-full">
           <img
             src={schedulePillar}
@@ -260,20 +254,121 @@ const App = () => {
               </div>
             </TabsContent>
           </Tabs>
+
+          <div className="h-8"></div>
+
+          <button className="hidden md:block bg-[#0D3A3F] text-[#EDEDEC] font-normal py-2 px-6 rounded-2xl text-base cursor-pointer">
+            Download Schedule
+          </button>
+
+          <div className="h-8"></div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="bg-red-900">
-        <h2 className="font-display text-6xl font-bold text-[#F4DA9E]">
-          Speakers
-        </h2>
-      </div>
+      {/* <div
+        className="p-12 m-8 flex flex-col items-center justify-center rounded-3xl"
+        style={{
+          backgroundImage: `url(${speakerBackground})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="flex my-10">
+          <img src={speakerLeft} alt="left arrow" />
+          <h2 className="font-display text-5xl font-bold text-[#F4DA9E] mx-6">
+            Speakers
+          </h2>
+          <img src={speakerRight} alt="right arrow" />
+        </div>
 
-      <h2 className="font-display text-6xl font-bold text-[#053020]">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-sm"
+        >
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index} className="basis-full md:basis-1/2">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <span className="text-3xl font-semibold">
+                        {index + 1}
+                      </span>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div> */}
+
+      {/* <div
+        className="p-12 m-8 flex flex-col items-center justify-center rounded-3xl"
+        style={{
+          backgroundImage: `url(${speakerBackground})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="flex items-center justify-center my-10">
+          <img src={speakerLeft} alt="left arrow" className="w-6 h-6" />
+          <h2 className="font-display text-5xl font-bold text-[#F4DA9E] mx-6 tracking-wider">
+            Speakers
+          </h2>
+          <img src={speakerRight} alt="right arrow" className="w-6 h-6" />
+        </div>
+
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-5xl"
+        >
+          <CarouselContent>
+            {speakers.map((speaker, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-full md:basis-1/2 flex justify-center"
+              >
+                <div className="bg-[#F4E6C2] rounded-2xl p-6 flex items-center max-w-xl shadow-md">
+                  <div className="min-w-[120px] max-w-[140px]">
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="rounded border-[6px] border-[#97784D] shadow-xl"
+                    />
+                  </div>
+                  <div className="ml-6">
+                    <h3 className="text-xl font-bold text-[#133B2E]">
+                      {speaker.name}
+                    </h3>
+                    <p className="text-sm text-[#B45C3D] mt-1 font-semibold">
+                      {speaker.role}
+                    </p>
+                    <p className="text-sm text-[#4A4A4A] mt-2">{speaker.bio}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <div className="flex justify-center items-center gap-6 mt-6">
+            <CarouselPrevious className="relative static" />
+            <CarouselNext className="relative static" />
+          </div>
+        </Carousel>
+      </div> */}
+
+      {/* <h2 className="font-display text-6xl font-bold text-[#053020]">
         Get Your Tickets
-      </h2>
+      </h2> */}
 
-      <h2 className="font-display text-6xl font-bold text-[#053020]">FAQs</h2>
+      {/* <h2 className="font-display text-6xl font-bold text-[#053020]">FAQs</h2> */}
     </>
   );
 };
