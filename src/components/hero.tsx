@@ -1,4 +1,3 @@
-import { FaArrowRight } from "react-icons/fa";
 import ticketBackground from "../assets/ticket.svg";
 
 const Hero = () => {
@@ -24,7 +23,6 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
         />
         <span className="z-10">Get Tickets</span>
-        <FaArrowRight className="text-[#FAF8F5]/60 text-lg z-10 absolute right-3.5" />
       </button>
     </div>
   );
