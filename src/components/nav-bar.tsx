@@ -1,67 +1,102 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import swiftBharatLogo from "../assets/swift-bharat-logo.png";
 
-const NavBar = () => {
+const NavLinks = () => (
+  <>
+    <li className="cursor-pointer">Schedule</li>
+    <li className="cursor-pointer">Speakers</li>
+    <li className="cursor-pointer">About</li>
+    <li className="cursor-pointer">Sponsors</li>
+    <li className="cursor-pointer">Venue</li>
+  </>
+);
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="flex w-full px-3 py-5 mx-auto items-center justify-between">
+    <nav className="flex w-full px-28 py-8 mx-auto items-center justify-between relative">
       <div className="flex items-center gap-2">
         <img
           src={swiftBharatLogo}
           alt="Swift Bharat"
-          width={40}
-          className="sm:w-[50px]"
+          className="w-[70px] h-[70px]"
         />
-        <span className="font-bold text-base">Swift Bharat</span>
+        <span className="font-display font-bold text-lg leading-7">
+          Swift Bharat
+        </span>
       </div>
+
       {/* Desktop Menu */}
-      <ul className="hidden md:flex items-center justify-center gap-10 mx-auto text-[#0C0C11] font-light text-sm">
-        <li className="cursor-pointer">Schedule</li>
-        <li className="cursor-pointer">Speakers</li>
-        <li className="cursor-pointer">About</li>
-        <li className="cursor-pointer">Sponsors</li>
-        <li className="cursor-pointer">Venue</li>
+      <ul className="hidden md:flex items-center gap-10 text-[#0C0C11] font-light text-lg font-display">
+        <NavLinks />
       </ul>
-      <button className="hidden md:block bg-[#0D3A3F] text-[#EDEDEC] font-normal py-2 px-6 rounded-2xl text-sm cursor-pointer">
+
+      <Button className="hidden md:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
         Get Tickets
-      </button>
+      </Button>
+
       {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
           type="button"
           className="text-[#0D3A3F] focus:outline-none"
-          aria-label="Open menu"
-          onClick={() => {
-            const menu = document.getElementById("mobile-menu");
-            if (menu) menu.classList.toggle("hidden");
-          }}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-            <path
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              d="M4 6h16M4 12h16M4 18h16"
+          <svg
+            width="25"
+            height="14"
+            viewBox="0 0 25 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="0"
+              y1="1.23438"
+              x2="25"
+              y2="1.23438"
+              stroke="black"
+              strokeWidth="1.5"
+              className={`transition-all duration-300 origin-center ${
+                menuOpen
+                  ? "translate-y-[6px] rotate-45"
+                  : "translate-y-0 rotate-0"
+              }`}
+            />
+            <line
+              x1="0"
+              y1="13.2344"
+              x2="25"
+              y2="13.2344"
+              stroke="black"
+              strokeWidth="1.5"
+              className={`transition-all duration-300 origin-center ${
+                menuOpen
+                  ? "-translate-y-[6px] -rotate-45"
+                  : "translate-y-0 rotate-0"
+              }`}
             />
           </svg>
         </button>
       </div>
+
       {/* Mobile Menu */}
-      <div
-        id="mobile-menu"
-        className="absolute top-20 left-0 w-full bg-white/95 shadow-lg flex flex-col items-center gap-4 py-4 z-50 hidden md:hidden"
-      >
-        <ul className="flex flex-col items-center gap-4 text-[#0C0C11] font-light text-base">
-          <li className="cursor-pointer">Schedule</li>
-          <li className="cursor-pointer">Speakers</li>
-          <li className="cursor-pointer">About</li>
-          <li className="cursor-pointer">Sponsors</li>
-          <li className="cursor-pointer">Venue</li>
-        </ul>
-        <button className="bg-[#0D3A3F] text-[#EDEDEC] font-normal py-2 px-6 rounded-2xl text-base cursor-pointer">
-          Get Tickets
-        </button>
-      </div>
+      {menuOpen && (
+        <div className="absolute top-20 left-0 w-full bg-white shadow-lg flex flex-col items-center gap-4 py-12 z-50 md:hidden">
+          <ul className="flex flex-col items-center gap-12 text-[#0C0C11] font-light text-lg font-display">
+            <NavLinks />
+          </ul>
+          <div className="h-6" />
+          <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14">
+            Get Tickets
+          </Button>
+        </div>
+      )}
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;
