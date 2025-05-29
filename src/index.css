@@ -6,16 +6,16 @@
   --font-display: "Inter", "sans-serif";
 
   /* Desktop typography */
-  --font-heading-1: 60px;
-  --font-heading-2: 40px;
-  --font-body: 18px;
-  --font-caption: 14px;
+  --text-heading-1: 60px;
+  --text-heading-2: 40px;
+  --text-body: 18px;
+  --text-caption: 14px;
 
   /* Mobile typography */
-  --font-heading-1-mobile: 32px;
-  --font-heading-2-mobile: 24px;
-  --font-body-mobile: 16px;
-  --font-caption-mobile: 14px;
+  --text-heading-1-mobile: 32px;
+  --text-heading-2-mobile: 24px;
+  --text-body-mobile: 16px;
+  --text-caption-mobile: 14px;
 
   /* Colors */
   --color-background: #f5db9f;
