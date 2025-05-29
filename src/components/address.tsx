@@ -1,5 +1,4 @@
 import dateAddressBackground from "@/assets/date-address-background.png";
-import Heading from "@/components/heading";
 import { Separator } from "@/components/ui/separator";
 
 const Address = () => {
@@ -17,18 +16,18 @@ const Address = () => {
         <h2 className="uppercase font-medium text-base lg:text-lg text-black/60 mb-4">
           Dates
         </h2>
-        <Heading fontWeight="semibold" mdFontSize="text-heading-2">
+        <h2 className="font-semibold text-4xl md:text-heading-2">
           15th-17th
           <br />
           September, 2025
-        </Heading>
+        </h2>
         <Separator className="my-10 bg-black/20" />
         <h2 className="uppercase font-medium text-base lg:text-lg text-black/60 mb-4">
           Address
         </h2>
-        <Heading fontWeight="semibold" mdFontSize="text-heading-2">
+        <h2 className="font-semibold text-4xl md:text-heading-2">
           Bangalore International Convention Center
-        </Heading>
+        </h2>
       </div>
     </div>
   );

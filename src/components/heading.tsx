@@ -1,18 +1,5 @@
-interface HeadingProps {
-  children: React.ReactNode;
-  fontWeight?: "bold" | "semibold";
-  mdFontSize?: string;
-}
-
-const Heading = ({
-  children,
-  fontWeight = "bold",
-  mdFontSize = "text-heading-1",
-}: HeadingProps) => {
-  const fontClass = fontWeight === "semibold" ? "font-semibold" : "font-bold";
-  return (
-    <h1 className={`${fontClass} text-4xl md:${mdFontSize}`}>{children}</h1>
-  );
+const Heading = ({ children }: { children: React.ReactNode }) => {
+  return <h1 className="font-bold text-4xl md:text-heading-1">{children}</h1>;
 };
 
 export default Heading;
