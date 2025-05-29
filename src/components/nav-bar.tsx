@@ -16,7 +16,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex w-full px-10 lg:px-16 py-8 items-center justify-between relative">
+    <nav className="flex w-full px-10 lg:px-18 py-8 items-center justify-between relative">
       <div className="flex items-center gap-2">
         <img
           src={swiftBharatLogo}
