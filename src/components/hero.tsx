@@ -1,15 +1,19 @@
-import ticketBackground from "../assets/ticket.svg";
+import Heading from "@/components/heading";
+import SubHeading from "@/components/sub-heading";
+import ticketBackground from "../assets/svg/ticket.svg";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col justify-center items-center mt-14 px-4 text-center max-w-4xl mx-auto">
-      <h1 className="text-5xl lg:text-6xl font-bold mb-4">
-        <span className="tracking-wide">Swift</span> Bharat 2025
-      </h1>
-
-      <div className="mb-10 font-light text-base lg:text-lg text-black/60 space-y-2">
-        <p>Meet experts from Apple and the global Swift community.</p>
-        <p>Learn, build, and connect over three packed days.</p>
+    <div className="flex flex-col justify-center items-center mt-14 px-1.5 text-center">
+      <div className="flex flex-col items-center mb-6">
+        <Heading>Swift Bharat 2025</Heading>
+        <div className="h-4" />
+        <SubHeading>
+          Meet experts from Apple and the global Swift community.
+        </SubHeading>
+        <SubHeading>
+          Learn, build, and connect over three packed days.
+        </SubHeading>
       </div>
 
       <button
