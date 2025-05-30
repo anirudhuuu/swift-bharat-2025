@@ -123,3 +123,9 @@ body {
 .animate-scroll {
   animation: scroll 90s linear infinite;
 }
+
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation-duration: 45s;
+  }
+}
