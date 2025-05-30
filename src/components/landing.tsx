@@ -1,5 +1,3 @@
-import Hero from "@/components/hero";
-import Navbar from "@/components/nav-bar";
 import heroBackground from "@/assets/hero-background.png";
 import speaker1 from "@/assets/speaker-1.png";
 import speaker2 from "@/assets/speaker-2.png";
@@ -7,6 +5,8 @@ import speaker3 from "@/assets/speaker-3.png";
 import speaker4 from "@/assets/speaker-4.png";
 import speaker5 from "@/assets/speaker-5.png";
 import speaker6 from "@/assets/speaker-6.png";
+import Hero from "@/components/hero";
+import Navbar from "@/components/nav-bar";
 
 const speakers = [speaker1, speaker2, speaker3, speaker4, speaker5, speaker6];
 

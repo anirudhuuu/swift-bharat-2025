@@ -1,6 +1,6 @@
+import ticketBackground from "@/assets/svg/ticket.svg";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
-import ticketBackground from "../assets/svg/ticket.svg";
 
 const Hero = () => {
   return (

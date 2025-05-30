@@ -1,6 +1,6 @@
-import { useState } from "react";
+import swiftBharatLogo from "@/assets/swift-bharat-logo.png";
 import { Button } from "@/components/ui/button";
-import swiftBharatLogo from "../assets/swift-bharat-logo.png";
+import { useState } from "react";
 
 const NavLinks = () => (
   <>
