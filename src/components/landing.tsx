@@ -23,7 +23,7 @@ const Landing = () => {
     >
       <div className="absolute bottom-0 w-full overflow-hidden h-[440px] pointer-events-none">
         <div className="animate-scroll flex w-max gap-2">
-          {[...speakers, ...speakers].map((src, i) => (
+          {[...speakers, ...speakers, ...speakers].map((src, i) => (
             <img
               key={i}
               src={src}
