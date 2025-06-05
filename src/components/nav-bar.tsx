@@ -115,7 +115,7 @@ const Navbar = () => {
         }`}
       >
         <div
-          className={`p-8 flex justify-between transition-transform duration-300 ease-out ${
+          className={`px-6 py-8 flex justify-between transition-transform duration-300 ease-out ${
             menuOpen ? "translate-y-0" : "-translate-y-4"
           }`}
         >
