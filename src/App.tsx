@@ -1,5 +1,6 @@
 import Address from "@/components/address";
 import Landing from "@/components/landing";
+import Faqs from "./components/faqs";
 import Footer from "./components/footer";
 import Sponsors from "./components/sponsors";
 
@@ -12,7 +13,7 @@ const App = () => {
       {/* Speakers */}
       {/* Get Your Tickets */}
       <Sponsors />
-      {/* FAQS */}
+      <Faqs />
       <Footer />
     </>
   );
