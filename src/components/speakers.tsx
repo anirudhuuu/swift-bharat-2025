@@ -1,12 +1,14 @@
 import speakersBackground from "@/assets/speakers-background.jpg";
-import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
-import speakersRightLogo from "@/assets/svg/speakersRight.svg";
 import arimaJainImage from "@/assets/speakers/arima-jain.svg";
 import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.svg";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.svg";
 import peterFrieseImage from "@/assets/speakers/peter-friese.svg";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.svg";
 import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.svg";
+import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
+import speakersRightLogo from "@/assets/svg/speakersRight.svg";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Speakers = () => {
   const speakersOfEvents = [
@@ -86,7 +88,7 @@ const Speakers = () => {
 
   return (
     <section
-      className="flex flex-col items-center justify-center w-[calc(100vw-80px)] mt-12 mx-auto px-4 py-12 rounded-3xl"
+      className="flex flex-col items-center justify-center w-[calc(100vw-5%)] mt-12 mx-auto px-4 py-12 rounded-3xl"
       aria-labelledby="speakers-heading"
       style={{
         backgroundImage: `url(${speakersBackground})`,
@@ -98,52 +100,53 @@ const Speakers = () => {
         <img src={speakersLeftLogo} alt="left arrow" />
         <h2
           id="speakers-heading"
-          className="font-bold text-3xl sm:text-5xl text-center mb-4 text-[#F5DB9F]"
+          className="font-bold text-3xl sm:text-5xl text-[#F5DB9F]"
         >
           Speakers
         </h2>
         <img src={speakersRightLogo} alt="right arrow" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full justify-items-center">
+
+      <div className="h-24" />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-28 gap-x-6 w-fit justify-items-center">
         {speakersOfEvents.map((speaker) => (
           <div
             key={speaker.id}
-            className="flex flex-col items-center mb-8 max-w-md"
+            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-72"
           >
             <img
               src={speaker.image}
               alt={speaker.name}
-              className="w-32 h-32 rounded-full mb-4"
+              className="absolute -top-28 left-4 w-52 h-auto object-cover rounded-lg"
             />
-            <div className="flex gap-4">
-              {speaker.socials.twitter && (
-                <a
-                  href={speaker.socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline"
-                >
-                  Twitter
-                </a>
-              )}
-              {speaker.socials.linkedin && (
-                <a
-                  href={speaker.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline"
-                >
-                  LinkedIn
-                </a>
-              )}
+
+            <div className="absolute top-4 right-4 flex space-x-2">
+              <a
+                href={speaker.socials.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F5DB9F] p-3 rounded-full"
+              >
+                <FaXTwitter className="w-5 h-5 text-black" />
+              </a>
+              <a
+                href={speaker.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F5DB9F] p-3 rounded-full"
+              >
+                <FaLinkedinIn className="w-5 h-5 text-black" />
+              </a>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {speaker.name}
-            </h3>
-            <p className="text-gray-300 text-center mb-2">{speaker.role}</p>
-            <p className="text-gray-400 text-center mb-4">
-              {speaker.description}
-            </p>
+
+            <div className="mt-auto flex flex-col">
+              <h3 className="text-xl font-medium text-black">{speaker.name}</h3>
+              <p className="text-[#CB6A31] text-sm font-medium">
+                {speaker.role}
+              </p>
+              <p className="text-gray-700 text-sm">{speaker.description}</p>
+            </div>
           </div>
         ))}
       </div>
