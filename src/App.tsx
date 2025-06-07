@@ -2,6 +2,7 @@ import Address from "@/components/address";
 import Landing from "@/components/landing";
 import Faqs from "./components/faqs";
 import Footer from "./components/footer";
+import Speakers from "./components/speakers";
 import Sponsors from "./components/sponsors";
 import Tickets from "./components/tickets";
 
@@ -11,7 +12,7 @@ const App = () => {
       <Landing />
       <Address />
       {/* Schedule */}
-      {/* Speakers */}
+      <Speakers />
       <Tickets />
       <Sponsors />
       <Faqs />
