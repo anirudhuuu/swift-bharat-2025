@@ -107,6 +107,15 @@ const Tickets = () => {
             </div>
           ))}
         </div>
+
+        <iframe
+          src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
+          id="konfhub-widget"
+          title="Register for Swift Bharat"
+          width="100%"
+          height="800"
+          className="mt-10 rounded-lg border-2 border-white/20 shadow-lg"
+        ></iframe>
       </div>
     </section>
   );
