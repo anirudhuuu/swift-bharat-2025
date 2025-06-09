@@ -97,7 +97,7 @@ const Tickets = () => {
       </h2>
       <h4 className="w-full max-w-md text-center font-light text-black/80 mb-2">
         Secure your spot at Swift Conference India 2025. Early bird registration
-        ends July 31, 2025.
+        ends June 30, 2025.
       </h4>
       {/* w-full */}
       <div className="w-sm">
