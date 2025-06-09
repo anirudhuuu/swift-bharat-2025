@@ -3,15 +3,49 @@ import swiftBharatLogo from "@/assets/svg/swiftLogo.svg";
 import swiftBharatMobileLogo from "@/assets/svg/swiftMobileLogo.svg";
 import { Button } from "@/components/ui/button";
 import { Fragment, useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
-const navItems = ["Schedule", "Speakers", "About", "Sponsors", "Venue"];
+const navItems = [
+  // {
+  //   id: 1,
+  //   label: "Schedule",
+  //   link: "#schedule",
+  // },
+  {
+    id: 2,
+    label: "Speakers",
+    link: "#speakers",
+  },
+  // {
+  //   id: 3,
+  //   label: "About",
+  //   link: "#about",
+  // },
+  {
+    id: 4,
+    label: "Sponsors",
+    link: "#sponsors",
+  },
+  {
+    id: 5,
+    label: "Venue",
+    link: "#venue",
+  },
+  {
+    id: 6,
+    label: "Tickets",
+    link: "#tickets",
+  },
+];
 
 const NavLinks = () => (
   <>
     {navItems.map((item, id) => (
-      <Fragment key={item}>
+      <Fragment key={item.id}>
         <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
-        <li className="cursor-pointer text-lg">{item}</li>
+        <li className="cursor-pointer text-lg">
+          <Link to={item.link}>{item.label}</Link>
+        </li>
         {id === navItems.length - 1 && (
           <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
         )}
@@ -38,15 +72,17 @@ const Navbar = () => {
   return (
     <nav className="flex w-full px-6 lg:px-18 py-8 items-center justify-between relative">
       <div className="flex items-center gap-2">
-        <img
-          src={swiftBharatLogo}
-          alt="Swift Bharat"
-          loading="lazy"
-          className="w-[70px] h-[70px]"
-        />
-        <span className="font-display font-bold text-lg leading-7">
-          Swift Bharat
-        </span>
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={swiftBharatLogo}
+            alt="Swift Bharat"
+            loading="lazy"
+            className="w-[70px] h-[70px]"
+          />
+          <span className="font-display font-bold text-lg leading-7">
+            Swift Bharat
+          </span>
+        </Link>
       </div>
 
       {/* Desktop Menu */}
