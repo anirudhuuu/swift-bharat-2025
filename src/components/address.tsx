@@ -3,7 +3,8 @@ import { Separator } from "@/components/ui/separator";
 
 const Address = () => {
   return (
-    <div
+    <section
+      id="venue"
       className="flex flex-col w-full font-display min-h-[550px]"
       style={{
         backgroundImage: `url(${dateAddressBackground})`,
@@ -17,7 +18,7 @@ const Address = () => {
           Dates
         </h2>
         <h2 className="font-semibold text-4xl md:text-heading-2">
-          15th-17th
+          26th-27th
           <br />
           September, 2025
         </h2>
@@ -25,11 +26,27 @@ const Address = () => {
         <h2 className="uppercase font-medium text-base lg:text-lg text-black/60 mb-4">
           Address
         </h2>
-        <h2 className="font-semibold text-4xl md:text-heading-2">
+        <h2
+          className="font-semibold text-4xl md:text-heading-2 cursor-pointer hover:underline"
+          onClick={() =>
+            window.open("https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA", "_blank")
+          }
+          tabIndex={0}
+          role="button"
+          aria-label="Open Bangalore International Convention Center in Maps"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              window.open(
+                "https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA",
+                "_blank"
+              );
+            }
+          }}
+        >
           Bangalore International Convention Center
         </h2>
       </div>
-    </div>
+    </section>
   );
 };
 
