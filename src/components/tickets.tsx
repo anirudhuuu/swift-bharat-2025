@@ -1,34 +1,67 @@
 const Tickets = () => {
   const ticketOptions = [
+    // {
+    //   id: 1,
+    //   title: "Standard Pass",
+    //   price: "₹ 9,999",
+    //   features: [
+    //     "All keynote sessions",
+    //     "Access to expo",
+    //     "Conference materials",
+    //     "Lunch and refreshments",
+    //   ],
+    //   bg: "bg-[#FCE5AF]",
+    //   text: "text-black",
+    //   button: {
+    //     bg: "bg-[#053020]",
+    //     text: "text-white",
+    //     hover: "hover:bg-[#065c38]",
+    //   },
+    //   ariaLabel: "Buy Standard Pass",
+    // },
+    // {
+    //   id: 2,
+    //   title: "Most Popular",
+    //   price: "₹ 14,999",
+    //   features: [
+    //     "All Standard Pass benefits",
+    //     "Workshop access",
+    //     "Networking dinner",
+    //     "Conference recordings",
+    //   ],
+    //   bg: "bg-[#053020]",
+    //   text: "text-[#F5DB9F]",
+    //   button: {
+    //     bg: "bg-[#F5DB9F]",
+    //     text: "text-[#053020]",
+    //     hover: "hover:bg-[#FCE5AF]",
+    //   },
+    //   ariaLabel: "Buy Most Popular Pass",
+    // },
+    // {
+    //   id: 3,
+    //   title: "VIP Pass",
+    //   price: "₹ 24,999",
+    //   features: [
+    //     "All Premium Pass benefits",
+    //     "Exclusive VIP lounge",
+    //     "Speaker dinner access",
+    //     "1-year SwiftIndia membership",
+    //   ],
+    //   bg: "bg-[#FCE5AF]",
+    //   text: "text-black",
+    //   button: {
+    //     bg: "bg-[#053020]",
+    //     text: "text-white",
+    //     hover: "hover:bg-[#065c38]",
+    //   },
+    //   ariaLabel: "Buy VIP Pass",
+    // },
     {
       id: 1,
-      title: "Standard Pass",
-      price: "₹ 9,999",
-      features: [
-        "All keynote sessions",
-        "Access to expo",
-        "Conference materials",
-        "Lunch and refreshments",
-      ],
-      bg: "bg-[#FCE5AF]",
-      text: "text-black",
-      button: {
-        bg: "bg-[#053020]",
-        text: "text-white",
-        hover: "hover:bg-[#065c38]",
-      },
-      ariaLabel: "Buy Standard Pass",
-    },
-    {
-      id: 2,
-      title: "Most Popular",
-      price: "₹ 14,999",
-      features: [
-        "All Standard Pass benefits",
-        "Workshop access",
-        "Networking dinner",
-        "Conference recordings",
-      ],
+      title: "Early Bird",
+      price: "₹ 4,999",
+      features: ["All Early Bird Pass benefits"],
       bg: "bg-[#053020]",
       text: "text-[#F5DB9F]",
       button: {
@@ -36,26 +69,7 @@ const Tickets = () => {
         text: "text-[#053020]",
         hover: "hover:bg-[#FCE5AF]",
       },
-      ariaLabel: "Buy Most Popular Pass",
-    },
-    {
-      id: 3,
-      title: "VIP Pass",
-      price: "₹ 24,999",
-      features: [
-        "All Premium Pass benefits",
-        "Exclusive VIP lounge",
-        "Speaker dinner access",
-        "1-year SwiftIndia membership",
-      ],
-      bg: "bg-[#FCE5AF]",
-      text: "text-black",
-      button: {
-        bg: "bg-[#053020]",
-        text: "text-white",
-        hover: "hover:bg-[#065c38]",
-      },
-      ariaLabel: "Buy VIP Pass",
+      ariaLabel: "Buy Early Bird Pass",
     },
   ];
 
@@ -74,8 +88,10 @@ const Tickets = () => {
         Secure your spot at Swift Conference India 2025. Early bird registration
         ends July 31, 2025.
       </h4>
-      <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      {/* w-full */}
+      <div className="w-sm">
+        {/* md:grid-cols-2 lg:grid-cols-3 */}
+        <div className="grid grid-cols-1 gap-6 mt-10">
           {ticketOptions.map((option) => (
             <div
               key={option.id}
@@ -107,16 +123,16 @@ const Tickets = () => {
             </div>
           ))}
         </div>
-
-        <iframe
-          src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
-          id="konfhub-widget"
-          title="Register for Swift Bharat"
-          width="100%"
-          height="800"
-          className="mt-10 rounded-lg border-2 border-white/20 shadow-lg"
-        ></iframe>
       </div>
+
+      <iframe
+        src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
+        id="konfhub-widget"
+        title="Register for Swift Bharat"
+        width="100%"
+        height="800"
+        className="mt-10 rounded-lg border-2 border-white/20 shadow-lg"
+      ></iframe>
     </section>
   );
 };
