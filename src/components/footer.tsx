@@ -57,8 +57,15 @@ const Footer = () => {
               </a>
             </li>
             <li className="leading-relaxed">
-              Bengaluru International Convention Center, 10th Mile, Tumkur Road,
-              Bengaluru
+              <a
+                href="https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline cursor-pointer"
+              >
+                Bengaluru International Convention Center, 10th Mile, Tumkur
+                Road, Bengaluru
+              </a>
             </li>
           </ul>
         </section>
