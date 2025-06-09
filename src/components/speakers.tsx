@@ -97,14 +97,22 @@ const Speakers = () => {
       }}
     >
       <div className="flex justify-between max-w-fit gap-8 mb-8">
-        <img src={speakersLeftLogo} alt="left arrow" />
+        <img
+          src={speakersLeftLogo}
+          alt="left arrow"
+          className="w-18 md:w-auto"
+        />
         <h2
           id="speakers-heading"
-          className="font-bold text-3xl sm:text-5xl text-[#F5DB9F]"
+          className="font-bold text-3xl md:text-5xl text-[#F5DB9F]"
         >
           Speakers
         </h2>
-        <img src={speakersRightLogo} alt="right arrow" />
+        <img
+          src={speakersRightLogo}
+          alt="right arrow"
+          className="w-18 md:w-auto"
+        />
       </div>
 
       <div className="h-24" />
