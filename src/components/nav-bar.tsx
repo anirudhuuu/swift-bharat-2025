@@ -38,13 +38,15 @@ const navItems = [
   },
 ];
 
-const NavLinks = () => (
+const NavLinks = ({ onClick }: { onClick?: () => void }) => (
   <>
     {navItems.map((item, id) => (
       <Fragment key={item.id}>
         <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
         <li className="cursor-pointer text-lg">
-          <Link to={item.link}>{item.label}</Link>
+          <Link to={item.link} onClick={onClick}>
+            {item.label}
+          </Link>
         </li>
         {id === navItems.length - 1 && (
           <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
@@ -175,7 +177,7 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col gap-2 text-[#0C0C11] font-normal text-xl font-display px-3">
-            <NavLinks />
+            <NavLinks onClick={() => setMenuOpen(false)} />
           </ul>
         </div>
         <div
@@ -183,7 +185,11 @@ const Navbar = () => {
             menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <Link to="#tickets">
+          <Link
+            to="#tickets"
+            className="w-full"
+            onClick={() => setMenuOpen(false)}
+          >
             <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full">
               Get Tickets
             </Button>
