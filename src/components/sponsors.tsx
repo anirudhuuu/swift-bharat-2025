@@ -86,11 +86,12 @@ const Sponsors = () => {
         ))}
       </div> */}
       <h2 className="font-bold text-5xl text-center mb-16">Sponsors</h2>
-      <div className="flex flex-col w-4xl">
-        <p className="text-2xl text-center mb-6">
+      <div className="flex flex-col w-fit max-w-4xl">
+        <p className="text-xl lg:text-2xl text-center mb-6">
           We'd love to partner with you to make Swift Bharat an unforgettable
           experience. If you're interested in sponsoring or have any questions,
           feel free to reach out to us:
+          <br />
           <br />
           <a
             href="mailto:hello@swiftbharat.org"
