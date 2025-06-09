@@ -5,16 +5,17 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import "@/index.css";
 
 import App from "@/App";
+import TermsAndCondition from "@/pages/terms";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <App />,
   },
-  // {
-  //   path: "/terms-and-conditions",
-  //   element: <App2024 />,
-  // },
+  {
+    path: "/terms-and-conditions",
+    element: <TermsAndCondition />,
+  },
 ]);
 
 createRoot(document.getElementById("root")!).render(
