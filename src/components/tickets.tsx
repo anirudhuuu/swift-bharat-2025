@@ -1,4 +1,9 @@
+import { useRef, useState } from "react";
+
 const Tickets = () => {
+  const [showIframe, setShowIframe] = useState(false);
+  const purchaseTicket = useRef<HTMLDivElement>(null);
+
   const ticketOptions = [
     // {
     //   id: 1,
@@ -73,6 +78,11 @@ const Tickets = () => {
     },
   ];
 
+  const purchaseTicketOnKonfhub = () => {
+    setShowIframe(true);
+    purchaseTicket.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 py-16 sm:py-24"
@@ -117,6 +127,7 @@ const Tickets = () => {
               <button
                 className={`${option.button.bg} ${option.button.text} w-full cursor-pointer font-normal px-6 py-2 rounded-lg ${option.button.hover} transition-colors mt-auto`}
                 aria-label={option.ariaLabel}
+                onClick={purchaseTicketOnKonfhub}
               >
                 Buy Now
               </button>
@@ -125,14 +136,18 @@ const Tickets = () => {
         </div>
       </div>
 
-      <iframe
-        src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
-        id="konfhub-widget"
-        title="Register for Swift Bharat"
-        width="100%"
-        height="800"
-        className="mt-10 rounded-lg border-2 border-white/20 shadow-lg"
-      ></iframe>
+      <div id="purchase" ref={purchaseTicket} className="w-full">
+        {showIframe && (
+          <iframe
+            src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
+            id="konfhub-widget"
+            title="Register for Swift Bharat"
+            width="100%"
+            height="800"
+            className="mt-10 rounded-lg border-2 border-white/20 shadow-lg"
+          ></iframe>
+        )}
+      </div>
     </section>
   );
 };
