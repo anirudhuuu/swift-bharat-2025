@@ -13,7 +13,7 @@ import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.svg";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.svg";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
-import { FaLinkedinIn } from "react-icons/fa";
+// import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Speakers = () => {
@@ -23,12 +23,11 @@ const Speakers = () => {
       name: "Arima Jain",
       image: arimaJainImage,
       imageMobile: arimaJainImageMobile,
-      role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking With Swift, author of Swift.",
+      role: "Founder and CEO of Lil Artist",
+      // description: "Learning and sharing at Hacking With Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/arimajain",
-        linkedin: "https://www.linkedin.com/in/arimajain/",
+        twitter: "https://x.com/ArimaJain",
+        // linkedin: "https://www.linkedin.com/in/arimajain/",
       },
     },
     {
@@ -36,12 +35,11 @@ const Speakers = () => {
       name: "Danijela Vrzan",
       image: danijelaVrzanImage,
       imageMobile: danijelaVrzanImageMobile,
-      role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking with Swift, author of Swift.",
+      role: "iOS Developer, writer and conference speaker",
+      // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/johndoe",
-        linkedin: "https://www.linkedin.com/in/johndoe/",
+        twitter: "https://x.com/dvrzan",
+        // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
     {
@@ -50,11 +48,10 @@ const Speakers = () => {
       image: paulHudsonImage,
       imageMobile: paulHudsonImageMobile,
       role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking with Swift, author of Swift.",
+      // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/johndoe",
-        linkedin: "https://www.linkedin.com/in/johndoe/",
+        twitter: "https://x.com/twostraws",
+        // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
     {
@@ -62,12 +59,11 @@ const Speakers = () => {
       name: "Peter Friese",
       image: peterFrieseImage,
       imageMobile: peterFrieseImageMobile,
-      role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking with Swift, author of Swift.",
+      role: "Author and Staff Developer Advocate on the Firebase at Google",
+      // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/johndoe",
-        linkedin: "https://www.linkedin.com/in/johndoe/",
+        twitter: "https://x.com/peterfriese",
+        // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
     {
@@ -75,12 +71,11 @@ const Speakers = () => {
       name: "Raja Vijayaraman",
       image: rajaVijayaramanImage,
       imageMobile: rajaVijayaramanImageMobile,
-      role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking with Swift, author of Swift.",
+      role: "Apple Design Award Winner and Building Waple Stuff Studio ",
+      // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/johndoe",
-        linkedin: "https://www.linkedin.com/in/johndoe/",
+        twitter: "https://x.com/rajavijayaraman",
+        // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
     {
@@ -88,12 +83,11 @@ const Speakers = () => {
       name: "Sandeep Ranade",
       image: sandeepRanadeImage,
       imageMobile: sandeepRanadeImageMobile,
-      role: "Founder of Hacking With Swift",
-      description:
-        "Learning and sharing at Hacking with Swift, author of Swift.",
+      role: "Geek-Gayak-Guru, Creator of NaadSadhana (Apple Design Award Winner)",
+      // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://twitter.com/johndoe",
-        linkedin: "https://www.linkedin.com/in/johndoe/",
+        twitter: "https://x.com/sandeepranade",
+        // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
   ];
@@ -157,14 +151,14 @@ const Speakers = () => {
               >
                 <FaXTwitter className="w-5 h-5 text-black" />
               </a>
-              <a
+              {/* <a
                 href={speaker.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#F5DB9F] p-3 rounded-full"
               >
                 <FaLinkedinIn className="w-5 h-5 text-black" />
-              </a>
+              </a> */}
             </div>
 
             <div className="mt-auto flex flex-col">
@@ -172,7 +166,7 @@ const Speakers = () => {
               <p className="text-[#CB6A31] text-sm font-medium">
                 {speaker.role}
               </p>
-              <p className="text-gray-700 text-sm">{speaker.description}</p>
+              {/* <p className="text-gray-700 text-sm">{speaker.description}</p> */}
             </div>
           </div>
         ))}
