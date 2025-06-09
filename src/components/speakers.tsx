@@ -1,10 +1,16 @@
 import speakersBackground from "@/assets/speakers-background.jpg";
 import arimaJainImage from "@/assets/speakers/arima-jain.svg";
+import arimaJainImageMobile from "@/assets/speakers/arima-jain-mobile.svg";
 import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.svg";
+import danijelaVrzanImageMobile from "@/assets/speakers/danijela-vrzan-mobile.svg";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.svg";
+import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.svg";
 import peterFrieseImage from "@/assets/speakers/peter-friese.svg";
+import peterFrieseImageMobile from "@/assets/speakers/peter-friese-mobile.svg";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.svg";
+import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.svg";
 import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.svg";
+import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.svg";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -16,6 +22,7 @@ const Speakers = () => {
       id: 1,
       name: "Arima Jain",
       image: arimaJainImage,
+      imageMobile: arimaJainImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking With Swift, author of Swift.",
@@ -28,6 +35,7 @@ const Speakers = () => {
       id: 2,
       name: "Danijela Vrzan",
       image: danijelaVrzanImage,
+      imageMobile: danijelaVrzanImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking with Swift, author of Swift.",
@@ -40,6 +48,7 @@ const Speakers = () => {
       id: 3,
       name: "Paul Hudson",
       image: paulHudsonImage,
+      imageMobile: paulHudsonImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking with Swift, author of Swift.",
@@ -52,6 +61,7 @@ const Speakers = () => {
       id: 4,
       name: "Peter Friese",
       image: peterFrieseImage,
+      imageMobile: peterFrieseImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking with Swift, author of Swift.",
@@ -64,6 +74,7 @@ const Speakers = () => {
       id: 5,
       name: "Raja Vijayaraman",
       image: rajaVijayaramanImage,
+      imageMobile: rajaVijayaramanImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking with Swift, author of Swift.",
@@ -76,6 +87,7 @@ const Speakers = () => {
       id: 6,
       name: "Sandeep Ranade",
       image: sandeepRanadeImage,
+      imageMobile: sandeepRanadeImageMobile,
       role: "Founder of Hacking With Swift",
       description:
         "Learning and sharing at Hacking with Swift, author of Swift.",
@@ -100,7 +112,7 @@ const Speakers = () => {
         <img
           src={speakersLeftLogo}
           alt="left arrow"
-          className="w-18 md:w-auto"
+          className="w-10 sm:w-18 md:w-auto"
         />
         <h2
           id="speakers-heading"
@@ -111,7 +123,7 @@ const Speakers = () => {
         <img
           src={speakersRightLogo}
           alt="right arrow"
-          className="w-18 md:w-auto"
+          className="w-10 sm:w-18 md:w-auto"
         />
       </div>
 
@@ -121,13 +133,19 @@ const Speakers = () => {
         {speakersOfEvents.map((speaker) => (
           <div
             key={speaker.id}
-            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-72"
+            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-64 md:h-72"
           >
-            <img
-              src={speaker.image}
-              alt={speaker.name}
-              className="absolute -top-28 left-4 w-52 h-auto object-cover rounded-lg"
-            />
+            <picture>
+              <source
+                media="(max-width: 640px)"
+                srcSet={speaker.imageMobile || speaker.image}
+              />
+              <img
+                src={speaker.image}
+                alt={speaker.name}
+                className="absolute -top-24 md:-top-28 -left-2 w-auto sm:w-40 md:w-auto object-cover rounded-lg"
+              />
+            </picture>
 
             <div className="flex justify-end space-x-2 mt-2 md:absolute md:top-4 md:right-4 md:mt-0">
               <a
