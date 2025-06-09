@@ -11,30 +11,30 @@ const navItems = [
   //   label: "Schedule",
   //   link: "#schedule",
   // },
-  {
-    id: 2,
-    label: "Speakers",
-    link: "#speakers",
-  },
   // {
   //   id: 3,
   //   label: "About",
   //   link: "#about",
   // },
   {
-    id: 4,
+    id: 1,
+    label: "Get Tickets",
+    link: "#tickets",
+  },
+  {
+    id: 2,
+    label: "Speakers",
+    link: "#speakers",
+  },
+  {
+    id: 3,
     label: "Sponsors",
     link: "#sponsors",
   },
   {
-    id: 5,
+    id: 4,
     label: "Venue",
     link: "#venue",
-  },
-  {
-    id: 6,
-    label: "Tickets",
-    link: "#tickets",
   },
 ];
 
