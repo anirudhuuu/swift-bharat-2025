@@ -124,11 +124,11 @@ const Speakers = () => {
 
       <div className="h-24" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-28 gap-x-6 w-fit justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-28 gap-x-6 w-fit justify-items-center px-4 md:px-12">
         {speakersOfEvents.map((speaker) => (
           <div
             key={speaker.id}
-            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-64 md:h-72"
+            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-64 md:h-72 w-full"
           >
             <picture>
               <source
@@ -166,7 +166,9 @@ const Speakers = () => {
               <p className="text-[#CB6A31] text-sm font-medium">
                 {speaker.role}
               </p>
-              {/* <p className="text-gray-700 text-sm">{speaker.description}</p> */}
+              <p className="text-gray-700 text-sm">
+                {/* {speaker.description} */}
+              </p>
             </div>
           </div>
         ))}
