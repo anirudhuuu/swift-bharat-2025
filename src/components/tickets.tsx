@@ -85,6 +85,7 @@ const Tickets = () => {
 
   return (
     <section
+      id="tickets"
       className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 py-16 sm:py-24"
       aria-labelledby="tickets-heading"
     >

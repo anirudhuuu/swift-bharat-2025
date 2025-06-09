@@ -100,6 +100,7 @@ const Speakers = () => {
 
   return (
     <section
+      id="speakers"
       className="flex flex-col items-center justify-center w-[calc(100vw-5%)] mt-12 mx-auto px-4 py-12 rounded-3xl"
       aria-labelledby="speakers-heading"
       style={{

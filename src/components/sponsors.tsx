@@ -60,7 +60,10 @@ const Sponsors = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 py-24">
+    <section
+      id="sponsors"
+      className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 py-24"
+    >
       <h2 className="font-bold text-5xl text-center mb-16">
         Thank you to our sponsors.
       </h2>
@@ -81,7 +84,7 @@ const Sponsors = () => {
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
