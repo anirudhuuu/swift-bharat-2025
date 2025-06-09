@@ -129,7 +129,7 @@ const Speakers = () => {
               className="absolute -top-28 left-4 w-52 h-auto object-cover rounded-lg"
             />
 
-            <div className="absolute top-4 right-4 flex space-x-2">
+            <div className="flex justify-end space-x-2 mt-2 md:absolute md:top-4 md:right-4 md:mt-0">
               <a
                 href={speaker.socials.twitter}
                 target="_blank"
