@@ -1,6 +1,6 @@
 import navDividerLogo from "@/assets/svg/nav-divider.svg";
-import swiftBharatLogo from "@/assets/svg/swiftLogo.svg";
-import swiftBharatMobileLogo from "@/assets/svg/swiftMobileLogo.svg";
+import swiftBharatLogo from "@/assets/svg/swiftLogo.png";
+import swiftBharatMobileLogo from "@/assets/svg/swiftMobileLogo.png";
 import { Button } from "@/components/ui/button";
 import { Fragment, useEffect, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
