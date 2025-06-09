@@ -1,6 +1,7 @@
 import ticketBackground from "@/assets/svg/ticket.svg";
 import Heading from "@/components/heading";
 import SubHeading from "@/components/sub-heading";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Hero = () => {
   return (
@@ -16,7 +17,8 @@ const Hero = () => {
         </SubHeading>
       </div>
 
-      <button
+      <Link
+        to="#tickets"
         type="button"
         aria-label="Get tickets for Swift Bharat 2025"
         className="relative flex items-center gap-8 text-[#FAF8F5] font-medium py-4 pl-7 pr-18 rounded-2xl cursor-pointer mb-4 overflow-hidden"
@@ -28,7 +30,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
         />
         <span className="z-10">Get Tickets</span>
-      </button>
+      </Link>
     </div>
   );
 };

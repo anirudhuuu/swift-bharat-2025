@@ -90,9 +90,11 @@ const Navbar = () => {
         <NavLinks />
       </ul>
 
-      <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer">
-        Get Tickets
-      </Button>
+      <Link to="#tickets">
+        <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer">
+          Get Tickets
+        </Button>
+      </Link>
 
       {/* Mobile Menu Button */}
       <div
@@ -181,9 +183,11 @@ const Navbar = () => {
             menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full">
-            Get Tickets
-          </Button>
+          <Link to="#tickets">
+            <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full">
+              Get Tickets
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
