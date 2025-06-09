@@ -5,8 +5,10 @@ import danijelaVrzanImageMobile from "@/assets/speakers/danijela-vrzan-mobile.pn
 import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.png";
 import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.png";
-import peterFrieseImageMobile from "@/assets/speakers/peter-friese-mobile.png";
-import peterFrieseImage from "@/assets/speakers/peter-friese.png";
+// import peterFrieseImageMobile from "@/assets/speakers/peter-friese-mobile.png";
+// import peterFrieseImage from "@/assets/speakers/peter-friese.png";
+import krzysztofZabłockiImageMobile from "@/assets/speakers/krzysztof-mobile.png";
+import krzysztofZabłockiImage from "@/assets/speakers/krzysztof.png";
 import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.png";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
@@ -54,15 +56,27 @@ const Speakers = () => {
         // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
+    // {
+    //   id: 4,
+    //   name: "Peter Friese",
+    //   image: peterFrieseImage,
+    //   imageMobile: peterFrieseImageMobile,
+    //   role: "Author and Staff Developer Advocate on the Firebase at Google",
+    //   // description: "Learning and sharing at Hacking with Swift, author of Swift.",
+    //   socials: {
+    //     twitter: "https://x.com/peterfriese",
+    //     // linkedin: "https://www.linkedin.com/in/johndoe/",
+    //   },
+    // },
     {
       id: 4,
-      name: "Peter Friese",
-      image: peterFrieseImage,
-      imageMobile: peterFrieseImageMobile,
-      role: "Author and Staff Developer Advocate on the Firebase at Google",
+      name: "Krzysztof Zabłocki",
+      image: krzysztofZabłockiImage,
+      imageMobile: krzysztofZabłockiImageMobile,
+      role: "Principal Swift Engineer",
       // description: "Learning and sharing at Hacking with Swift, author of Swift.",
       socials: {
-        twitter: "https://x.com/peterfriese",
+        twitter: "https://x.com/merowing_",
         // linkedin: "https://www.linkedin.com/in/johndoe/",
       },
     },
@@ -124,7 +138,7 @@ const Speakers = () => {
 
       <div className="h-24" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-36 gap-x-6 w-fit justify-items-center px-4 md:px-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-y-36 gap-x-6 w-fit justify-items-center px-4 md:px-12">
         {speakersOfEvents.map((speaker) => (
           <div
             key={speaker.id}
@@ -136,7 +150,8 @@ const Speakers = () => {
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="absolute -top-10 sm:-top-18 md:-top-36 -left-3 sm:-left-1 w-64 sm:w-40 md:w-60 object-cover rounded-lg"
+                className="absolute -top-10 sm:-top-18 md:-top-36 -left-3 sm:-left-1 w-full h-auto max-w-[240px] sm:max-w-[160px] md:max-w-[240px] rounded-lg object-contain"
+                style={{ maxHeight: "100%", width: "100%" }}
               />
             </picture>
 
