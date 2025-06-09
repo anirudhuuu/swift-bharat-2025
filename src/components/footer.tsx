@@ -1,3 +1,5 @@
+import { HashLink as Link } from "react-router-hash-link";
+
 const Footer = () => {
   return (
     <footer
@@ -22,19 +24,25 @@ const Footer = () => {
             Quick Links
           </h4>
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
-            <li className="cursor-pointer hover:underline">About</li>
-            <li className="cursor-pointer hover:underline">Speakers</li>
-            <li className="cursor-pointer hover:underline">Schedule</li>
-            <li className="cursor-pointer hover:underline">Tickets</li>
+            {/* <li className="cursor-pointer hover:underline">About</li> */}
+            <li className="cursor-pointer hover:underline">
+              <Link to="#speakers">Speakers</Link>
+            </li>
+            <li className="cursor-pointer hover:underline">
+              <Link to="#sponsors">Sponsors</Link>
+            </li>
+            <li className="cursor-pointer hover:underline">
+              <Link to="#venue">Venue</Link>
+            </li>
           </ul>
         </nav>
-        <nav aria-labelledby="footer-social" className="flex-1 min-w-0">
+        {/* <nav aria-labelledby="footer-social" className="flex-1 min-w-0">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">Connect</h4>
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
             <li className="cursor-pointer hover:underline">Linkedin</li>
             <li className="cursor-pointer hover:underline">Behance</li>
           </ul>
-        </nav>
+        </nav> */}
         <section aria-labelledby="footer-contact" className="flex-1 min-w-0">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Get in touch
@@ -42,21 +50,21 @@ const Footer = () => {
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
             <li>
               <a
-                href="mailto:swiftbharat@gmail.com"
-                className="cursor-pointer hover:underline break-all"
+                href="mailto:hello@swiftbharat.org"
+                className="cursor-pointer hover:underline"
               >
-                swiftbharat@gmail.com
+                hello@swiftbharat.org
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="tel:+91987654321"
                 className="cursor-pointer hover:underline"
               >
                 +91 98765 4321
               </a>
-            </li>
-            <li className="leading-relaxed">
+            </li> */}
+            {/* <li className="leading-relaxed">
               <a
                 href="https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA"
                 target="_blank"
@@ -66,7 +74,7 @@ const Footer = () => {
                 Bengaluru International Convention Center, 10th Mile, Tumkur
                 Road, Bengaluru
               </a>
-            </li>
+            </li> */}
           </ul>
         </section>
       </div>
