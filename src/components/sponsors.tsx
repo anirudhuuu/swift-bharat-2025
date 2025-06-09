@@ -1,12 +1,3 @@
-// import atlassianLogo from "@/assets/sponsors/atlassian.svg";
-// import builderIoLogo from "@/assets/sponsors/builder-io.svg";
-// import divRiotsLogo from "@/assets/sponsors/div-riots.png";
-// import githubLogo from "@/assets/sponsors/github.png";
-// import grammarlyLogo from "@/assets/sponsors/grammarly.svg";
-// import greatQuestionLogo from "@/assets/sponsors/great-question.svg";
-// import locofyLogo from "@/assets/sponsors/locofy.svg";
-// import userTestingLogo from "@/assets/sponsors/user-testing.svg";
-
 const Sponsors = () => {
   // const sponsorsOfEvents = [
   //   {

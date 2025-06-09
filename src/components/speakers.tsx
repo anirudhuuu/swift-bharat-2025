@@ -1,16 +1,16 @@
 import speakersBackground from "@/assets/speakers-background.jpg";
-import arimaJainImage from "@/assets/speakers/arima-jain.svg";
-import arimaJainImageMobile from "@/assets/speakers/arima-jain-mobile.svg";
-import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.svg";
-import danijelaVrzanImageMobile from "@/assets/speakers/danijela-vrzan-mobile.svg";
-import paulHudsonImage from "@/assets/speakers/paul-hudson.svg";
-import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.svg";
-import peterFrieseImage from "@/assets/speakers/peter-friese.svg";
-import peterFrieseImageMobile from "@/assets/speakers/peter-friese-mobile.svg";
-import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.svg";
-import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.svg";
-import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.svg";
-import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.svg";
+import arimaJainImageMobile from "@/assets/speakers/arima-jain-mobile.png";
+import arimaJainImage from "@/assets/speakers/arima-jain.png";
+import danijelaVrzanImageMobile from "@/assets/speakers/danijela-vrzan-mobile.png";
+import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.png";
+import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
+import paulHudsonImage from "@/assets/speakers/paul-hudson.png";
+import peterFrieseImageMobile from "@/assets/speakers/peter-friese-mobile.png";
+import peterFrieseImage from "@/assets/speakers/peter-friese.png";
+import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.png";
+import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
+import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
+import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.png";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
 // import { FaLinkedinIn } from "react-icons/fa";
@@ -124,21 +124,19 @@ const Speakers = () => {
 
       <div className="h-24" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-28 gap-x-6 w-fit justify-items-center px-4 md:px-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-36 gap-x-6 w-fit justify-items-center px-4 md:px-12">
         {speakersOfEvents.map((speaker) => (
           <div
             key={speaker.id}
-            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md h-64 md:h-72 w-full"
+            className="relative bg-[#FCE5AF] rounded-2xl pt-24 pb-6 px-6 flex flex-col shadow-md mt-8 h-64 md:h-72 w-full"
           >
             <picture>
-              <source
-                media="(max-width: 640px)"
-                srcSet={speaker.imageMobile || speaker.image}
-              />
+              <source media="(max-width: 640px)" srcSet={speaker.imageMobile} />
+              <source media="(min-width: 641px)" srcSet={speaker.image} />
               <img
                 src={speaker.image}
                 alt={speaker.name}
-                className="absolute -top-24 md:-top-28 -left-2 w-auto sm:w-40 md:w-auto object-cover rounded-lg"
+                className="absolute -top-10 sm:-top-18 md:-top-36 -left-3 sm:-left-1 w-64 sm:w-40 md:w-60 object-cover rounded-lg"
               />
             </picture>
 
