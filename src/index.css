@@ -2,8 +2,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Samarkan Normal";
+  src: url("/fonts/samarkan.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-display: "Inter", "sans-serif";
+  --font-samarkan: "Samarkan Normal", "serif";
 
   /* Desktop typography */
   --text-heading-1: 60px;

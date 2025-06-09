@@ -81,7 +81,7 @@ const Navbar = () => {
             loading="lazy"
             className="w-[70px] h-[70px]"
           />
-          <span className="font-display font-bold text-lg leading-7">
+          <span className="font-samarkan font-bold text-3xl leading-7">
             Swift Bharat
           </span>
         </Link>
@@ -166,7 +166,7 @@ const Navbar = () => {
               loading="lazy"
               className="w-[70px] h-[70px]"
             />
-            <span className="font-display font-bold text-lg leading-7">
+            <span className="font-samarkan font-bold text-3xl leading-7">
               Swift Bharat
             </span>
           </div>
