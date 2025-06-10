@@ -78,7 +78,7 @@ const Footer = () => {
           </ul>
         </section>
       </div>
-      <div className="h-32" />
+      <div className="h-24" />
     </footer>
   );
 };
