@@ -12,9 +12,7 @@ const Hero = () => {
         <SubHeading>
           Meet experts from Apple and the global Swift community.
         </SubHeading>
-        <SubHeading>
-          Learn, build, and connect over three packed days.
-        </SubHeading>
+        <SubHeading>Learn, build, and connect over two packed days.</SubHeading>
       </div>
 
       <Link
