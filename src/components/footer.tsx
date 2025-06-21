@@ -1,4 +1,9 @@
-import { HashLink as Link } from "react-router-hash-link";
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const Footer = () => {
   return (
@@ -25,14 +30,23 @@ const Footer = () => {
           </h4>
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
             {/* <li className="cursor-pointer hover:underline">About</li> */}
-            <li className="cursor-pointer hover:underline">
-              <Link to="#speakers">Speakers</Link>
+            <li
+              className="cursor-pointer hover:underline"
+              onClick={() => scrollToSection("speakers")}
+            >
+              Speakers
             </li>
-            <li className="cursor-pointer hover:underline">
-              <Link to="#sponsors">Sponsors</Link>
+            <li
+              className="cursor-pointer hover:underline"
+              onClick={() => scrollToSection("sponsors")}
+            >
+              Sponsors
             </li>
-            <li className="cursor-pointer hover:underline">
-              <Link to="#venue">Venue</Link>
+            <li
+              className="cursor-pointer hover:underline"
+              onClick={() => scrollToSection("venue")}
+            >
+              Venue
             </li>
           </ul>
         </nav>
