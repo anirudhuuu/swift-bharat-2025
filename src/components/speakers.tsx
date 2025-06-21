@@ -90,25 +90,21 @@ const Speakers = () => {
       }}
     >
       <div className="flex justify-between items-center max-w-fit gap-8 mb-8">
-        <img
-          src={speakersLeftLogo}
-          alt="left arrow"
-          className="w-12 md:w-16 lg:w-20"
-        />
+        <img src={speakersLeftLogo} alt="left arrow" className="w-16 lg:w-20" />
         <h2
           id="speakers-heading"
-          className="font-bold text-2xl md:text-4xl lg:text-5xl text-[#F5DB9F]"
+          className="font-bold text-3xl md:text-4xl lg:text-5xl text-[#F5DB9F]"
         >
           Speakers
         </h2>
         <img
           src={speakersRightLogo}
           alt="right arrow"
-          className="w-12 md:w-16 lg:w-20"
+          className="w-16 lg:w-20"
         />
       </div>
 
-      <div className="h-24" />
+      <div className="h-14" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-18 md:gap-y-22 gap-x-6 w-fit justify-items-center px-4 md:px-12">
         {speakersOfEvents.map((speaker) => (
