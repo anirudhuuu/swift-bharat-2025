@@ -3,7 +3,6 @@ import swiftBharatLogo from "@/assets/svg/swiftLogo.png";
 import swiftBharatMobileLogo from "@/assets/svg/swiftMobileLogo.png";
 import { Button } from "@/components/ui/button";
 import { Fragment, useEffect, useState } from "react";
-import { HashLink as Link } from "react-router-hash-link";
 
 const navItems = [
   // {
@@ -19,34 +18,45 @@ const navItems = [
   {
     id: 1,
     label: "Get Tickets",
-    link: "#tickets",
+    link: "tickets",
   },
   {
     id: 2,
     label: "Speakers",
-    link: "#speakers",
+    link: "speakers",
   },
   {
     id: 3,
     label: "Sponsors",
-    link: "#sponsors",
+    link: "sponsors",
   },
   {
     id: 4,
     label: "Venue",
-    link: "#venue",
+    link: "venue",
   },
 ];
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const NavLinks = ({ onClick }: { onClick?: () => void }) => (
   <>
     {navItems.map((item, id) => (
       <Fragment key={item.id}>
         <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
-        <li className="cursor-pointer text-lg">
-          <Link to={item.link} onClick={onClick}>
-            {item.label}
-          </Link>
+        <li
+          className="cursor-pointer text-lg hover:opacity-80 transition-opacity"
+          onClick={() => {
+            scrollToSection(item.link);
+            onClick?.();
+          }}
+        >
+          {item.label}
         </li>
         {id === navItems.length - 1 && (
           <img src={navDividerLogo} alt="divider" className="block lg:hidden" />
@@ -74,7 +84,10 @@ const Navbar = () => {
   return (
     <nav className="flex w-full px-6 lg:px-18 py-8 items-center justify-between relative">
       <div className="flex items-center gap-2">
-        <Link to="/" className="flex items-center gap-2">
+        <div
+          onClick={() => (window.location.href = "/")}
+          className="flex items-center gap-2 cursor-pointer"
+        >
           <img
             src={swiftBharatLogo}
             alt="Swift Bharat"
@@ -84,7 +97,7 @@ const Navbar = () => {
           <span className="font-samarkan font-bold text-3xl leading-7">
             Swift Bharat
           </span>
-        </Link>
+        </div>
       </div>
 
       {/* Desktop Menu */}
@@ -92,11 +105,12 @@ const Navbar = () => {
         <NavLinks />
       </ul>
 
-      <Link to="#tickets">
-        <Button className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer">
-          Get Tickets
-        </Button>
-      </Link>
+      <Button
+        onClick={() => scrollToSection("tickets")}
+        className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer hover:opacity-90 transition-opacity"
+      >
+        Get Tickets
+      </Button>
 
       {/* Mobile Menu Button */}
       <div
@@ -185,15 +199,15 @@ const Navbar = () => {
             menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <Link
-            to="#tickets"
-            className="w-full"
-            onClick={() => setMenuOpen(false)}
+          <Button
+            onClick={() => {
+              scrollToSection("tickets");
+              setMenuOpen(false);
+            }}
+            className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full hover:opacity-90 transition-opacity"
           >
-            <Button className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full">
-              Get Tickets
-            </Button>
-          </Link>
+            Get Tickets
+          </Button>
         </div>
       </div>
     </nav>
