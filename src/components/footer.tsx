@@ -20,7 +20,7 @@ const Footer = () => {
           <p className="mb-2">
             Meet experts from Apple and the global Swift community.
           </p>
-          <p>Learn, build, and connect over three packed days.</p>
+          <p>Learn, build, and connect over two packed days.</p>
         </section>
       </div>
       <div className="flex flex-col sm:flex-row">
