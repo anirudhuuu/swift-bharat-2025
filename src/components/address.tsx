@@ -5,7 +5,7 @@ const Address = () => {
   return (
     <section
       id="venue"
-      className="w-full font-display min-h-[550px] py-8 lg:py-12"
+      className="w-full font-display min-h-[650px] py-8 lg:py-12 flex items-center"
       style={{
         backgroundImage: `url(${dateAddressBackground})`,
         backgroundSize: "cover",
