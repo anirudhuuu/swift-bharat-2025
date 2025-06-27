@@ -29,8 +29,8 @@ const Footer = () => {
           </p>
         </section>
       </div>
-      <div className="flex flex-col sm:flex-row">
-        <nav aria-labelledby="footer-links" className="flex-1 min-w-0 mb-4">
+      <div className="flex flex-col sm:flex-row gap-8">
+        <nav aria-labelledby="footer-links" className="flex-1 min-w-0">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Quick Links
           </h4>
@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
           </ul>
         </nav>
-        <nav aria-labelledby="footer-social" className="flex-1 min-w-0 mb-4">
+        <nav aria-labelledby="footer-social" className="flex-1 min-w-0">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">Connect</h4>
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
             <a
@@ -74,6 +74,31 @@ const Footer = () => {
             >
               <li className="cursor-pointer hover:underline">LinkedIn</li>
             </a>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-built" className="flex-1 min-w-32">
+          <h4 className="font-semibold mb-3 text-base lg:text-lg">Built by</h4>
+          <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
+            <li>
+              <a
+                href="https://x.com/aryanuiux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:underline"
+              >
+                Aryan ~ Design
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/nirudhuuu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:underline"
+              >
+                Anirudh ~ Code
+              </a>
+            </li>
           </ul>
         </nav>
         <section aria-labelledby="footer-contact" className="flex-1 min-w-0">
