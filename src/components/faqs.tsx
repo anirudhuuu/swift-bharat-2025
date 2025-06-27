@@ -11,35 +11,35 @@ const Faqs = () => {
       answer:
         "Swift Conference India 2025 is designed for developers, designers, and tech enthusiasts who are passionate about Swift and iOS development. Whether you're a seasoned professional or just starting out, there's something for everyone.",
     },
-    // {
-    //   id: 2,
-    //   question: "What's included in my registration?",
-    //   answer:
-    //     "Your registration includes access to all keynote sessions, workshops, and panel discussions, as well as meals and refreshments during the conference. You will also receive a conference swag bag with exclusive merchandise.",
-    // },
-    // {
-    //   id: 3,
-    //   question: "What is the refund policy?",
-    //   answer:
-    //     "If you need to cancel your registration, please do so at least 30 days before the event for a full refund. Cancellations made within 30 days of the event will not be eligible for a refund, but you may transfer your registration to another person.",
-    // },
-    // {
-    //   id: 4,
-    //   question: "Will sessions be recorded?",
-    //   answer:
-    //     "Yes, all keynote sessions and selected workshops will be recorded and made available to attendees after the conference. This allows you to revisit the content at your convenience.",
-    // },
-    // {
-    //   id: 5,
-    //   question: "How can I become a speaker?",
-    //   answer:
-    //     "If you're interested in speaking at Swift Conference India 2025, please submit your proposal through our website. We are looking for engaging talks on Swift, iOS development, and related topics. The deadline for speaker submissions is [insert date].",
-    // },
     {
-      id: 6,
+      id: 2,
       question: "Is there a dress code?",
       answer:
         "There is no formal dress code for the conference. We recommend comfortable attire suitable for a tech event. Many attendees opt for casual or business casual clothing.",
+    },
+    {
+      id: 3,
+      question: "What are the conference timings and schedule?",
+      answer:
+        "The detailed schedule will be shared closer to the event. Stay tuned!",
+    },
+    {
+      id: 4,
+      question: "Where is the venue?",
+      answer:
+        "The event will be hosted at BIC - Bangalore International Centre",
+    },
+    {
+      id: 5,
+      question: "How can I become a sponsor for Swift Bharat 2025?",
+      answer:
+        "We'd love your support! Please email us directly at hello@swiftbharat.org",
+    },
+    {
+      id: 6,
+      question: "Will the event be streamed or recorded?",
+      answer:
+        "As of now, no — we're optimizing for a great in-person experience since it's our very first edition.",
     },
   ];
 
