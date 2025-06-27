@@ -17,9 +17,7 @@ const Footer = () => {
           aria-labelledby="footer-brand"
           className="max-w-full lg:w-80 text-sm lg:text-base"
         >
-          <p className="mb-2">
-            Meet experts from Apple and the global Swift community.
-          </p>
+          <p className="mb-2">Meet experts from global Swift community.</p>
           <p>Learn, build, and connect over two packed days.</p>
         </section>
       </div>

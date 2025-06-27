@@ -15,9 +15,7 @@ const Hero = () => {
       <div className="flex flex-col items-center mb-6">
         <Heading>Swift Bharat 2025</Heading>
         <div className="h-4" />
-        <SubHeading>
-          Meet experts from Apple and the global Swift community.
-        </SubHeading>
+        <SubHeading>Meet experts from global Swift community.</SubHeading>
         <SubHeading>Learn, build, and connect over two packed days.</SubHeading>
       </div>
 
