@@ -9,7 +9,7 @@ const Faqs = () => {
       id: 1,
       question: "Who should attend Swift Conference India 2025?",
       answer:
-        "Swift Conference India 2025 is designed for developers, designers, and tech enthusiasts who are passionate about Swift and iOS development. Whether you're a seasoned professional or just starting out, there's something for everyone.",
+        "Swift Conference India 2025 is designed for developers, designers and tech enthusiasts who are passionate about Swift and iOS development. Whether you're a seasoned professional or just starting out, there's something for everyone.",
     },
     {
       id: 2,
@@ -26,14 +26,34 @@ const Faqs = () => {
     {
       id: 4,
       question: "Where is the venue?",
-      answer:
-        "The event will be hosted at BIC - Bangalore International Centre",
+      answer: (
+        <>
+          The event will be hosted at{" "}
+          <a
+            href="https://maps.app.goo.gl/c4yYsrS1d8YUKcpF8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
+          >
+            BIC - Bangalore International Centre
+          </a>
+        </>
+      ),
     },
     {
       id: 5,
       question: "How can I become a sponsor for Swift Bharat 2025?",
-      answer:
-        "We'd love your support! Please email us directly at hello@swiftbharat.org",
+      answer: (
+        <>
+          We'd love your support! Please email us directly at{" "}
+          <a
+            href="mailto:hello@swiftbharat.org"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
+          >
+            hello@swiftbharat.org
+          </a>
+        </>
+      ),
     },
     {
       id: 6,

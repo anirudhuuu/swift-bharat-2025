@@ -86,21 +86,21 @@ const Sponsors = () => {
           <br />
           <a
             href="mailto:hello@swiftbharat.org"
-            className="text-blue-600 underline hover:text-blue-800"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
           >
             hello@swiftbharat.org
           </a>
           &nbsp; /&nbsp;
           <a
             href="mailto:mustafa@msquarelabs.com"
-            className="text-blue-600 underline hover:text-blue-800"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
           >
             mustafa@msquarelabs.com
           </a>
           &nbsp; /&nbsp;
           <a
             href="mailto:i.amit.samant@gmail.com"
-            className="text-blue-600 underline hover:text-blue-800"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
           >
             i.amit.samant@gmail.com
           </a>
