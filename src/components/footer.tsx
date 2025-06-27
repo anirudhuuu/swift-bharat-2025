@@ -12,17 +12,25 @@ const Footer = () => {
       className="flex flex-col lg:flex-row min-h-72 bg-[#053020] text-white px-4 sm:px-8 lg:px-20 py-8 lg:py-12 lg:justify-between gap-8 lg:gap-0"
     >
       <div className="flex-1">
-        <h4 className="text-lg lg:text-xl mb-3">Swift Bharat</h4>
+        <h4 className="text-2xl lg:text-3xl mb-3 font-bold font-samarkan">
+          Swift Bharat
+        </h4>
         <section
           aria-labelledby="footer-brand"
           className="max-w-full lg:w-80 text-sm lg:text-base"
         >
-          <p className="mb-2">Meet experts from global Swift community.</p>
-          <p>Learn, build, and connect over two packed days.</p>
+          <p className="mb-2">
+            Swift Bharat is an international Apple developer conference, built
+            by and for Indian developers.
+          </p>
+          <p>
+            Join 200+ iOS engineers and tech leads for two days of pure Swift
+            and real-world insights.
+          </p>
         </section>
       </div>
       <div className="flex flex-col sm:flex-row">
-        <nav aria-labelledby="footer-links" className="flex-1 min-w-0">
+        <nav aria-labelledby="footer-links" className="flex-1 min-w-0 mb-4">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Quick Links
           </h4>
