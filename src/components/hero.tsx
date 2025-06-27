@@ -15,8 +15,17 @@ const Hero = () => {
       <div className="flex flex-col items-center mb-6">
         <Heading>Swift Bharat 2025</Heading>
         <div className="h-4" />
-        <SubHeading>Meet experts from global Swift community.</SubHeading>
-        <SubHeading>Learn, build, and connect over two packed days.</SubHeading>
+        <div className="max-w-4xl px-8">
+          <SubHeading>
+            Swift Bharat is an international Apple developer conference, built
+            by and for Indian developers.
+          </SubHeading>
+          <div className="h-1.5" />
+          <SubHeading>
+            Join 200+ iOS engineers and tech leads for two days of pure Swift
+            and real-world insights.
+          </SubHeading>
+        </div>
       </div>
 
       <button
