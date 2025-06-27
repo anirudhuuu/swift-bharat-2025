@@ -56,13 +56,26 @@ const Footer = () => {
             </li>
           </ul>
         </nav>
-        {/* <nav aria-labelledby="footer-social" className="flex-1 min-w-0">
+        <nav aria-labelledby="footer-social" className="flex-1 min-w-0 mb-4">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">Connect</h4>
           <ul className="font-light italic flex flex-col gap-1.5 text-sm lg:text-base">
-            <li className="cursor-pointer hover:underline">Linkedin</li>
-            <li className="cursor-pointer hover:underline">Behance</li>
+            <a
+              href="https://x.com/swiftbharat"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li className="cursor-pointer hover:underline">X (Twitter)</li>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/swift-bharat/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <li className="cursor-pointer hover:underline">LinkedIn</li>
+            </a>
           </ul>
-        </nav> */}
+        </nav>
         <section aria-labelledby="footer-contact" className="flex-1 min-w-0">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Get in touch
