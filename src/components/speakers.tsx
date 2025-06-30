@@ -7,6 +7,8 @@ import krzysztofZabłockiImageMobile from "@/assets/speakers/krzysztof-mobile.pn
 import krzysztofZabłockiImage from "@/assets/speakers/krzysztof.png";
 import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.png";
+import placeholderImageMobile from "@/assets/speakers/placeholder-mobile.png";
+import placeholderImage from "@/assets/speakers/placeholder.png";
 import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.png";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
@@ -77,6 +79,36 @@ const Speakers = () => {
         twitter: "https://x.com/sandeepranade",
       },
     },
+    {
+      id: 7,
+      name: "Speaker",
+      image: placeholderImage,
+      imageMobile: placeholderImageMobile,
+      role: "To be announced soon",
+      socials: {
+        twitter: "",
+      },
+    },
+    {
+      id: 8,
+      name: "Speaker",
+      image: placeholderImage,
+      imageMobile: placeholderImageMobile,
+      role: "To be announced soon",
+      socials: {
+        twitter: "",
+      },
+    },
+    {
+      id: 9,
+      name: "Speaker",
+      image: placeholderImage,
+      imageMobile: placeholderImageMobile,
+      role: "To be announced soon",
+      socials: {
+        twitter: "",
+      },
+    },
   ];
 
   return (
@@ -126,14 +158,19 @@ const Speakers = () => {
                 />
               </picture>
               <div className="flex justify-center space-x-2 mt-4">
-                <a
-                  href={speaker.socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#F5DB9F] p-3 rounded-full"
-                >
-                  <FaXTwitter className="w-5 h-5 text-black" />
-                </a>
+                {speaker.socials.twitter.length > 0 ? (
+                  <a
+                    href={speaker.socials.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#F5DB9F] p-3 rounded-full"
+                    aria-label={`Follow ${speaker.name} on Twitter`}
+                  >
+                    <FaXTwitter className="w-5 h-5 text-black" />
+                  </a>
+                ) : (
+                  <div className="w-5 h-12 p-3" />
+                )}
               </div>
             </div>
             {/* Info below */}
