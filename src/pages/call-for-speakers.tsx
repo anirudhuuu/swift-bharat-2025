@@ -2,7 +2,6 @@ import callForSpeakers from "@/assets/call-for-speakers.png";
 import speakersBackground from "@/assets/speakers-background.jpg";
 import swiftBharatLogo from "@/assets/svg/swiftLogo-yellow.svg";
 import Footer from "@/components/footer";
-import SubHeading from "@/components/sub-heading";
 import { Link } from "react-router-dom";
 
 const CallForSpeakers = () => {
@@ -18,18 +17,18 @@ const CallForSpeakers = () => {
               src={swiftBharatLogo}
               alt="Swift Bharat"
               loading="lazy"
-              className="w-[80px] h-[80px] md:w-[100px] md:h-[100px]"
+              className="w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
             />
             <span className="font-samarkan text-3xl md:text-5xl text-[#0A451C]">
               Swift Bharat
             </span>
           </Link>
-          <SubHeading>
+          <p className="font-light text-xs md:text-sm text-black/60">
             Meet experts from Apple and the global Swift community.
-          </SubHeading>
-          <SubHeading>
+          </p>
+          <p className="font-light text-xs md:text-sm text-black/60">
             Learn, build, and connect over two packed days.
-          </SubHeading>
+          </p>
         </div>
 
         <div className="w-full max-w-5xl">
@@ -44,16 +43,16 @@ const CallForSpeakers = () => {
               <img
                 src={callForSpeakers}
                 alt="Call for Speakers"
-                className="object-cover w-80 sm:w-96 md:w-[28rem] lg:w-[32rem] h-auto"
+                className="object-cover w-52 md:w-72 lg:w-96 h-auto"
               />
             </div>
 
             <div className="text-center flex flex-col gap-y-2">
-              <p className="uppercase font-normal text-sm sm:text-base md:text-lg text-[#FCE5AFCC]">
+              <p className="uppercase font-normal text-xs md:text-sm text-[#FCE5AFCC]">
                 Submissions close on August 15, 2025
               </p>
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-7 md:mb-8 text-[#FCE5AF] cursor-pointer hover:underline"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-7 md:mb-8 text-[#FCE5AF] cursor-pointer hover:underline"
                 onClick={() =>
                   window.open(
                     "https://www.papercall.io/swift-bharat-2025",
