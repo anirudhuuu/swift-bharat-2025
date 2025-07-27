@@ -189,7 +189,7 @@ const TermsAndCondition = () => {
 
   return (
     <div className="flex flex-col justify-start items-start font-display w-full">
-      <Navbar />
+      <Navbar showNavItems={false} />
       <section id="terms-and-conditions" className="px-8 md:px-24">
         <h2 className="font-bold text-2xl md:text-4xl mb-8">
           Terms & Conditions
