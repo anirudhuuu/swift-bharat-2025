@@ -6,11 +6,16 @@ import "@/index.css";
 
 import App from "@/App";
 import TermsAndCondition from "@/pages/terms";
+import CallForSpeakers from "./pages/call-for-speakers";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/call-for-speakers",
+    element: <CallForSpeakers />,
   },
   {
     path: "/terms-and-conditions",

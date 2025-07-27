@@ -32,7 +32,7 @@ const Footer = () => {
         </section>
       </div>
       <div className="flex flex-col sm:flex-row gap-8">
-        <nav aria-labelledby="footer-links" className="flex-1 min-w-0">
+        <nav aria-labelledby="footer-links" className="flex-1 min-w-fit">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Quick Links
           </h4>
@@ -115,6 +115,14 @@ const Footer = () => {
               >
                 hello@swiftbharat.org
               </a>
+            </li>
+            <li>
+              <Link
+                to="/call-for-speakers"
+                className="cursor-pointer hover:underline"
+              >
+                Call for Speakers
+              </Link>
             </li>
             <li>
               <Link
