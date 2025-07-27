@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"; // Add this import
+
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {
@@ -101,7 +103,7 @@ const Footer = () => {
             </li>
           </ul>
         </nav>
-        <section aria-labelledby="footer-contact" className="flex-1 min-w-0">
+        <section aria-labelledby="footer-contact" className="flex-1 min-w-fit">
           <h4 className="font-semibold mb-3 text-base lg:text-lg">
             Get in touch
           </h4>
@@ -114,25 +116,14 @@ const Footer = () => {
                 hello@swiftbharat.org
               </a>
             </li>
-            {/* <li>
-              <a
-                href="tel:+91987654321"
+            <li>
+              <Link
+                to="/terms-and-conditions"
                 className="cursor-pointer hover:underline"
               >
-                +91 98765 4321
-              </a>
-            </li> */}
-            {/* <li className="leading-relaxed">
-              <a
-                href="https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline cursor-pointer"
-              >
-                Bengaluru International Convention Center, 10th Mile, Tumkur
-                Road, Bengaluru
-              </a>
-            </li> */}
+                Terms & Conditions
+              </Link>
+            </li>
           </ul>
         </section>
       </div>
