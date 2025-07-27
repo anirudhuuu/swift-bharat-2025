@@ -66,7 +66,7 @@ const NavLinks = ({ onClick }: { onClick?: () => void }) => (
   </>
 );
 
-const Navbar = ({ showNavItems = true }: { showNavItems: boolean }) => {
+const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
