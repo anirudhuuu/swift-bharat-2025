@@ -60,7 +60,7 @@ const Tickets = () => {
       </h4>
       {/* w-full */}
       <div className="w-full flex justify-center">
-        <div className="grid grid-cols-2 gap-6 mt-10 w-fit">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 w-fit">
           {ticketOptions.map((option) => (
             <div
               key={option.id}
