@@ -139,7 +139,7 @@ const Tickets = () => {
       <div id="purchase" ref={purchaseTicket} className="w-full">
         {showIframe && (
           <iframe
-            src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=38216&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
+            src="https://konfhub.com/widget/dummy-event-5c7368ee?desc=false&ticketId=49824&secondaryBg=fce5af&ticketBg=fce5af&borderCl=fce5af&bg=f5db9f&fontColor=000000&ticketCl=000000&btnColor=053020&fontFamily=Nunito&borderRadius=12"
             id="konfhub-widget"
             title="Register for Swift Bharat"
             width="100%"
