@@ -5,63 +5,6 @@ const Tickets = () => {
   const purchaseTicket = useRef<HTMLDivElement>(null);
 
   const ticketOptions = [
-    // {
-    //   id: 1,
-    //   title: "Standard Pass",
-    //   price: "₹ 9,999",
-    //   features: [
-    //     "All keynote sessions",
-    //     "Access to expo",
-    //     "Conference materials",
-    //     "Lunch and refreshments",
-    //   ],
-    //   bg: "bg-[#FCE5AF]",
-    //   text: "text-black",
-    //   button: {
-    //     bg: "bg-[#053020]",
-    //     text: "text-white",
-    //     hover: "hover:bg-[#065c38]",
-    //   },
-    //   ariaLabel: "Buy Standard Pass",
-    // },
-    // {
-    //   id: 2,
-    //   title: "Most Popular",
-    //   price: "₹ 14,999",
-    //   features: [
-    //     "All Standard Pass benefits",
-    //     "Workshop access",
-    //     "Networking dinner",
-    //     "Conference recordings",
-    //   ],
-    //   bg: "bg-[#053020]",
-    //   text: "text-[#F5DB9F]",
-    //   button: {
-    //     bg: "bg-[#F5DB9F]",
-    //     text: "text-[#053020]",
-    //     hover: "hover:bg-[#FCE5AF]",
-    //   },
-    //   ariaLabel: "Buy Most Popular Pass",
-    // },
-    // {
-    //   id: 3,
-    //   title: "VIP Pass",
-    //   price: "₹ 24,999",
-    //   features: [
-    //     "All Premium Pass benefits",
-    //     "Exclusive VIP lounge",
-    //     "Speaker dinner access",
-    //     "1-year SwiftIndia membership",
-    //   ],
-    //   bg: "bg-[#FCE5AF]",
-    //   text: "text-black",
-    //   button: {
-    //     bg: "bg-[#053020]",
-    //     text: "text-white",
-    //     hover: "hover:bg-[#065c38]",
-    //   },
-    //   ariaLabel: "Buy VIP Pass",
-    // },
     {
       id: 1,
       title: "Early Bird",
@@ -73,8 +16,25 @@ const Tickets = () => {
         bg: "bg-[#F5DB9F]",
         text: "text-[#053020]",
         hover: "hover:bg-[#FCE5AF]",
+        label: "Sold Out",
       },
       ariaLabel: "Buy Early Bird Pass",
+      soldOut: true,
+    },
+    {
+      id: 2,
+      title: "Regular Ticket",
+      price: "₹ 5,999",
+      features: ["All days conference and supporting events access"],
+      bg: "bg-[#053020]",
+      text: "text-[#F5DB9F]",
+      button: {
+        bg: "bg-[#F5DB9F]",
+        text: "text-[#053020]",
+        hover: "hover:bg-[#FCE5AF]",
+        label: "Buy Now",
+      },
+      ariaLabel: "Buy Regular Ticket",
     },
   ];
 
@@ -99,9 +59,8 @@ const Tickets = () => {
         Secure your spot at Swift Conference India 2025.
       </h4>
       {/* w-full */}
-      <div className="w-sm">
-        {/* md:grid-cols-2 lg:grid-cols-3 */}
-        <div className="grid grid-cols-1 gap-6 mt-10">
+      <div className="w-full flex justify-center">
+        <div className="grid grid-cols-2 gap-6 mt-10 w-fit">
           {ticketOptions.map((option) => (
             <div
               key={option.id}
@@ -125,11 +84,18 @@ const Tickets = () => {
                 <br />
               </ul>
               <button
-                className={`${option.button.bg} ${option.button.text} w-full cursor-pointer font-normal px-6 py-2 rounded-lg ${option.button.hover} transition-colors mt-auto`}
+                className={`${option.button.bg} ${
+                  option.button.text
+                } w-full cursor-pointer font-normal px-6 py-2 rounded-lg ${
+                  option.button.hover
+                } transition-colors mt-auto ${
+                  option.soldOut ? "opacity-50 cursor-not-allowed" : ""
+                }`}
                 aria-label={option.ariaLabel}
                 onClick={purchaseTicketOnKonfhub}
+                disabled={option.soldOut}
               >
-                Buy Now
+                {option.button.label}
               </button>
             </div>
           ))}
