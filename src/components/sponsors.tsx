@@ -118,6 +118,52 @@ const Sponsors = () => {
           className="h-6 sm:h-8 w-full object-contain"
         />
       </div>
+      <div className="flex items-center justify-center gap-4">
+        <img
+          src={silverLeafLeft}
+          alt="Silver Leaf Left"
+          className="h-16 w-auto object-contain"
+        />
+        <div className="flex gap-36 items-center">
+          <a
+            href="https://www.mercari.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={mercari}
+              alt="Mercari"
+              className="h-10 w-auto object-contain"
+            />
+          </a>
+          <a
+            href="https://www.zoho.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={zoho} alt="Zoho" className="h-10 w-auto object-contain" />
+          </a>
+          <a
+            href="https://signeasy.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={signEasy}
+              alt="SignEasy"
+              className="h-10 w-auto object-contain"
+            />
+          </a>
+        </div>
+        <img
+          src={silverLeafRight}
+          alt="Silver Leaf Right"
+          className="h-16 w-auto object-contain"
+        />
+      </div>
+      <div className="h-16 w-full" />
+
+      {/* Community Sponsors */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative">
         <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-lg text-black/60">
           Community Sponsors
@@ -128,6 +174,36 @@ const Sponsors = () => {
           className="h-6 sm:h-8 w-full object-contain"
         />
       </div>
+      <div className="flex items-center justify-center gap-8">
+        <img
+          src={communityLeafLeft}
+          alt="Community Leaf Left"
+          className="h-16 w-auto object-contain"
+        />
+        <div className="flex gap-36 items-center">
+          <img
+            src={communitySponsor1}
+            alt="Community Sponsor 1"
+            className="h-16 w-auto object-contain"
+          />
+          <img
+            src={communitySponsor2}
+            alt="Community Sponsor 2"
+            className="h-16 w-auto object-contain"
+          />
+          <img
+            src={communitySponsor3}
+            alt="Community Sponsor 3"
+            className="h-16 w-auto object-contain"
+          />
+        </div>
+        <img
+          src={communityLeafRight}
+          alt="Community Leaf Right"
+          className="h-16 w-auto object-contain"
+        />
+      </div>
+      <div className="h-16 w-full" />
     </section>
   );
 };
