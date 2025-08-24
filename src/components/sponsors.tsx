@@ -82,7 +82,33 @@ const Sponsors = () => {
           className="h-6 sm:h-8 w-full object-contain"
         />
       </div>
-      <div className="w-full my-4 flex flex-col items-center justify-center relative">
+      <div className="flex items-center justify-center gap-6">
+        <img
+          src={goldLeafLeft}
+          alt="Gold Leaf Left"
+          className="h-16 w-auto object-contain"
+        />
+        <a
+          href="https://boxbox.club/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={boxClub}
+            alt="Box Club"
+            className="h-16 w-auto object-contain"
+          />
+        </a>
+        <img
+          src={goldLeafRight}
+          alt="Gold Leaf Right"
+          className="h-16 w-auto object-contain"
+        />
+      </div>
+      <div className="h-16 w-full" />
+
+      {/* Silver Sponsors */}
+      <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
         <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-lg text-black/60">
           Silver Sponsors
         </div>
