@@ -13,6 +13,8 @@ import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobil
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
 import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.png";
+import charlieChapmanImage from "@/assets/speakers/charlie-chapman.png";
+import charlieChapmanImageMobile from "@/assets/speakers/charlie-chapman-mobile.png";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
 import { FaXTwitter } from "react-icons/fa6";
@@ -81,12 +83,12 @@ const Speakers = () => {
     },
     {
       id: 7,
-      name: "Speaker",
-      image: placeholderImage,
-      imageMobile: placeholderImageMobile,
-      role: "To be announced soon",
+      name: "Charlie Chapman",
+      image: charlieChapmanImage,
+      imageMobile: charlieChapmanImageMobile,
+      role: "Dev Advocate RevenueCat, Creator of Dark Noise App",
       socials: {
-        twitter: "",
+        twitter: "https://x.com/_chuckyc",
       },
     },
     {
