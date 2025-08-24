@@ -1,21 +1,37 @@
 import sponsorsBackground from "@/assets/green-lush-background.png";
 import sponsorDivider from "@/assets/svg/sponsor-divider.svg";
+import platinumLeafLeaves from "@/assets/svg/platinum-left.svg";
+import revenueCat from "@/assets/svg/revenue-cat.svg";
+import platinumLeafRight from "@/assets/svg/platinum-right.svg";
+import goldLeafLeft from "@/assets/svg/gold-left.svg";
+import boxClub from "@/assets/svg/box-club.svg";
+import goldLeafRight from "@/assets/svg/gold-right.svg";
+import silverLeafLeft from "@/assets/svg/silver-left.svg";
+import mercari from "@/assets/svg/mercari.svg";
+import zoho from "@/assets/svg/zoho.svg";
+import signEasy from "@/assets/svg/signeasy.svg";
+import silverLeafRight from "@/assets/svg/silver-right.svg";
+import communityLeafLeft from "@/assets/svg/community-left.svg";
+import communitySponsor1 from "@/assets/svg/community-sponsor-1.svg";
+import communitySponsor2 from "@/assets/svg/community-sponsor-2.svg";
+import communitySponsor3 from "@/assets/svg/community-sponsor-3.svg";
+import communityLeafRight from "@/assets/svg/community-right.svg";
 
 const Sponsors = () => {
   return (
     <section
       id="sponsors"
-      className="flex flex-col items-center px-4 py-12 min-h-[2650px]"
+      className="flex flex-col items-center px-4 py-12"
       style={{
         backgroundImage: `url(${sponsorsBackground})`,
         backgroundSize: "cover",
-        backgroundPosition: "50% center",
+        backgroundPosition: "80% center",
         backgroundRepeat: "no-repeat",
-        minHeight: "800px",
-        maxHeight: "2200px",
+        minHeight: "1500px",
+        maxHeight: "2000px",
       }}
     >
-      <h2 className="font-bold text-3xl sm:text-5xl text-center mb-16">
+      <h2 className="font-bold text-3xl sm:text-5xl text-center mb-8">
         Sponsors
       </h2>
       <div className="w-full my-4 flex flex-col items-center justify-center relative">
