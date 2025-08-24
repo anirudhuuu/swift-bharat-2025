@@ -34,7 +34,9 @@ const Sponsors = () => {
       <h2 className="font-bold text-3xl sm:text-5xl text-center mb-8">
         Sponsors
       </h2>
-      <div className="w-full my-4 flex flex-col items-center justify-center relative">
+
+      {/* Platinum Sponsor */}
+      <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
         <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-lg text-black/60">
           Platinum Sponsor
         </div>
@@ -44,7 +46,33 @@ const Sponsors = () => {
           className="h-6 sm:h-8 w-full object-contain"
         />
       </div>
-      <div className="w-full my-4 flex flex-col items-center justify-center relative">
+      <div className="flex items-center justify-center gap-5">
+        <img
+          src={platinumLeafLeaves}
+          alt="Platinum Leaf Left"
+          className="h-16 w-auto object-contain"
+        />
+        <a
+          href="https://www.revenuecat.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={revenueCat}
+            alt="Revenue Cat"
+            className="h-12 w-auto object-contain"
+          />
+        </a>
+        <img
+          src={platinumLeafRight}
+          alt="Platinum Leaf Right"
+          className="h-16 w-auto object-contain"
+        />
+      </div>
+      <div className="h-16 w-full" />
+
+      {/* Gold Sponsor */}
+      <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
         <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-lg text-black/60">
           Gold Sponsor
         </div>
