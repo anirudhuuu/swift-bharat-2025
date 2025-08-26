@@ -9,17 +9,17 @@ import speaker7 from "@/assets/speaker-7.png";
 import Hero from "@/components/hero";
 import Navbar from "@/components/nav-bar";
 
-const speakers = [
-  speaker1,
-  speaker2,
-  speaker3,
-  speaker4,
-  speaker5,
-  speaker6,
-  speaker7,
-];
-
 const Landing = () => {
+  const speakers = [
+    speaker1,
+    speaker2,
+    speaker3,
+    speaker4,
+    speaker5,
+    speaker6,
+    speaker7,
+  ];
+
   return (
     <div
       className="relative flex flex-col justify-start items-center font-display h-[1280px] w-full overflow-hidden"
@@ -37,6 +37,7 @@ const Landing = () => {
               key={i}
               src={src}
               alt={`speaker-${i}`}
+              loading="lazy"
               className="h-[28rem] w-[28rem] object-contain"
             />
           ))}
