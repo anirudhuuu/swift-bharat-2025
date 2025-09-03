@@ -6,7 +6,7 @@ import mercari from "@/assets/svg/mercari.svg";
 import platinumLeafLeaves from "@/assets/svg/platinum-left.svg";
 import platinumLeafRight from "@/assets/svg/platinum-right.svg";
 import revenueCat from "@/assets/svg/revenue-cat.svg";
-import signEasy from "@/assets/svg/signeasy.svg";
+import signEasy from "@/assets/svg/signeasy.png";
 import silverLeafLeft from "@/assets/svg/silver-left.svg";
 import silverLeafRight from "@/assets/svg/silver-right.svg";
 import sponsorDivider from "@/assets/svg/sponsor-divider.svg";
