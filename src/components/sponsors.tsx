@@ -10,7 +10,7 @@ import signEasy from "@/assets/svg/signeasy.svg";
 import silverLeafLeft from "@/assets/svg/silver-left.svg";
 import silverLeafRight from "@/assets/svg/silver-right.svg";
 import sponsorDivider from "@/assets/svg/sponsor-divider.svg";
-import zoho from "@/assets/svg/zoho.svg";
+import zoho from "@/assets/svg/zoho.png";
 
 const Sponsors = () => {
   return (
