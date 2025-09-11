@@ -1,8 +1,13 @@
 import sponsorsBackground from "@/assets/green-lush-background.png";
 import boxClub from "@/assets/svg/box-club.svg";
+import communityLeafLeft from "@/assets/svg/community-left.svg";
+import communityLeafRight from "@/assets/svg/community-right.svg";
 import goldLeafLeft from "@/assets/svg/gold-left.svg";
 import goldLeafRight from "@/assets/svg/gold-right.svg";
+import gratitude from "@/assets/svg/gratitude.svg";
+import lookaway from "@/assets/svg/lookaway.png";
 import mercari from "@/assets/svg/mercari.svg";
+import nunch from "@/assets/svg/nunch.png";
 import platinumLeafLeaves from "@/assets/svg/platinum-left.svg";
 import platinumLeafRight from "@/assets/svg/platinum-right.svg";
 import revenueCat from "@/assets/svg/revenue-cat.svg";
@@ -180,6 +185,74 @@ const Sponsors = () => {
         />
       </div>
       <div className="h-8 sm:h-16 w-full" />
+
+      {/* Community Sponsors */}
+      <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
+        <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-base sm:text-lg text-black/60">
+          Community Sponsors
+        </div>
+        <img
+          src={sponsorDivider}
+          alt="Divider"
+          className="h-6 sm:h-8 w-full max-w-5xl object-contain"
+          loading="lazy"
+        />
+      </div>
+      <div className="flex items-center justify-center gap-3 sm:gap-6">
+        <img
+          src={communityLeafLeft}
+          alt="Gold Leaf Left"
+          className="h-12 sm:h-16 w-auto object-contain"
+          loading="lazy"
+        />
+        <div className="flex xs:flex-row gap-8 sm:gap-36 items-center">
+          <a
+            href="https://www.gratefulness.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-200"
+          >
+            <img
+              src={gratitude}
+              alt="Gratitude"
+              className="h-8 sm:h-18 w-auto object-contain rounded-xl"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://lookaway.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-200"
+          >
+            <img
+              src={lookaway}
+              alt="Lookaway"
+              className="h-8 sm:h-18 w-auto object-contain"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://nunch.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-200"
+          >
+            <img
+              src={nunch}
+              alt="Nunch"
+              className="h-8 sm:h-18 w-auto object-contain rounded-2xl"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <img
+          src={communityLeafRight}
+          alt="Gold Leaf Right"
+          className="h-12 sm:h-16 w-auto object-contain"
+          loading="lazy"
+        />
+      </div>
       <div className="h-8 sm:h-16 w-full" />
     </section>
   );
