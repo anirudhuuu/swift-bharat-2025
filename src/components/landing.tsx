@@ -6,6 +6,8 @@ import speaker4 from "@/assets/speaker-4.png";
 import speaker5 from "@/assets/speaker-5.png";
 import speaker6 from "@/assets/speaker-6.png";
 import speaker7 from "@/assets/speaker-7.png";
+import speaker8 from "@/assets/speaker-8.png";
+import speaker9 from "@/assets/speaker-9.png";
 import Hero from "@/components/hero";
 import Navbar from "@/components/nav-bar";
 
@@ -18,6 +20,8 @@ const Landing = () => {
     speaker5,
     speaker6,
     speaker7,
+    speaker8,
+    speaker9,
   ];
 
   return (
