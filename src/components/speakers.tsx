@@ -110,6 +110,36 @@ const speakersOfEvents = [
       twitter: "",
     },
   },
+  {
+    id: 10,
+    name: "Speaker",
+    image: placeholderImage,
+    imageMobile: placeholderImageMobile,
+    role: "To be announced soon",
+    socials: {
+      twitter: "",
+    },
+  },
+  {
+    id: 11,
+    name: "Speaker",
+    image: placeholderImage,
+    imageMobile: placeholderImageMobile,
+    role: "To be announced soon",
+    socials: {
+      twitter: "",
+    },
+  },
+  {
+    id: 12,
+    name: "Speaker",
+    image: placeholderImage,
+    imageMobile: placeholderImageMobile,
+    role: "To be announced soon",
+    socials: {
+      twitter: "",
+    },
+  },
 ];
 
 const SpeakerCard = ({
