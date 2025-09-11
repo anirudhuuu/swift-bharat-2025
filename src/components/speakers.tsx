@@ -5,6 +5,10 @@ import charlieChapmanImageMobile from "@/assets/speakers/charlie-chapman-mobile.
 import charlieChapmanImage from "@/assets/speakers/charlie-chapman.png";
 import danijelaVrzanImageMobile from "@/assets/speakers/danijela-vrzan-mobile.png";
 import danijelaVrzanImage from "@/assets/speakers/danijela-vrzan.png";
+import garimaBothraImageMobile from "@/assets/speakers/garima-bothra-mobile.png";
+import garimaBothraImage from "@/assets/speakers/garima-bothra.png";
+import joshHoltzImageMobile from "@/assets/speakers/josh-holtz-mobile.png";
+import joshHoltzImage from "@/assets/speakers/josh-holtz.png";
 import krzysztofZabłockiImageMobile from "@/assets/speakers/krzysztof-mobile.png";
 import krzysztofZabłockiImage from "@/assets/speakers/krzysztof.png";
 import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
@@ -92,22 +96,22 @@ const speakersOfEvents = [
   },
   {
     id: 8,
-    name: "Speaker",
-    image: placeholderImage,
-    imageMobile: placeholderImageMobile,
-    role: "To be announced soon",
+    name: "Josh Holtz",
+    image: joshHoltzImage,
+    imageMobile: joshHoltzImageMobile,
+    role: "Monetization em RevenueCat, Deep Dish Swift",
     socials: {
-      twitter: "",
+      twitter: "https://x.com/joshdholtz",
     },
   },
   {
     id: 9,
-    name: "Speaker",
-    image: placeholderImage,
-    imageMobile: placeholderImageMobile,
-    role: "To be announced soon",
+    name: "Garima Bothra",
+    image: garimaBothraImage,
+    imageMobile: garimaBothraImageMobile,
+    role: "SDE 2 Swiggy, SSC 21 Winner",
     socials: {
-      twitter: "",
+      twitter: "https://x.com/garimabothraa",
     },
   },
   {
