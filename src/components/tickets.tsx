@@ -32,9 +32,10 @@ const Tickets = () => {
         bg: "bg-[#F5DB9F]",
         text: "text-[#053020]",
         hover: "hover:bg-[#FCE5AF]",
-        label: "Buy Now",
+        label: "Sold Out",
       },
       ariaLabel: "Buy Regular Ticket",
+      soldOut: true,
     },
   ];
 
