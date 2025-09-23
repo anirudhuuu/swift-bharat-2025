@@ -1,5 +1,10 @@
 import heroBackground from "@/assets/hero-background.png";
 import speaker1 from "@/assets/speaker-1.png";
+import speaker10 from "@/assets/speaker-10.png";
+import speaker11 from "@/assets/speaker-11.png";
+import speaker12 from "@/assets/speaker-12.png";
+import speaker13 from "@/assets/speaker-13.png";
+import speaker14 from "@/assets/speaker-14.png";
 import speaker2 from "@/assets/speaker-2.png";
 import speaker3 from "@/assets/speaker-3.png";
 import speaker4 from "@/assets/speaker-4.png";
@@ -22,8 +27,12 @@ const Landing = () => {
     speaker7,
     speaker8,
     speaker9,
+    speaker10,
+    speaker11,
+    speaker12,
+    speaker13,
+    speaker14,
   ];
-
   return (
     <div
       className="relative flex flex-col justify-start items-center font-display h-[1280px] w-full overflow-hidden"
@@ -41,7 +50,7 @@ const Landing = () => {
               key={i}
               src={src}
               alt={`speaker-${i}`}
-              loading="lazy"
+              loading="eager"
               className="h-[28rem] w-[28rem] object-contain"
             />
           ))}
