@@ -61,6 +61,33 @@ const Faqs = () => {
       answer:
         "As of now, no — we're optimizing for a great in-person experience since it's our very first edition.",
     },
+    {
+      id: 7,
+      question: "Who has designed and built the website?",
+      answer: (
+        <>
+          The website has been designed by&nbsp;
+          <a
+            href="https://x.com/aryanuiux"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
+          >
+            Aryan
+          </a>
+          &nbsp;and built by&nbsp;
+          <a
+            href="https://x.com/nirudhuuu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800 cursor-pointer"
+          >
+            Anirudh
+          </a>
+          .
+        </>
+      ),
+    },
   ];
 
   return (
