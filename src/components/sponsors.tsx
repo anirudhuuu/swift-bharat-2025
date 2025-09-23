@@ -78,10 +78,10 @@ const Sponsors = () => {
       </div>
       <div className="h-8 sm:h-14 w-full" />
 
-      {/* Gold Sponsor */}
+      {/* Gold Sponsors */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
         <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
-          Gold Sponsor
+          Gold Sponsors
         </div>
         <img
           src={sponsorDivider}
