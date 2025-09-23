@@ -5,33 +5,28 @@ import { Button } from "@/components/ui/button";
 import { Fragment, useEffect, useState } from "react";
 
 const navItems = [
-  // {
-  //   id: 1,
-  //   label: "Schedule",
-  //   link: "#schedule",
-  // },
-  // {
-  //   id: 3,
-  //   label: "About",
-  //   link: "#about",
-  // },
   {
     id: 1,
+    label: "Schedule",
+    link: "schedule",
+  },
+  {
+    id: 2,
     label: "Get Tickets",
     link: "tickets",
   },
   {
-    id: 2,
+    id: 3,
     label: "Speakers",
     link: "speakers",
   },
   {
-    id: 3,
+    id: 4,
     label: "Sponsors",
     link: "sponsors",
   },
   {
-    id: 4,
+    id: 5,
     label: "Venue",
     link: "venue",
   },
