@@ -31,7 +31,7 @@ const Address = () => {
             <h2 className="uppercase font-medium text-base lg:text-lg text-black/60 mb-4">
               Dates
             </h2>
-            <h2 className="font-semibold text-4xl md:text-heading-2">
+            <h2 className="font-semibold text-2xl lg:text-4xl md:text-heading-2">
               26th-27th
               <br />
               September, 2025
@@ -41,7 +41,7 @@ const Address = () => {
               Address
             </h2>
             <h2
-              className="font-semibold text-4xl md:text-heading-2 cursor-pointer hover:underline"
+              className="font-semibold text-2xl lg:text-4xl md:text-heading-2 cursor-pointer hover:underline"
               onClick={() =>
                 window.open(
                   "https://maps.app.goo.gl/oWC7t5cr2ik8VTqdA",

@@ -104,7 +104,7 @@ export const Schedule = () => {
     <div id="schedule" className="w-full">
       <div className="flex flex-col max-w-5xl mx-auto items-center">
         <div className="h-12"></div>
-        <h2 className="font-display text-3xl sm:text-5xl font-bold text-[#053020] mb-4">
+        <h2 className="font-display text-4xl sm:text-5xl font-bold text-[#053020] mb-4">
           Schedule
         </h2>
       </div>
