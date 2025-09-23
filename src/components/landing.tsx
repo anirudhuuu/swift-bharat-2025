@@ -13,6 +13,7 @@ import speaker11 from "@/assets/speaker-11.png";
 import speaker12 from "@/assets/speaker-12.png";
 import speaker13 from "@/assets/speaker-13.png";
 import speaker14 from "@/assets/speaker-14.png";
+import speaker15 from "@/assets/speaker-15.png";
 import Hero from "@/components/hero";
 import Navbar from "@/components/nav-bar";
 
@@ -32,6 +33,7 @@ const Landing = () => {
     speaker12,
     speaker13,
     speaker14,
+    speaker15,
   ];
   return (
     <div
