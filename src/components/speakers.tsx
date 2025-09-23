@@ -116,7 +116,7 @@ const speakersOfEvents = [
     name: "Josh Holtz",
     image: joshHoltzImage,
     imageMobile: joshHoltzImageMobile,
-    role: "Monetization em RevenueCat · Deep Dish Swift",
+    role: "Engineering Manager RevenueCat · Deep Dish Swift",
     socials: {
       twitter: "https://x.com/joshdholtz",
       linkedIn: "https://www.linkedin.com/in/josh-holtz-771b582a/",
@@ -138,7 +138,7 @@ const speakersOfEvents = [
     name: "Hariom Palkar",
     image: hariomPalkarImage,
     imageMobile: hariomPalkarImageMobile,
-    role: "Engineering & Product, Swiggy · Logitech speaker",
+    role: "Sr iOS Engineer and Product at Swiggy · Logitech Speaker",
     socials: {
       linkedIn: "https://www.linkedin.com/in/hariompalkar/",
     },
