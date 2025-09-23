@@ -196,6 +196,11 @@ const speakersOfEvents = [
   },
 ];
 
+// Sort speakers alphabetically by name
+const sortedSpeakers = [...speakersOfEvents].sort((a, b) =>
+  a.name.localeCompare(b.name, "en", { sensitivity: "base" })
+);
+
 const SpeakerCard = ({
   speaker,
 }: {
@@ -290,7 +295,7 @@ const Speakers = () => {
       <div className="h-14" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-18 md:gap-y-22 gap-x-6 w-fit justify-items-center px-4 md:px-12">
-        {speakersOfEvents.map((speaker) => (
+        {sortedSpeakers.map((speaker) => (
           <SpeakerCard key={speaker.id} speaker={speaker} />
         ))}
       </div>
