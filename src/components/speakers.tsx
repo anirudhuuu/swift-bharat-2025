@@ -23,14 +23,16 @@ import krzysztofZabłockiImageMobile from "@/assets/speakers/krzysztof-mobile.pn
 import krzysztofZabłockiImage from "@/assets/speakers/krzysztof.png";
 import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.png";
-import placeholderImageMobile from "@/assets/speakers/placeholder-mobile.png";
-import placeholderImage from "@/assets/speakers/placeholder.png";
+// import placeholderImageMobile from "@/assets/speakers/placeholder-mobile.png";
+// import placeholderImage from "@/assets/speakers/placeholder.png";
 import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.png";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
 import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.png";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
+import peterSteinbergerImage from "@/assets/speakers/peter-steinberger.png";
+import peterSteinbergerImageMobile from "@/assets/speakers/peter-steinberger-mobile.png";
 import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
 const speakersOfEvents = [
@@ -188,11 +190,14 @@ const speakersOfEvents = [
   },
   {
     id: 15,
-    name: "Speaker",
-    image: placeholderImage,
-    imageMobile: placeholderImageMobile,
-    role: "To be announced soon, stay tuned!",
-    socials: {},
+    name: "Peter Steinberger",
+    image: peterSteinbergerImage,
+    imageMobile: peterSteinbergerImageMobile,
+    role: "Employs AI, Agent Whisperer · Full-Time Open-Sorcerer",
+    socials: {
+      twitter: "https://x.com/steipete",
+      linkedIn: "https://www.linkedin.com/in/steipete/",
+    },
   },
 ];
 
@@ -233,7 +238,7 @@ const SpeakerCard = ({
                 className="bg-[#F5DB9F] p-3 rounded-full hover:bg-[#F5DB9F]/80 transition-colors"
                 aria-label={`Follow ${speaker.name} on Twitter`}
               >
-                <FaXTwitter className="w-5 h-5 text-black" />
+                <FaXTwitter className="w-3 h-3 md:w-5 md:h-5 text-black" />
               </a>
             )}
             {speaker.socials.linkedIn &&
@@ -245,7 +250,7 @@ const SpeakerCard = ({
                   className="bg-[#F5DB9F] p-3 rounded-full hover:bg-[#F5DB9F]/80 transition-colors"
                   aria-label={`Follow ${speaker.name} on LinkedIn`}
                 >
-                  <FaLinkedin className="w-5 h-5 text-black" />
+                  <FaLinkedin className="w-3 h-3 md:w-5 md:h-5 text-black" />
                 </a>
               )}
           </>
