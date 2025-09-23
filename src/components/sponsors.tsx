@@ -18,8 +18,40 @@ import silverLeafRight from "@/assets/svg/silver-right.svg";
 import sponsorDivider from "@/assets/svg/sponsor-divider.svg";
 import teleprompter from "@/assets/svg/teleprompter.png";
 import zoho from "@/assets/svg/zoho.png";
+import { useEffect } from "react";
 
 const Sponsors = () => {
+  // Preload all sponsor images for better performance
+  useEffect(() => {
+    const images = [
+      sponsorsBackground,
+      boxClub,
+      communityLeafLeft,
+      communityLeafRight,
+      goldLeafLeft,
+      goldLeafRight,
+      gratitude,
+      logitech,
+      lookaway,
+      mercari,
+      nunch,
+      platinumLeafLeaves,
+      platinumLeafRight,
+      revenueCat,
+      signEasy,
+      silverLeafLeft,
+      silverLeafRight,
+      sponsorDivider,
+      teleprompter,
+      zoho,
+    ];
+
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <section
       id="sponsors"
@@ -46,7 +78,6 @@ const Sponsors = () => {
           src={sponsorDivider}
           alt="Divider"
           className="h-6 sm:h-8 w-full max-w-5xl object-contain"
-          loading="lazy"
         />
       </div>
       <div className="flex items-center justify-center gap-3 sm:gap-5 w-full max-w-4xl px-4">
@@ -54,7 +85,6 @@ const Sponsors = () => {
           src={platinumLeafLeaves}
           alt="Platinum Leaf Left"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
         <a
           href="https://www.revenuecat.com/"
@@ -66,14 +96,12 @@ const Sponsors = () => {
             src={revenueCat}
             alt="Revenue Cat"
             className="h-8 sm:h-10 md:h-12 w-auto object-contain max-w-[200px] sm:max-w-none"
-            loading="lazy"
           />
         </a>
         <img
           src={platinumLeafRight}
           alt="Platinum Leaf Right"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
       </div>
       <div className="h-8 sm:h-14 w-full" />
@@ -87,7 +115,6 @@ const Sponsors = () => {
           src={sponsorDivider}
           alt="Divider"
           className="h-6 sm:h-8 w-full max-w-5xl object-contain"
-          loading="lazy"
         />
       </div>
       <div className="flex items-center justify-center gap-3 sm:gap-6 w-full max-w-4xl px-4">
@@ -95,7 +122,6 @@ const Sponsors = () => {
           src={goldLeafLeft}
           alt="Gold Leaf Left"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
         <div className="w-3 sm:w-6" />
         <a
@@ -108,7 +134,6 @@ const Sponsors = () => {
             src={boxClub}
             alt="Box Club"
             className="h-8 sm:h-12 md:h-16 w-auto object-contain max-w-[200px] sm:max-w-none"
-            loading="lazy"
           />
         </a>
         <div className="w-3 sm:w-6" />
@@ -122,7 +147,6 @@ const Sponsors = () => {
             src={logitech}
             alt="Logitech"
             className="h-10 sm:h-10 md:h-12 lg:h-14 w-auto object-contain max-w-[90px] sm:max-w-[110px] md:max-w-[130px]"
-            loading="lazy"
           />
         </a>
         <div className="w-3 sm:w-6" />
@@ -130,7 +154,6 @@ const Sponsors = () => {
           src={goldLeafRight}
           alt="Gold Leaf Right"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
       </div>
       <div className="h-8 sm:h-14 w-full" />
@@ -144,7 +167,6 @@ const Sponsors = () => {
           src={sponsorDivider}
           alt="Divider"
           className="h-6 sm:h-8 w-full max-w-5xl object-contain"
-          loading="lazy"
         />
       </div>
       <div className="flex items-center justify-center gap-2 sm:gap-4 w-full max-w-4xl px-4">
@@ -152,7 +174,6 @@ const Sponsors = () => {
           src={silverLeafLeft}
           alt="Silver Leaf Left"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
         <div className="flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center flex-1 min-w-0 overflow-x-hidden">
           <a
@@ -165,7 +186,6 @@ const Sponsors = () => {
               src={mercari}
               alt="Mercari"
               className="h-5 sm:h-8 md:h-10 w-auto object-contain max-w-[100px] sm:max-w-none"
-              loading="lazy"
             />
           </a>
           <a
@@ -178,7 +198,6 @@ const Sponsors = () => {
               src={zoho}
               alt="Zoho"
               className="h-5 sm:h-8 md:h-10 w-auto object-contain max-w-[100px] sm:max-w-none"
-              loading="lazy"
             />
           </a>
           <a
@@ -191,7 +210,6 @@ const Sponsors = () => {
               src={signEasy}
               alt="SignEasy"
               className="h-5 sm:h-8 md:h-10 w-auto object-contain max-w-[100px] sm:max-w-none"
-              loading="lazy"
             />
           </a>
         </div>
@@ -199,7 +217,6 @@ const Sponsors = () => {
           src={silverLeafRight}
           alt="Silver Leaf Right"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
       </div>
       <div className="h-8 sm:h-16 w-full" />
@@ -213,7 +230,6 @@ const Sponsors = () => {
           src={sponsorDivider}
           alt="Divider"
           className="h-6 sm:h-8 w-full max-w-5xl object-contain"
-          loading="lazy"
         />
       </div>
       <div className="flex items-center justify-center gap-3 sm:gap-6 w-full max-w-4xl px-4">
@@ -221,7 +237,6 @@ const Sponsors = () => {
           src={communityLeafLeft}
           alt="Community Leaf Left"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
         <div className="flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center flex-1 min-w-0 overflow-x-hidden">
           <a
@@ -234,7 +249,6 @@ const Sponsors = () => {
               src={gratitude}
               alt="Gratitude"
               className="h-12 sm:h-12 md:h-16 lg:h-20 w-auto object-contain rounded sm:rounded-xl max-w-[180px] sm:max-w-[200px] md:max-w-none"
-              loading="lazy"
             />
           </a>
           <a
@@ -247,7 +261,6 @@ const Sponsors = () => {
               src={lookaway}
               alt="Lookaway"
               className="h-12 sm:h-12 md:h-16 lg:h-20 w-auto object-contain max-w-[180px] sm:max-w-[200px] md:max-w-none"
-              loading="lazy"
             />
           </a>
           <a
@@ -260,7 +273,6 @@ const Sponsors = () => {
               src={nunch}
               alt="Nunch"
               className="h-12 sm:h-12 md:h-16 lg:h-20 w-auto object-contain rounded-xl max-w-[180px] sm:max-w-[200px] md:max-w-none"
-              loading="lazy"
             />
           </a>
           <a
@@ -273,7 +285,6 @@ const Sponsors = () => {
               src={teleprompter}
               alt="Teleprompter"
               className="h-12 sm:h-12 md:h-16 lg:h-20 w-auto object-contain rounded sm:rounded-xl max-w-[180px] sm:max-w-[200px] md:max-w-none"
-              loading="lazy"
             />
           </a>
         </div>
@@ -281,7 +292,6 @@ const Sponsors = () => {
           src={communityLeafRight}
           alt="Community Leaf Right"
           className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
-          loading="lazy"
         />
       </div>
       <div className="h-8 sm:h-16 w-full" />
