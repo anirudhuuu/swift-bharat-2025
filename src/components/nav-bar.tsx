@@ -86,7 +86,6 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
           <img
             src={swiftBharatLogo}
             alt="Swift Bharat"
-            loading="lazy"
             className="w-[70px] h-[70px]"
           />
           <span className="font-samarkan font-bold text-3xl leading-7">
@@ -174,7 +173,6 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
                 <img
                   src={swiftBharatMobileLogo}
                   alt="Swift Bharat"
-                  loading="lazy"
                   className="w-[70px] h-[70px]"
                 />
                 <span className="font-samarkan font-bold text-3xl leading-7">

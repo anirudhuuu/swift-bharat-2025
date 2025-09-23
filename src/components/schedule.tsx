@@ -80,22 +80,51 @@ export const Schedule = () => {
   ];
 
   const scheduleData2 = [
-    { time: "9:00 am – 9:45 am", session: "Doors Open" },
-    { time: "9:45 am – 10:30 am", session: "Curt Clifton" },
-    { time: "10:30 am – 11:10 am", session: "Krzysztof Zabłocki" },
+    { time: "9:00 am – 9:45 am", session: "Doors Open & Snacks" },
+    {
+      time: "9:45 am – 10:30 am",
+      session: "Curt Clifton",
+      topic: '"Create a custom control with SwiftUI"',
+      isCursive: true,
+    },
+    {
+      time: "10:30 am – 11:10 am",
+      session: "Krzysztof Zabłocki",
+      topic: '"What people get wrong about testing?"',
+      isCursive: true,
+    },
     { time: "11:15 am – 11:35 am", session: "Break" },
-    { time: "12:35 am – 12:15 am", session: "Garima Bothra" },
-    { time: "12:15 pm – 12:55 pm", session: "Josh Holtz" },
+    {
+      time: "12:35 am – 12:15 am",
+      session: "Garima Bothra",
+      topic: '"Does SwiftUI work in production?"',
+      isCursive: true,
+    },
+    {
+      time: "12:15 pm – 12:55 pm",
+      session: "Josh Holtz",
+      topic: '"A Swift Drive into DSLs"',
+      isCursive: true,
+    },
     { time: "1:00 pm – 2:30 pm", session: "Lunch" },
-    { time: "2:30 pm – 3:10 pm", session: "Harshil Shah" },
+    {
+      time: "2:30 pm – 3:10 pm",
+      session: "Harshil Shah",
+      topic: '"Shipping Solo"',
+      isCursive: false,
+    },
     {
       time: "3:10 pm – 4:25 pm",
-      session: "Launched Podcast with Raja V & Sandeep Ranade",
+      session: "Launched Podcast",
+      topic: "Raja V & Sandeep Ranade",
+      isCursive: false,
     },
     { time: "4:25 pm – 4:50 pm", session: "Break" },
     {
       time: "4:50 pm – 5:35 pm",
-      session: "Closing keynote - Peter Steinberger",
+      session: "Peter Steinberger",
+      topic: '"Closing keynote"',
+      isCursive: true,
     },
     { time: "5:35 pm – 5:50 pm", session: "Closing Remarks" },
   ];
