@@ -12,13 +12,13 @@ const navItems = [
   },
   {
     id: 2,
-    label: "Get Tickets",
-    link: "tickets",
+    label: "Speakers",
+    link: "speakers",
   },
   {
     id: 3,
-    label: "Speakers",
-    link: "speakers",
+    label: "Get Tickets",
+    link: "tickets",
   },
   {
     id: 4,
