@@ -50,7 +50,7 @@ const Address = () => {
               }
               tabIndex={0}
               role="button"
-              aria-label="Open Bangalore International Convention Center in Maps"
+              aria-label="Open Bangalore International Center in Maps"
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   window.open(
@@ -60,7 +60,7 @@ const Address = () => {
                 }
               }}
             >
-              Bangalore International Convention Center
+              Bangalore International Center
             </h2>
           </div>
         </div>
