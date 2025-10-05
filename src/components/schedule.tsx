@@ -1,6 +1,7 @@
 import schedulePillar from "@/assets/schedule-pillar.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState, useEffect } from "react";
 
 type ScheduleItemType = {
   time: string;
@@ -10,30 +11,11 @@ type ScheduleItemType = {
 };
 
 export const Schedule = () => {
-  // Function to get the default tab based on current IST time
-  const getDefaultTab = () => {
-    const now = new Date();
+  const [isClient, setIsClient] = useState(false);
 
-    // Convert to IST (UTC+5:30)
-    const istTime = new Date(now.getTime() + 5.5 * 60 * 60 * 1000);
-
-    // Check if it's after 6 PM IST on September 26th, 2025
-    const september26_6pm = new Date("2025-09-26T18:00:00+05:30");
-
-    // Debug logging (remove in production)
-    console.log("Current IST time:", istTime.toISOString());
-    console.log("Sep 26 6PM IST:", september26_6pm.toISOString());
-    console.log("Is after 6PM Sep 26:", istTime >= september26_6pm);
-
-    // If current IST time is after 6 PM on Sep 26, 2025, default to Sep 27
-    if (istTime >= september26_6pm) {
-      return "sep-27";
-    }
-
-    // Otherwise default to Sep 26
-    return "sep-26";
-  };
-
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   const scheduleData1 = [
     { time: "8:45 am – 9:45 am", session: "Registration & Snacks" },
     { time: "9:45 am – 9:55 am", session: "Welcome Talk" },
@@ -153,36 +135,44 @@ export const Schedule = () => {
           />
         </div>
         <div className="flex flex-col max-w-5xl mx-auto items-center">
-          <Tabs defaultValue={getDefaultTab()} className="items-center w-full">
-            <TabsList className="bg-[#FCE5AF] p-1 mb-4 rounded-xl">
-              <TabsTrigger
-                key="sep-26"
-                value="sep-26"
-                className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
-              >
-                Sep 26
-              </TabsTrigger>
-              <TabsTrigger
-                key="sep-27"
-                value="sep-27"
-                className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
-              >
-                Sep 27
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent
-              value="sep-26"
-              className="space-y-6 w-full sm:w-2xl md:w-3xl px-3"
-            >
+          {!isClient ? (
+            // Server-side fallback - show Sep 26 content directly
+            <div className="space-y-6 w-full sm:w-2xl md:w-3xl px-3">
               <ScheduleItem scheduleData={scheduleData1} />
-            </TabsContent>
-            <TabsContent
-              value="sep-27"
-              className="space-y-6 w-full sm:w-2xl md:w-3xl px-3"
-            >
-              <ScheduleItem scheduleData={scheduleData2} />
-            </TabsContent>
-          </Tabs>
+            </div>
+          ) : (
+            // Client-side tabs
+            <Tabs defaultValue="sep-26" className="items-center w-full">
+              <TabsList className="bg-[#FCE5AF] p-1 mb-4 rounded-xl">
+                <TabsTrigger
+                  key="sep-26"
+                  value="sep-26"
+                  className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
+                >
+                  Sep 26
+                </TabsTrigger>
+                <TabsTrigger
+                  key="sep-27"
+                  value="sep-27"
+                  className="font-light rounded-md text-[#053020]/60 data-[state=active]:bg-[#053020] data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
+                >
+                  Sep 27
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent
+                value="sep-26"
+                className="space-y-6 w-full sm:w-2xl md:w-3xl px-3"
+              >
+                <ScheduleItem scheduleData={scheduleData1} />
+              </TabsContent>
+              <TabsContent
+                value="sep-27"
+                className="space-y-6 w-full sm:w-2xl md:w-3xl px-3"
+              >
+                <ScheduleItem scheduleData={scheduleData2} />
+              </TabsContent>
+            </Tabs>
+          )}
         </div>
       </div>
     </div>

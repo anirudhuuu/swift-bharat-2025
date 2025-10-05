@@ -13,7 +13,7 @@
     }
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "node server",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -26,6 +26,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "express": "^4.19.2",
     "lucide-react": "^0.511.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
+    "@types/express": "^5.0.3",
     "@types/node": "^22.17.2",
     "@types/react": "^19.1.11",
     "@types/react-dom": "^19.1.7",
