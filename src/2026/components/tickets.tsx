@@ -58,11 +58,14 @@ const Tickets = () => {
   };
 
   return (
-    <section id="tickets" className="px-6 py-16 md:px-12 md:py-24">
-      <div className="mx-auto max-w-[944px]">
+    <section
+      id="tickets"
+      className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
+    >
+      <div className="mx-auto w-full max-w-[944px]">
         <SectionTitle className="text-center">get your tickets</SectionTitle>
 
-        <div className="mt-12 grid justify-items-center gap-8 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 justify-items-center gap-6 sm:mt-8 sm:gap-8 md:mt-10 md:grid-cols-2 md:gap-8 lg:mt-12">
           {tickets.map((ticket) => (
             <TicketCard
               key={ticket.title}
@@ -82,7 +85,7 @@ const Tickets = () => {
               width="100%"
               height="800"
               allow="payment"
-              className="mt-10 rounded-2xl border-2 border-foreground/20 shadow-lg"
+              className="mt-6 h-[min(600px,80vh)] w-full rounded-xl border-2 border-foreground/20 shadow-lg sm:mt-8 sm:h-[700px] sm:rounded-2xl md:mt-10 md:h-[800px]"
             />
           )}
         </div>
@@ -91,14 +94,14 @@ const Tickets = () => {
   );
 };
 
-function CheckIcon() {
+function CheckIcon({ className = "" }: { className?: string }) {
   return (
     <svg
       width="16"
       height="16"
       viewBox="0 0 16 16"
       fill="none"
-      className="mt-1 shrink-0"
+      className={`mt-0.5 shrink-0 sm:mt-1 ${className}`}
       aria-hidden
     >
       <path
@@ -123,23 +126,25 @@ function TicketCard({
   const gradientId = useId();
 
   return (
-    <article className="relative w-full max-w-[413px]">
+    <article className="relative w-full max-w-70 sm:max-w-[20rem] md:max-w-90 lg:max-w-103.25">
       <TicketCardShell gradientId={gradientId} className="h-auto w-full" />
 
       <div className="absolute inset-0 flex flex-col">
-        <div className="flex flex-col items-center px-8 pt-18 text-center">
-          <p className="flex items-baseline justify-center gap-1.5 text-[3.25rem] font-semibold leading-none tracking-tight text-lime">
+        <div className="flex flex-col items-center px-[7%] pt-[10%] text-center sm:pt-[12%]">
+          <p className="flex items-baseline justify-center gap-1 text-4xl font-semibold leading-none tracking-tight text-lime sm:gap-1.5 sm:text-5xl lg:text-[3.25rem]">
             <span>{ticket.currency}</span>
             <span className="tabular-nums">{ticket.amount}</span>
           </p>
-          <p className="mt-3 text-xl font-normal text-white">{ticket.title}</p>
+          <p className="mt-2 text-lg font-normal text-white sm:mt-3 sm:text-xl">
+            {ticket.title}
+          </p>
         </div>
 
-        <div className="mt-7 flex flex-col items-center px-8">
-          <ul className="flex w-max flex-col gap-[1.15rem] text-lg leading-snug text-white/60">
+        <div className="mt-4 flex flex-col items-center px-[7%] sm:mt-5 md:mt-7">
+          <ul className="flex w-max max-w-full flex-col gap-3 text-sm leading-snug text-white/60 sm:gap-4 sm:text-base md:gap-[1.15rem] md:text-lg">
             {ticketFeatures.map((feature) => (
-              <li key={feature} className="flex items-start gap-3">
-                <CheckIcon />
+              <li key={feature} className="flex items-start gap-2 sm:gap-3">
+                <CheckIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 <span>{feature}</span>
               </li>
             ))}
@@ -148,13 +153,13 @@ function TicketCard({
 
         <div className="min-h-0 flex-1" aria-hidden />
 
-        <div className="h-18 shrink-0" aria-hidden />
+        <div className="h-12 shrink-0 sm:h-14 md:h-16 lg:h-18" aria-hidden />
 
-        <div className="px-[2.4rem] pb-[2.1rem]">
+        <div className="px-[6%] pb-[3.5%] sm:pb-[4%]">
           <button
             type="button"
             onClick={onBuyNow}
-            className="flex h-18 w-full cursor-pointer items-center justify-center rounded-full bg-white text-2xl font-bold text-foreground transition-opacity hover:opacity-90"
+            className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full bg-white text-base font-bold text-foreground transition-opacity hover:opacity-90 sm:h-14 sm:text-lg md:h-16 md:text-xl lg:h-18 lg:text-2xl"
           >
             Buy Now
           </button>
