@@ -13,23 +13,39 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: "esnext",
-    minify: "esbuild",
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          router: ["react-router-dom"],
-          icons: ["react-icons", "lucide-react"],
-          ui: [
-            "@radix-ui/react-separator",
-            "@radix-ui/react-slot",
-            "@radix-ui/react-tabs",
+        codeSplitting: {
+          groups: [
+            {
+              name: "vendor",
+              test: /node_modules\/(react|react-dom)(\/|$)/,
+            },
+            {
+              name: "router",
+              test: /node_modules\/react-router-dom/,
+            },
+            {
+              name: "icons",
+              test: /node_modules\/(react-icons|lucide-react)/,
+            },
+            {
+              name: "ui",
+              test: /node_modules\/@radix-ui\/(react-separator|react-slot|react-tabs)/,
+            },
           ],
         },
+        ...(mode === "production" && {
+          minify: {
+            compress: {
+              dropConsole: true,
+              dropDebugger: true,
+            },
+          },
+        }),
       },
     },
     chunkSizeWarningLimit: 1000,
-    // Production optimizations
     ...(mode === "production" && {
       cssCodeSplit: true,
       sourcemap: false,
@@ -41,9 +57,5 @@ export default defineConfig(({ mode }) => ({
   },
   server: {
     hmr: true,
-  },
-  // Performance optimizations
-  esbuild: {
-    drop: mode === "production" ? ["console", "debugger"] : [],
   },
 }));
