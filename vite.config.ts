@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
             },
             {
               name: "router",
-              test: /node_modules\/react-router-dom/,
+              test: /node_modules\/react-router/,
             },
             {
               name: "icons",
@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => ({
     }),
   },
   optimizeDeps: {
-    include: ["react", "react-dom", "react-router-dom"],
+    include: ["react", "react-dom", "react-router"],
   },
   server: {
     hmr: true,

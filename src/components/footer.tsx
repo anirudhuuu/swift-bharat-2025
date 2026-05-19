@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // Add this import
+import { Link } from "react-router";
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
