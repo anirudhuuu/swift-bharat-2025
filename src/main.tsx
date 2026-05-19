@@ -3,7 +3,8 @@ import ResourcePreloader from "@/2025/components/resource-preloader";
 import Site2025Layout from "@/2025/layout";
 import CallForSpeakers from "@/2025/pages/call-for-speakers";
 import TermsAndCondition from "@/2025/pages/terms";
-import App from "@/App";
+import App2026 from "@/2026/App";
+import Site2026Layout from "@/2026/layout";
 import ErrorBoundary from "@/components/error-boundary";
 import NotFoundPage from "@/components/not-found-page";
 import RouteErrorPage from "@/components/route-error-page";
@@ -14,9 +15,14 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
 const siteRoutes = [
-  { index: true, element: <App /> },
-  { path: "*", element: <NotFoundPage /> },
-] as const;
+  {
+    element: <Site2026Layout />,
+    children: [
+      { index: true, element: <App2026 /> },
+      { path: "*", element: <NotFoundPage /> },
+    ],
+  },
+];
 
 const siteRoutes2025 = [
   {
