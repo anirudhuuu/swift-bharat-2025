@@ -3,14 +3,17 @@ import speakersBackground from "@/assets/speakers-background.jpg";
 import swiftBharatLogo from "@/assets/svg/swiftLogo-yellow.svg";
 import Footer from "@/components/footer";
 import { Link } from "react-router";
+import { useSiteRoutes } from "@/lib/use-site-routes";
 
 const CallForSpeakers = () => {
+  const routes = useSiteRoutes();
+
   return (
     <div className="flex flex-col justify-start items-start font-display w-full">
       <section className="w-full flex flex-col items-center px-8 md:px-24 py-16">
         <div className="flex flex-col items-center text-center mb-8">
           <Link
-            to="/"
+            to={routes.home}
             className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-7 md:mb-8"
           >
             <img
