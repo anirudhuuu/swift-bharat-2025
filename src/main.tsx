@@ -1,12 +1,12 @@
-import App from "@/App";
-import ResourcePreloader from "@/components/resource-preloader";
+import App from "@/2025/App";
+import ResourcePreloader from "@/2025/components/resource-preloader";
+import CallForSpeakers from "@/2025/pages/call-for-speakers";
+import TermsAndCondition from "@/2025/pages/terms";
 import "@/index.css";
-import TermsAndCondition from "@/pages/terms";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import CallForSpeakers from "./pages/call-for-speakers";
 
 const siteRoutes = [
   { index: true, element: <App /> },

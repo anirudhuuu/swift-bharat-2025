@@ -1,6 +1,6 @@
 import ticketBackground from "@/assets/2025/svg/ticket.svg";
-import Heading from "@/components/heading";
-import SubHeading from "@/components/sub-heading";
+import Heading from "@/2025/components/heading";
+import SubHeading from "@/2025/components/sub-heading";
 import { useCallback } from "react";
 
 const Hero = () => {

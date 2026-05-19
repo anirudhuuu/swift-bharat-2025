@@ -14,8 +14,8 @@ import speaker6 from "@/assets/2025/speaker-6.png";
 import speaker7 from "@/assets/2025/speaker-7.png";
 import speaker8 from "@/assets/2025/speaker-8.png";
 import speaker9 from "@/assets/2025/speaker-9.png";
-import Hero from "@/components/hero";
-import Navbar from "@/components/nav-bar";
+import Hero from "@/2025/components/hero";
+import Navbar from "@/2025/components/nav-bar";
 
 const Landing = () => {
   const speakers = [

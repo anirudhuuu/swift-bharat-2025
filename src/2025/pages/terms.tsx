@@ -1,5 +1,5 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/nav-bar";
+import Footer from "@/2025/components/footer";
+import Navbar from "@/2025/components/nav-bar";
 import type { FC } from "react";
 
 interface TermsBlockProps {

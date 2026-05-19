@@ -1,7 +1,7 @@
 import navDividerLogo from "@/assets/2025/svg/nav-divider.svg";
 import swiftBharatLogo from "@/assets/2025/svg/swiftLogo.png";
 import swiftBharatMobileLogo from "@/assets/2025/svg/swiftMobileLogo.png";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/2025/components/ui/button";
 import { useSiteRoutes } from "@/lib/use-site-routes";
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router";

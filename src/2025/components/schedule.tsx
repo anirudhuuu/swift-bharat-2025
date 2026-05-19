@@ -1,6 +1,6 @@
 import schedulePillar from "@/assets/2025/schedule-pillar.png";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/2025/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/2025/components/ui/tabs";
 
 type ScheduleItemType = {
   time: string;

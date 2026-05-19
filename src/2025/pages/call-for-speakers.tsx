@@ -1,7 +1,7 @@
 import callForSpeakers from "@/assets/2025/call-for-speakers.png";
 import speakersBackground from "@/assets/2025/speakers-background.jpg";
 import swiftBharatLogo from "@/assets/2025/svg/swiftLogo-yellow.svg";
-import Footer from "@/components/footer";
+import Footer from "@/2025/components/footer";
 import { Link } from "react-router";
 import { useSiteRoutes } from "@/lib/use-site-routes";
 
