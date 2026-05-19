@@ -1,1 +1,3 @@
-export { default } from "@/2025/App";
+export default function App() {
+    return <div>Hello World</div>;
+}
