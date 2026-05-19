@@ -85,13 +85,10 @@ const Tickets = () => {
                 <br />
               </ul>
               <button
-                className={`${option.button.bg} ${
-                  option.button.text
-                } w-full cursor-pointer font-normal px-6 py-2 rounded-lg ${
-                  option.button.hover
-                } transition-colors mt-auto ${
-                  option.soldOut ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+                className={`${option.button.bg} ${option.button.text
+                  } w-full cursor-pointer font-normal px-6 py-2 rounded-lg ${option.button.hover
+                  } transition-colors mt-auto ${option.soldOut ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 aria-label={option.ariaLabel}
                 onClick={purchaseTicketOnKonfhub}
                 disabled={option.soldOut}

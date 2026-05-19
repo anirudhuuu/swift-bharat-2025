@@ -23,17 +23,17 @@ import krzysztofZabłockiImageMobile from "@/assets/speakers/krzysztof-mobile.pn
 import krzysztofZabłockiImage from "@/assets/speakers/krzysztof.png";
 import paulHudsonImageMobile from "@/assets/speakers/paul-hudson-mobile.png";
 import paulHudsonImage from "@/assets/speakers/paul-hudson.png";
-// import placeholderImageMobile from "@/assets/speakers/placeholder-mobile.png";
-// import placeholderImage from "@/assets/speakers/placeholder.png";
+import peterSteinbergerImageMobile from "@/assets/speakers/peter-steinberger-mobile.png";
+import peterSteinbergerImage from "@/assets/speakers/peter-steinberger.png";
 import rajaVijayaramanImageMobile from "@/assets/speakers/raja-vijayaraman-mobile.png";
 import rajaVijayaramanImage from "@/assets/speakers/raja-vijayaraman.png";
 import sandeepRanadeImageMobile from "@/assets/speakers/sandeep-ranade-mobile.png";
 import sandeepRanadeImage from "@/assets/speakers/sandeep-ranade.png";
 import speakersLeftLogo from "@/assets/svg/speakersLeft.svg";
 import speakersRightLogo from "@/assets/svg/speakersRight.svg";
-import peterSteinbergerImage from "@/assets/speakers/peter-steinberger.png";
-import peterSteinbergerImageMobile from "@/assets/speakers/peter-steinberger-mobile.png";
-import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+// import placeholderImageMobile from "@/assets/speakers/placeholder-mobile.png";
+// import placeholderImage from "@/assets/speakers/placeholder.png";
 
 const speakersOfEvents = [
   {
@@ -225,8 +225,8 @@ const SpeakerCard = ({
       </picture>
       <div className="flex justify-center space-x-2 mt-4">
         {(!speaker.socials.twitter && !speaker.socials.linkedIn) ||
-        (speaker.socials.twitter?.length === 0 &&
-          speaker.socials.linkedIn?.length === 0) ? (
+          (speaker.socials.twitter?.length === 0 &&
+            speaker.socials.linkedIn?.length === 0) ? (
           <div className="w-5 h-12 p-3" />
         ) : (
           <>
@@ -269,7 +269,7 @@ const Speakers = () => {
   return (
     <section
       id="speakers"
-      className="flex flex-col items-center justify-center w-[calc(100vw-10%)] mt-12 mx-auto px-4 py-12 rounded-3xl bg-cover bg-center sm:bg-[auto_100%]"
+      className="flex flex-col items-center justify-center w-[calc(100vw-10%)] mt-12 mx-auto px-4 py-12 rounded-3xl bg-cover bg-center sm:bg-size-[auto_100%]"
       aria-labelledby="speakers-heading"
       style={{
         backgroundImage: `url(${speakersBackground})`,

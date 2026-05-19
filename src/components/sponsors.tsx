@@ -84,13 +84,13 @@ const Sponsors = () => {
         <img
           src={platinumLeafLeaves}
           alt="Platinum Leaf Left"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
         <a
           href="https://www.revenuecat.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:scale-105 transition-transform duration-200 flex-shrink-0"
+          className="hover:scale-105 transition-transform duration-200 shrink-0"
         >
           <img
             src={revenueCat}
@@ -101,7 +101,7 @@ const Sponsors = () => {
         <img
           src={platinumLeafRight}
           alt="Platinum Leaf Right"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
       </div>
       <div className="h-8 sm:h-14 w-full" />
@@ -121,14 +121,14 @@ const Sponsors = () => {
         <img
           src={goldLeafLeft}
           alt="Gold Leaf Left"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
         <div className="w-3 sm:w-6" />
         <a
           href="https://boxbox.club/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:scale-105 transition-transform duration-200 flex-shrink-0"
+          className="hover:scale-105 transition-transform duration-200 shrink-0"
         >
           <img
             src={boxClub}
@@ -141,7 +141,7 @@ const Sponsors = () => {
           href="https://www.logitech.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+          className="transition-opacity duration-200 shrink-0 hover:opacity-80"
         >
           <img
             src={logitech}
@@ -153,7 +153,7 @@ const Sponsors = () => {
         <img
           src={goldLeafRight}
           alt="Gold Leaf Right"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
       </div>
       <div className="h-8 sm:h-14 w-full" />
@@ -173,14 +173,14 @@ const Sponsors = () => {
         <img
           src={silverLeafLeft}
           alt="Silver Leaf Left"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
         <div className="flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center flex-1 min-w-0 overflow-x-hidden">
           <a
             href="https://www.mercari.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={mercari}
@@ -192,7 +192,7 @@ const Sponsors = () => {
             href="https://www.zoho.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={zoho}
@@ -204,7 +204,7 @@ const Sponsors = () => {
             href="https://signeasy.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={signEasy}
@@ -216,7 +216,7 @@ const Sponsors = () => {
         <img
           src={silverLeafRight}
           alt="Silver Leaf Right"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
       </div>
       <div className="h-8 sm:h-16 w-full" />
@@ -236,14 +236,14 @@ const Sponsors = () => {
         <img
           src={communityLeafLeft}
           alt="Community Leaf Left"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
         <div className="flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 items-center justify-center flex-1 min-w-0 overflow-x-hidden">
           <a
             href="https://www.gratefulness.me/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={gratitude}
@@ -255,7 +255,7 @@ const Sponsors = () => {
             href="https://lookaway.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={lookaway}
@@ -267,7 +267,7 @@ const Sponsors = () => {
             href="https://nunch.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={nunch}
@@ -279,7 +279,7 @@ const Sponsors = () => {
             href="https://teleprompterpro.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-opacity duration-200 flex-shrink-0 hover:opacity-80"
+            className="transition-opacity duration-200 shrink-0 hover:opacity-80"
           >
             <img
               src={teleprompter}
@@ -291,7 +291,7 @@ const Sponsors = () => {
         <img
           src={communityLeafRight}
           alt="Community Leaf Right"
-          className="h-10 sm:h-12 md:h-16 w-auto object-contain flex-shrink-0"
+          className="h-10 sm:h-12 md:h-16 w-auto object-contain shrink-0"
         />
       </div>
       <div className="h-8 sm:h-16 w-full" />

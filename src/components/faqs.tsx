@@ -117,11 +117,10 @@ const Faqs = () => {
               id={`answer-${faq.id}`}
               className={`
                         mt-2 text-gray-700 overflow-hidden transition-[max-height,opacity] duration-300
-                        ${
-                          openId === faq.id
-                            ? "max-h-40 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }
+                        ${openId === faq.id
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
+                }
                     `}
             >
               <div className="py-2 px-1">{faq.answer}</div>
