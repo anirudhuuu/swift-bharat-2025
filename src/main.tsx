@@ -4,7 +4,7 @@ import "@/index.css";
 import TermsAndCondition from "@/pages/terms";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createHashRouter } from "react-router";
+import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import CallForSpeakers from "./pages/call-for-speakers";
 
@@ -14,7 +14,7 @@ const siteRoutes = [
   { path: "terms-and-conditions", element: <TermsAndCondition /> },
 ] as const;
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     children: [...siteRoutes],
