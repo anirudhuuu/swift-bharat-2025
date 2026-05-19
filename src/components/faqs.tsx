@@ -1,4 +1,4 @@
-import faqDividerLogo from "@/assets/svg/faq-divider.svg";
+import faqDividerLogo from "@/assets/2025/svg/faq-divider.svg";
 import { useState } from "react";
 
 const Faqs = () => {

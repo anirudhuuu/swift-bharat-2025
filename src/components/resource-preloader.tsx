@@ -6,8 +6,8 @@ const ResourcePreloader = () => {
     // Preload critical images
     const criticalImages = [
       "/fonts/samankan.TTF",
-      "/src/assets/hero-background.png",
-      "/src/assets/speakers-background.jpg",
+      "/src/assets/2025/hero-background.png",
+      "/src/assets/2025/speakers-background.jpg",
     ];
 
     criticalImages.forEach((src) => {

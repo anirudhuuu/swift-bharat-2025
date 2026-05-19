@@ -1,4 +1,4 @@
-import dateAddressBackground from "@/assets/green-lush-background.png";
+import dateAddressBackground from "@/assets/2025/green-lush-background.png";
 import { Separator } from "@/components/ui/separator";
 
 const Address = () => {
