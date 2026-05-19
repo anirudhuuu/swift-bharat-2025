@@ -29,15 +29,18 @@ const speakers = [
 ] as const;
 
 const Speakers = () => (
-  <section id="speakers" className="px-4 py-16 md:px-8 md:py-24">
-    <div className="mx-auto max-w-[1222px] rounded-[64px] bg-card-accent px-6 py-12 md:rounded-[102px] md:px-12 md:py-16">
+  <section
+    id="speakers"
+    className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24"
+  >
+    <div className="mx-auto w-full max-w-[1222px] rounded-4xl bg-card-accent px-4 py-8 sm:rounded-[3rem] sm:px-6 sm:py-10 md:rounded-[4rem] md:px-10 md:py-14 lg:rounded-[5rem] lg:px-12 lg:py-16 xl:rounded-[6.375rem]">
       <SectionTitle className="mx-auto block w-fit text-center text-lime">
         speakers
       </SectionTitle>
 
-      <ul className="mt-10 grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      <ul className="mt-6 grid grid-cols-1 gap-10 sm:mt-8 sm:grid-cols-2 sm:gap-8 md:mt-10 md:gap-10 lg:grid-cols-3 lg:gap-8">
         {speakers.map((speaker) => (
-          <li key={speaker.firstName}>
+          <li key={speaker.firstName} className="flex justify-center lg:justify-start">
             <SpeakerCard speaker={speaker} />
           </li>
         ))}
@@ -52,15 +55,15 @@ function SpeakerCard({
   speaker: (typeof speakers)[number];
 }) {
   return (
-    <article>
-      <div className="relative mx-auto aspect-244/308 w-full max-w-[244px]">
+    <article className="flex w-full max-w-[280px] flex-col sm:max-w-none">
+      <div className="relative mx-auto aspect-244/308 w-full max-w-44 sm:max-w-54 md:max-w-61">
         <img
           src={stamp}
           alt=""
           className="absolute inset-0 h-full w-full"
           aria-hidden
         />
-        <div className="absolute inset-[10%] overflow-hidden rounded-[26px]">
+        <div className="absolute inset-[10%] overflow-hidden rounded-[18px] sm:rounded-[22px] md:rounded-[26px]">
           <img
             src={speaker.image}
             alt={`${speaker.firstName} ${speaker.lastName}`}
@@ -68,14 +71,14 @@ function SpeakerCard({
           />
         </div>
       </div>
-      <div className="mt-5 text-white">
-        <p className="text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-none">
+      <div className="mt-4 w-full text-white sm:mt-5">
+        <p className="text-3xl font-semibold leading-none sm:text-4xl md:text-5xl lg:text-6xl">
           {speaker.firstName}
         </p>
-        <p className="mt-1 font-speaker-surname text-2xl font-normal leading-10 text-white">
+        <p className="mt-1 font-speaker-surname text-xl font-normal leading-8 text-white sm:text-2xl sm:leading-10">
           {speaker.lastName}
         </p>
-        <p className="mt-2 text-base font-light text-lime md:text-lg">
+        <p className="mt-2 text-sm font-light text-lime sm:text-base md:text-lg">
           {speaker.role}
         </p>
       </div>
