@@ -14,7 +14,7 @@ export function ErrorFallback({
   return (
     <main
       role="alert"
-      className="flex min-h-screen flex-col items-center justify-center bg-brand-green px-6 py-12 text-center font-display text-white"
+      className="flex min-h-screen flex-col items-center justify-center bg-2025-brand-green px-6 py-12 text-center font-display text-white"
     >
       <h1 className="font-samarkan text-3xl md:text-5xl mb-4">{title}</h1>
       <p className="max-w-md text-sm md:text-base text-white/80 mb-8">{message}</p>
@@ -23,14 +23,14 @@ export function ErrorFallback({
           <button
             type="button"
             onClick={onRetry}
-            className="rounded-xl bg-[#F5DB9F] px-6 py-3 text-brand-green font-medium hover:opacity-90 transition-opacity"
+            className="rounded-xl bg-2025-cream px-6 py-3 text-2025-brand-green font-medium hover:opacity-90 transition-opacity"
           >
             Try again
           </button>
         )}
         <a
           href="/"
-          className="rounded-xl bg-[#F5DB9F] px-6 py-3 text-brand-green font-medium hover:opacity-90 transition-opacity"
+          className="rounded-xl bg-2025-cream px-6 py-3 text-2025-brand-green font-medium hover:opacity-90 transition-opacity"
         >
           Go home
         </a>

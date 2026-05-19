@@ -100,13 +100,13 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
       {showNavItems && (
         <>
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex items-center gap-10 text-[#0C0C11] font-light text-lg font-display">
+          <ul className="hidden lg:flex items-center gap-10 text-2025-ink font-light text-lg font-display">
             <NavLinks />
           </ul>
 
           <Button
             onClick={() => scrollToSection("tickets")}
-            className="hidden lg:block bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer hover:opacity-90 transition-opacity"
+            className="hidden lg:block bg-2025-teal text-white py-4 px-10 rounded-xl text-lg font-display font-normal w-44 h-14 cursor-pointer hover:opacity-90 transition-opacity"
           >
             Get Tickets
           </Button>
@@ -118,7 +118,7 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
           >
             <button
               type="button"
-              className="text-[#0D3A3F] focus:outline-none z-50 relative cursor-pointer"
+              className="text-2025-teal focus:outline-none z-50 relative cursor-pointer"
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
@@ -159,7 +159,7 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
 
           {/* Mobile Menu - Full Page with Fade-in Animation */}
           <div
-            className={`fixed inset-0 top-0 left-0 w-full h-full bg-[#F5DB9F] z-40 flex flex-col lg:hidden transition-opacity duration-300 ease-in-out ${menuOpen
+            className={`fixed inset-0 top-0 left-0 w-full h-full bg-2025-cream z-40 flex flex-col lg:hidden transition-opacity duration-300 ease-in-out ${menuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
               }`}
@@ -185,7 +185,7 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
                 : "opacity-0 translate-y-4"
                 }`}
             >
-              <ul className="flex flex-col gap-2 text-[#0C0C11] font-normal text-xl font-display px-3">
+              <ul className="flex flex-col gap-2 text-2025-ink font-normal text-xl font-display px-3">
                 <NavLinks onClick={() => setMenuOpen(false)} />
               </ul>
             </div>
@@ -200,7 +200,7 @@ const Navbar = ({ showNavItems = true }: { showNavItems?: boolean }) => {
                   scrollToSection("tickets");
                   setMenuOpen(false);
                 }}
-                className="bg-[#0D3A3F] text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full hover:opacity-90 transition-opacity"
+                className="bg-2025-teal text-white py-4 px-10 rounded-xl text-lg font-display font-normal h-14 cursor-pointer w-full hover:opacity-90 transition-opacity"
               >
                 Get Tickets
               </Button>

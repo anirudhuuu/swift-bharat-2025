@@ -133,7 +133,7 @@ export const Schedule = () => {
     <div id="schedule" className="w-full">
       <div className="flex flex-col max-w-5xl mx-auto items-center">
         <div className="h-12"></div>
-        <h2 className="font-display text-4xl sm:text-5xl font-bold text-brand-green mb-4">
+        <h2 className="font-display text-4xl sm:text-5xl font-bold text-2025-brand-green mb-4">
           Schedule
         </h2>
       </div>
@@ -154,18 +154,18 @@ export const Schedule = () => {
         </div>
         <div className="flex flex-col max-w-5xl mx-auto items-center">
           <Tabs defaultValue={getDefaultTab()} className="items-center w-full">
-            <TabsList className="bg-[#FCE5AF] p-1 mb-4 rounded-xl">
+            <TabsList className="bg-2025-cream-light p-1 mb-4 rounded-xl">
               <TabsTrigger
                 key="sep-26"
                 value="sep-26"
-                className="font-light rounded-md text-brand-green/60 data-[state=active]:bg-brand-green data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
+                className="font-light rounded-md text-2025-brand-green/60 data-[state=active]:bg-2025-brand-green data-[state=active]:text-2025-cream-light px-4 py-1 capitalize cursor-pointer"
               >
                 Sep 26
               </TabsTrigger>
               <TabsTrigger
                 key="sep-27"
                 value="sep-27"
-                className="font-light rounded-md text-brand-green/60 data-[state=active]:bg-brand-green data-[state=active]:text-[#FCE5AF] px-4 py-1 capitalize cursor-pointer"
+                className="font-light rounded-md text-2025-brand-green/60 data-[state=active]:bg-2025-brand-green data-[state=active]:text-2025-cream-light px-4 py-1 capitalize cursor-pointer"
               >
                 Sep 27
               </TabsTrigger>
@@ -195,37 +195,37 @@ const ScheduleItem = ({
   scheduleData: ScheduleItemType[];
 }) => {
   return (
-    <Card className="bg-[#FCE5AF] border-[#FCE5AF] shadow-md pt-1.5">
+    <Card className="bg-2025-cream-light border-2025-cream-light shadow-md pt-1.5">
       <CardContent className="p-0">
-        <div className="bg-[#FCE5AF] border-b-2 border-brand-green/20">
+        <div className="bg-2025-cream-light border-b-2 border-2025-brand-green/20">
           <div className="grid grid-cols-[1fr_2fr] px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-            <div className="font-bold text-brand-green text-sm sm:text-base lg:text-lg">
+            <div className="font-bold text-2025-brand-green text-sm sm:text-base lg:text-lg">
               Time
             </div>
-            <div className="font-bold text-brand-green text-sm sm:text-base lg:text-lg border-l border-brand-green/20 pl-4 sm:pl-6 lg:pl-8">
+            <div className="font-bold text-2025-brand-green text-sm sm:text-base lg:text-lg border-l border-2025-brand-green/20 pl-4 sm:pl-6 lg:pl-8">
               Session
             </div>
           </div>
         </div>
-        <div className="bg-[#FCE5AF]">
+        <div className="bg-2025-cream-light">
           {scheduleData.map((item, index) => (
             <div
               key={index}
               className={`grid grid-cols-[1fr_2fr] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 ${index !== scheduleData.length - 1
-                ? "border-b border-brand-green/15"
+                ? "border-b border-2025-brand-green/15"
                 : ""
                 }`}
             >
-              <div className="text-brand-green text-xs sm:text-sm lg:text-base">
+              <div className="text-2025-brand-green text-xs sm:text-sm lg:text-base">
                 {item.time}
               </div>
-              <div className="flex flex-col border-l border-brand-green/20 pl-4 sm:pl-6 lg:pl-8">
-                <span className="text-brand-green text-xs sm:text-sm lg:text-base">
+              <div className="flex flex-col border-l border-2025-brand-green/20 pl-4 sm:pl-6 lg:pl-8">
+                <span className="text-2025-brand-green text-xs sm:text-sm lg:text-base">
                   {item.session}
                 </span>
                 {item.topic && (
                   <span
-                    className={`text-brand-green text-xs sm:text-sm lg:text-base mt-1 ${item.isCursive ? "italic" : ""
+                    className={`text-2025-brand-green text-xs sm:text-sm lg:text-base mt-1 ${item.isCursive ? "italic" : ""
                       }`}
                   >
                     {item.topic}

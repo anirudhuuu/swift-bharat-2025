@@ -26,16 +26,32 @@
   --text-body-mobile: 16px;
   --text-caption-mobile: 14px;
 
-  /* Colors */
-  --color-background: #f5db9f;
-  --color-primary: #000000;
-  --color-secondary: #000000/60;
-  --color-brand-green: #053020;
-  --color-brand-orange: #cb6a31;
+  /*
+   * Swift Bharat 2025 — archived palette
+   * Use Tailwind utilities: bg-2025-brand-green, text-2025-cream, etc.
+   * Or wrap content in .site-2025 to alias legacy names (brand-green, …).
+   */
+  --color-2025-background: #f5db9f;
+  --color-2025-cream: #f5db9f;
+  --color-2025-cream-light: #fce5af;
+  --color-2025-cream-hover: #fce5af;
+  --color-2025-cream-soft: #fce5afcc;
+  --color-2025-brand-green: #053020;
+  --color-2025-teal: #0d3a3f;
+  --color-2025-forest: #0a451c;
+  --color-2025-brand-orange: #cb6a31;
+  --color-2025-gold: #fbdd93;
+  --color-2025-ink: #0c0c11;
+  --color-2025-sand: #faf8f5;
 }
 
-body {
-  background-color: #f5db9f;
+/* Remap legacy utility names inside the 2025 site shell only */
+.site-2025 {
+  --color-background: var(--color-2025-background);
+  --color-brand-green: var(--color-2025-brand-green);
+  --color-brand-orange: var(--color-2025-brand-orange);
+  background-color: var(--color-2025-background);
+  color: var(--color-2025-ink);
 }
 
 @theme inline {
