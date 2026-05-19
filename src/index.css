@@ -44,6 +44,9 @@
   --color-2025-ink: #0c0c11;
   --color-2025-sand: #faf8f5;
 
+  /* Swift Bharat 2026 — body/UI text (scoped via .site-2026 in fonts.css) */
+  --font-2026-sans: "Google Sans Flex", system-ui, sans-serif;
+
   /* Swift Bharat — main site palette */
   --color-lime: #d9ff00;
   --color-footer: #1a1a1a;
