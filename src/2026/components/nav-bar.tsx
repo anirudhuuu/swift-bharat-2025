@@ -1,35 +1,156 @@
+import navDivider from "@/assets/2025/svg/nav-divider.svg";
 import swiftLogo from "@/assets/2026/svg/swift-logo.svg";
+import { Fragment, useEffect, useState } from "react";
 
-const navLinks = [
-  { label: "Schedule", href: "#about" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "About", href: "#about" },
-  { label: "Sponsors", href: "#sponsors" },
-  { label: "Venue", href: "#venue" },
+const navItems = [
+  { label: "About", sectionId: "about" },
+  { label: "Speakers", sectionId: "speakers" },
+  { label: "Schedule", sectionId: "about" },
+  { label: "Sponsors", sectionId: "sponsors" },
+  { label: "Venue", sectionId: "venue" },
 ] as const;
 
-const NavBar = () => (
-  <header className="absolute inset-x-0 top-0 z-50 px-6 py-5 md:px-12">
-    <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6">
-      <a
-        href="#"
-        className="flex items-center gap-2 text-lg font-bold text-foreground"
-      >
-        <img src={swiftLogo} alt="" className="h-12 w-12 object-contain" />
-        <span>Swift Bharat</span>
-      </a>
-      <nav
-        aria-label="Main"
-        className="hidden items-center gap-6 text-lg font-medium text-foreground md:flex"
-      >
-        {navLinks.map((link) => (
-          <a key={link.href} href={link.href} className="hover:opacity-70">
-            {link.label}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </header>
+const scrollToSection = (sectionId: string) => {
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+};
+
+const NavLinks = ({ onNavigate }: { onNavigate?: () => void }) => (
+  <>
+    {navItems.map((item, index) => (
+      <Fragment key={item.label}>
+        <img
+          src={navDivider}
+          alt=""
+          className="block w-full max-w-[280px] opacity-40 lg:hidden"
+          aria-hidden
+        />
+        <li>
+          <button
+            type="button"
+            onClick={() => {
+              scrollToSection(item.sectionId);
+              onNavigate?.();
+            }}
+            className="w-full cursor-pointer text-left text-lg font-medium transition-opacity hover:opacity-70 lg:w-auto"
+          >
+            {item.label}
+          </button>
+        </li>
+        {index === navItems.length - 1 && (
+          <img
+            src={navDivider}
+            alt=""
+            className="block w-full max-w-[280px] opacity-40 lg:hidden"
+            aria-hidden
+          />
+        )}
+      </Fragment>
+    ))}
+  </>
 );
+
+const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const goToTickets = () => {
+    scrollToSection("tickets");
+    setMenuOpen(false);
+  };
+
+  return (
+    <header className="absolute inset-x-0 top-0 z-50 px-4 py-4 sm:px-6 sm:py-5 md:px-12">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4">
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("about");
+          }}
+          className="flex shrink-0 items-center gap-2 text-base font-bold text-foreground sm:text-lg"
+        >
+          <img src={swiftLogo} alt="" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
+          <span>Swift Bharat</span>
+        </a>
+
+        <nav
+          aria-label="Main"
+          className="hidden items-center gap-8 text-lg font-medium text-foreground lg:flex"
+        >
+          <ul className="flex items-center gap-8">
+            <NavLinks />
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          className="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center lg:hidden"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <svg
+            width="25"
+            height="14"
+            viewBox="0 0 25 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <line
+              x1="0"
+              y1="1.23438"
+              x2="25"
+              y2="1.23438"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className={`origin-center transition-all duration-300 ${menuOpen ? "translate-y-[6px] rotate-45" : ""
+                }`}
+            />
+            <line
+              x1="0"
+              y1="13.2344"
+              x2="25"
+              y2="13.2344"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className={`origin-center transition-all duration-300 ${menuOpen ? "translate-y-[-6px] -rotate-45" : ""
+                }`}
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        className={`fixed inset-0 z-40 flex flex-col bg-background transition-opacity duration-300 lg:hidden ${menuOpen
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
+          }`}
+        aria-hidden={!menuOpen}
+      >
+        <div className="flex flex-1 flex-col items-center justify-center px-6">
+          <ul className="flex w-full max-w-sm flex-col items-stretch gap-1">
+            <NavLinks onNavigate={() => setMenuOpen(false)} />
+          </ul>
+        </div>
+        <div className="p-6">
+          <button
+            type="button"
+            onClick={goToTickets}
+            className="flex h-14 w-full cursor-pointer items-center justify-center rounded-full bg-foreground text-lg font-semibold text-background transition-opacity hover:opacity-90"
+          >
+            Get Tickets
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
 
 export default NavBar;

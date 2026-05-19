@@ -3,7 +3,10 @@ import swiftBharatTitle from "@/assets/2026/hero/swift-bharat-title.svg";
 import ticketSea from "@/assets/2026/hero/ticket-seat.svg";
 
 const Hero = () => (
-  <section className="relative overflow-x-hidden bg-background pt-20">
+  <section
+    id="about"
+    className="relative overflow-x-hidden bg-background pt-20"
+  >
     <div className="relative z-20 w-full">
       <img
         src={heroBuildingSealink}
@@ -37,10 +40,7 @@ const Hero = () => (
         id="venue"
         className="absolute inset-0 z-10 mx-auto grid max-w-[1440px] grid-cols-1 items-start px-6 pt-[32%] sm:items-center sm:pt-[34%] md:grid-cols-2 md:items-start md:px-16 md:pt-[34%] lg:px-24 lg:pt-[36%] xl:pt-[38%] 2xl:pt-[40%]"
       >
-        <div
-          id="about"
-          className="w-fit max-w-[min(calc(100vw-3rem),20rem)] text-ink sm:min-w-48 sm:max-w-68 md:min-w-[16rem] md:max-w-xs lg:min-w-[18rem] lg:max-w-sm xl:max-w-md 2xl:max-w-lg"
-        >
+        <div className="w-fit max-w-[min(calc(100vw-3rem),20rem)] text-ink sm:min-w-48 sm:max-w-68 md:min-w-[16rem] md:max-w-xs lg:min-w-[18rem] lg:max-w-sm xl:max-w-md 2xl:max-w-lg">
           <p className="text-[2.75rem] font-bold leading-[0.9] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             19-20
           </p>
