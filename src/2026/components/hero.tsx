@@ -1,4 +1,4 @@
-import heroBuildingSealink from "@/assets/2026/hero/hero-building-sealink.png";
+import heroBuildingSealink from "@/assets/2026/hero/hero-building-sealink.webp";
 import swiftBharatTitle from "@/assets/2026/hero/swift-bharat-title.svg";
 import ticketSea from "@/assets/2026/hero/ticket-seat.svg";
 
