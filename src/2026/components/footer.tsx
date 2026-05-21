@@ -75,7 +75,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="max-w-[245px] leading-relaxed">
-              Bengaluru International Convention Center, 10th Mile, Tumkur Road, Bengaluru
+              Yashwantrao Chavan Center, Mumbai
             </li>
           </ul>
         </div>
