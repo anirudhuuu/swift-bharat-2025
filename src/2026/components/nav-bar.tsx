@@ -65,7 +65,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 px-4 py-4 sm:px-6 sm:py-5 md:px-12">
+    <header className="absolute inset-x-0 top-0 z-50 px-4 pb-4 pt-6 sm:px-6 sm:pb-5 sm:pt-7 md:px-12 md:pt-8">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4">
         <a
           href="#about"
@@ -73,9 +73,13 @@ const NavBar = () => {
             e.preventDefault();
             scrollToSection("about");
           }}
-          className="flex shrink-0 items-center gap-2 text-base font-bold text-foreground sm:text-lg"
+          className="flex shrink-0 items-center gap-3 text-lg font-semibold text-foreground sm:gap-3.5 sm:text-xl md:text-2xl"
         >
-          <img src={swiftLogo} alt="" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
+          <img
+            src={swiftLogo}
+            alt=""
+            className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+          />
           <span>Swift Bharat</span>
         </a>
 
