@@ -5,23 +5,21 @@ import speaker1_3x from "@/assets/2026/speakers/speaker-1@3x.webp";
 import speaker2 from "@/assets/2026/speakers/speaker-2.webp";
 import speaker2_2x from "@/assets/2026/speakers/speaker-2@2x.webp";
 import speaker2_3x from "@/assets/2026/speakers/speaker-2@3x.webp";
-import speaker3 from "@/assets/2026/speakers/speaker-3.webp";
+import speaker3 from "@/assets/2026/speakers/speaker-3@1x.webp";
+import speaker3_2x from "@/assets/2026/speakers/speaker-3@2x.webp";
+import speaker3_3x from "@/assets/2026/speakers/speaker-3@3x.webp";
 import stamp from "@/assets/2026/svg/stamp.svg";
 
-/** Shared card + stamp width (176px → 216px → 244px). */
-const SPEAKER_CARD_CLASS = "w-full max-w-44 sm:max-w-54 md:max-w-61";
+/** Shared card + stamp width (208px → 256px → 288px). */
+const SPEAKER_CARD_CLASS = "w-full max-w-52 sm:max-w-64 md:max-w-72";
 
 /** Display width of the photo frame (matches SPEAKER_CARD_CLASS). */
 const SPEAKER_PHOTO_SIZES =
-  "(max-width: 640px) 176px, (max-width: 768px) 216px, 244px";
+  "(max-width: 640px) 208px, (max-width: 768px) 256px, 288px";
 
 /** Speakers 1–2: 196×254 @1x, 392×508 @2x, 588×762 @3x */
 const SPEAKER_12_WIDTH = 196;
 const SPEAKER_12_HEIGHT = 254;
-
-/** Speaker 3: 277×264 (1x only) */
-const SPEAKER_3_WIDTH = 277;
-const SPEAKER_3_HEIGHT = 264;
 
 type ResponsiveImage = {
   src: string;
@@ -54,7 +52,7 @@ const speakers = [
   {
     firstName: "Donny",
     lastName: "Wals",
-    role: "Indie app developer, consultant, and content creator",
+    role: "Indie Developer, Consultant, and Content Creator",
     imagePosition: "object-[18%_center]",
     image: responsiveSpeakerPhoto(
       speaker1,
@@ -67,7 +65,7 @@ const speakers = [
   {
     firstName: "Monika",
     lastName: "Mateska",
-    role: "Software engineer, RevenueCat",
+    role: "Software engineer at RevenueCat & Conference organizer",
     imagePosition: "object-[48%_center]",
     image: responsiveSpeakerPhoto(
       speaker2,
@@ -80,12 +78,14 @@ const speakers = [
   {
     firstName: "Marcin",
     lastName: "Krzyzanowski",
-    role: "Founder of Hacking With Swift",
+    role: "Open Source, building Notepad.exe & senior engineer GoodNotes",
     imagePosition: "object-[78%_center]",
     image: responsiveSpeakerPhoto(
       speaker3,
-      SPEAKER_3_WIDTH,
-      SPEAKER_3_HEIGHT,
+      SPEAKER_12_WIDTH,
+      SPEAKER_12_HEIGHT,
+      speaker3_2x,
+      speaker3_3x,
     ),
   },
 ] as const;
