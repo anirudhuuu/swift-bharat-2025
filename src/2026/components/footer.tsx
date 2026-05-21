@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-footer px-6 py-14 text-white md:px-12 md:py-16">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div>
           <p className="text-2xl font-bold">Swift Bharat</p>
           <p className="mt-4 max-w-xs text-sm leading-snug text-white/80">
@@ -58,6 +58,22 @@ const Footer = () => {
           </ul>
         </nav>
 
+        <nav aria-label="Built by">
+          <p className="font-bold">Built by</p>
+          <ul className="mt-4 flex flex-col gap-2 text-sm text-white/80">
+            <li>
+              <a
+                href="https://anirudhjwala.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-lime"
+              >
+                Anirudh Jwala
+              </a>
+            </li>
+          </ul>
+        </nav>
+
         <div>
           <p className="font-bold">Get in touch</p>
           <ul className="mt-4 flex flex-col gap-2 text-sm text-white/80">
@@ -75,7 +91,14 @@ const Footer = () => {
               </a>
             </li>
             <li className="max-w-[245px] leading-relaxed">
-              Yashwantrao Chavan Center, Mumbai
+              <a
+                href="https://maps.app.goo.gl/1STD2hQbhK6v4aZx8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-lime"
+              >
+                Yashwantrao Chavan Center, Mumbai
+              </a>
             </li>
           </ul>
         </div>
