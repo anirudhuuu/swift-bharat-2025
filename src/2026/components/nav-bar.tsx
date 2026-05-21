@@ -3,7 +3,7 @@ import swiftLogo from "@/assets/2026/svg/swift-logo.svg";
 import { Fragment, useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Schedule", sectionId: "about" },
+  { label: "Schedule", sectionId: "schedule" },
   { label: "Speakers", sectionId: "speakers" },
   { label: "About", sectionId: "about" },
   { label: "Sponsors", sectionId: "sponsors" },
