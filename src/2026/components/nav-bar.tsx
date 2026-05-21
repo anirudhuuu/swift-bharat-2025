@@ -3,9 +3,9 @@ import swiftLogo from "@/assets/2026/svg/swift-logo.svg";
 import { Fragment, useEffect, useState } from "react";
 
 const navItems = [
-  { label: "About", sectionId: "about" },
-  { label: "Speakers", sectionId: "speakers" },
   { label: "Schedule", sectionId: "about" },
+  { label: "Speakers", sectionId: "speakers" },
+  { label: "About", sectionId: "about" },
   { label: "Sponsors", sectionId: "sponsors" },
   { label: "Venue", sectionId: "venue" },
 ] as const;

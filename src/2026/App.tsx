@@ -5,12 +5,14 @@ import NavBar from "@/2026/components/nav-bar";
 import Speakers from "@/2026/components/speakers";
 import Sponsors from "@/2026/components/sponsors";
 import Tickets from "@/2026/components/tickets";
+import Venue from "./components/venue";
 
 const App = () => (
   <div className="flex min-h-screen flex-col bg-background text-foreground">
     <NavBar />
     <main>
       <Hero />
+      <Venue />
       <Speakers />
       <Tickets />
       <Sponsors />
