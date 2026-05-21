@@ -108,10 +108,18 @@ const Speakers = () => (
         ))}
       </ul>
 
-      <div className="mt-12 w-full text-center">
+      <div className="mt-12 flex w-full flex-col items-center text-center">
         <span className="font-speaker-surname text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl">
           Announcing more soon...
         </span>
+        <a
+          href="https://www.papercall.io/swiftbharat-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 flex h-12 w-full max-w-xs cursor-pointer items-center justify-center rounded-2xl bg-white px-8 text-base font-bold text-foreground transition-opacity hover:opacity-90 sm:mt-12 sm:h-14 sm:max-w-sm sm:text-lg md:mt-14 md:h-16 md:text-xl"
+        >
+          Apply to speak
+        </a>
       </div>
     </div>
   </section>
