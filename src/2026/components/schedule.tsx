@@ -66,7 +66,7 @@ const Schedule = () => {
                     aria-labelledby={`schedule-tab-${activeDay}`}
                     className="mt-32 w-full text-center"
                 >
-                    <span className="font-speaker-surname text-[clamp(2.25rem,10vw,5rem)] font-bold leading-tight text-ink">
+                    <span className="font-gochi-hand text-[clamp(2.25rem,10vw,5rem)] leading-tight text-ink">
                         Announcing soon...
                     </span>
                 </div>
