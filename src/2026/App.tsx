@@ -14,9 +14,9 @@ const App = () => (
     <main>
       <Hero />
       <Venue />
+      <Tickets />
       <Speakers />
       <Schedule />
-      <Tickets />
       <Sponsors />
       <Faqs />
     </main>

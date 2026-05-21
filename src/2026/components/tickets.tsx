@@ -1,5 +1,6 @@
 import SectionTitle from "@/2026/components/section-title";
 import TicketCardShell from "@/2026/components/ticket-card-shell";
+import TicketCardShellLimited from "@/2026/components/ticket-card-shell-limited";
 import { useId, useRef, useState } from "react";
 
 const ticketFeatures = [
@@ -35,16 +36,18 @@ const buildKonfhubUrl = (ticketsId: string, ticketId: string) => {
 
 const tickets = [
   {
-    title: "Early Bird",
+    title: "Super Early Bird",
     currency: "₹",
     amount: "4,999",
     konfhubUrl: buildKonfhubUrl("101764", "101764|1"),
+    limited: true,
   },
   {
     title: "Regular Ticket",
     currency: "₹",
     amount: "5,999",
     konfhubUrl: buildKonfhubUrl("101765", "101765|1"),
+    limited: false,
   },
 ] as const;
 
@@ -63,7 +66,7 @@ const Tickets = () => {
       className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[944px]">
-        <SectionTitle className="text-center">get your tickets</SectionTitle>
+        <SectionTitle className="text-center">get your ticket</SectionTitle>
 
         <div className="mt-6 grid grid-cols-1 justify-items-center gap-6 sm:mt-8 sm:gap-8 md:mt-10 md:grid-cols-2 md:gap-8 lg:mt-12">
           {tickets.map((ticket) => (
@@ -127,7 +130,11 @@ function TicketCard({
 
   return (
     <article className="relative w-full max-w-70 sm:max-w-[20rem] md:max-w-90 lg:max-w-103.25">
-      <TicketCardShell gradientId={gradientId} className="h-auto w-full" />
+      {ticket.limited ? (
+        <TicketCardShellLimited gradientId={gradientId} className="h-auto w-full" />
+      ) : (
+        <TicketCardShell gradientId={gradientId} className="h-auto w-full" />
+      )}
 
       <div className="absolute inset-0 flex flex-col">
         <div className="flex flex-col items-center px-[7%] pt-[10%] text-center sm:pt-[12%]">
@@ -153,13 +160,13 @@ function TicketCard({
 
         <div className="min-h-0 flex-1" aria-hidden />
 
-        <div className="h-12 shrink-0 sm:h-14 md:h-16 lg:h-18" aria-hidden />
+        <div className="h-6 shrink-0 sm:h-8 md:h-10 lg:h-12" aria-hidden />
 
-        <div className="px-[6%] pb-[3.5%] sm:pb-[4%]">
+        <div className="px-[6%] pb-[4%] sm:pb-[4.5%]">
           <button
             type="button"
             onClick={onBuyNow}
-            className="flex h-12 w-full cursor-pointer items-center justify-center rounded-full bg-white text-base font-bold text-foreground transition-opacity hover:opacity-90 sm:h-14 sm:text-lg md:h-16 md:text-xl lg:h-18 lg:text-2xl"
+            className="flex h-12 w-full cursor-pointer items-center justify-center rounded-2xl bg-white text-base font-bold text-foreground transition-opacity hover:opacity-90 sm:h-14 sm:text-lg md:h-16 md:text-xl lg:h-18 lg:text-2xl"
           >
             Buy Now
           </button>
