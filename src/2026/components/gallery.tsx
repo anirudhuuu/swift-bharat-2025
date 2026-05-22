@@ -14,8 +14,9 @@ import gallery8 from "@/assets/2026/gallery/8.webp";
 import gallery9 from "@/assets/2026/gallery/9.webp";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
 const EMBLA_OPTIONS = {
     loop: true,
@@ -129,37 +130,212 @@ const GALLERY_SLIDES: GallerySlide[] = [
     makeSlide(13, 1, 2, 3),
 ];
 
+const ALL_GALLERY_IMAGES: GalleryImage[] = (
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const
+).map((key) => GALLERY_IMAGE_ENTRIES[key]);
+
+const SINGLE_IMAGE_GALLERY_SLIDES = ALL_GALLERY_IMAGES;
+
+const DESKTOP_GALLERY_MEDIA_QUERY = "(min-width: 1024px)";
+
+function useIsDesktopGallery() {
+    const [isDesktop, setIsDesktop] = useState(
+        () =>
+            typeof window !== "undefined" &&
+            window.matchMedia(DESKTOP_GALLERY_MEDIA_QUERY).matches,
+    );
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia(DESKTOP_GALLERY_MEDIA_QUERY);
+        const onChange = () => setIsDesktop(mediaQuery.matches);
+        onChange();
+        mediaQuery.addEventListener("change", onChange);
+        return () => mediaQuery.removeEventListener("change", onChange);
+    }, []);
+
+    return isDesktop;
+}
+
 const GALLERY_IMAGE_CLASS =
     "absolute inset-0 h-full w-full object-cover";
+
+const MOBILE_IMAGE_HEIGHT_CLASS =
+    "relative h-[min(62vw,32rem)] min-h-72 w-full overflow-hidden rounded-2xl bg-ink sm:min-h-80";
+
+function findGalleryImageIndex(image: GalleryImage) {
+    return ALL_GALLERY_IMAGES.findIndex((entry) => entry.src === image.src);
+}
+
+type GalleryImageButtonProps = {
+    image: GalleryImage;
+    isActive: boolean;
+    onOpen: (image: GalleryImage) => void;
+    className?: string;
+};
+
+const GalleryImageButton = memo(function GalleryImageButton({
+    image,
+    isActive,
+    onOpen,
+    className,
+}: GalleryImageButtonProps) {
+    return (
+        <button
+            type="button"
+            onClick={() => onOpen(image)}
+            className={cn(
+                "relative block w-full cursor-zoom-in overflow-hidden bg-ink transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+                className,
+            )}
+            aria-label={`View ${image.alt} fullscreen`}
+        >
+            <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className={GALLERY_IMAGE_CLASS}
+                loading={isActive ? "eager" : "lazy"}
+                decoding={isActive ? "sync" : "async"}
+                fetchPriority={isActive ? "high" : "low"}
+                draggable={false}
+            />
+        </button>
+    );
+});
+
+type GalleryLightboxProps = {
+    imageIndex: number;
+    onClose: () => void;
+    onPrev: () => void;
+    onNext: () => void;
+};
+
+function GalleryLightbox({
+    imageIndex,
+    onClose,
+    onPrev,
+    onNext,
+}: GalleryLightboxProps) {
+    const image = ALL_GALLERY_IMAGES[imageIndex];
+    const positionLabel = `${imageIndex + 1} of ${ALL_GALLERY_IMAGES.length}`;
+
+    useEffect(() => {
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") onClose();
+            if (event.key === "ArrowLeft") onPrev();
+            if (event.key === "ArrowRight") onNext();
+        };
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        window.addEventListener("keydown", onKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener("keydown", onKeyDown);
+        };
+    }, [onClose, onPrev, onNext]);
+
+    return createPortal(
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 sm:p-8"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gallery image preview"
+            onClick={onClose}
+        >
+            <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close preview"
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:top-6 sm:right-6"
+            >
+                <X className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} aria-hidden />
+            </button>
+
+            <p className="absolute top-5 left-1/2 z-10 -translate-x-1/2 text-sm text-white/70 sm:top-7">
+                {positionLabel}
+            </p>
+
+            <button
+                type="button"
+                onClick={(event) => {
+                    event.stopPropagation();
+                    onPrev();
+                }}
+                aria-label="Previous image"
+                className="absolute top-1/2 left-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-4 sm:h-12 sm:w-12"
+            >
+                <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} aria-hidden />
+            </button>
+
+            <button
+                type="button"
+                onClick={(event) => {
+                    event.stopPropagation();
+                    onNext();
+                }}
+                aria-label="Next image"
+                className="absolute top-1/2 right-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-4 sm:h-12 sm:w-12"
+            >
+                <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} aria-hidden />
+            </button>
+
+            <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="max-h-[calc(100vh-2rem)] max-w-full object-contain"
+                onClick={(event) => event.stopPropagation()}
+                draggable={false}
+            />
+        </div>,
+        document.body,
+    );
+}
+
+const GallerySingleImage = memo(function GallerySingleImage({
+    image,
+    isActive,
+    onImageClick,
+}: {
+    image: GalleryImage;
+    isActive: boolean;
+    onImageClick: (image: GalleryImage) => void;
+}) {
+    return (
+        <GalleryImageButton
+            image={image}
+            isActive={isActive}
+            onOpen={onImageClick}
+            className={MOBILE_IMAGE_HEIGHT_CLASS}
+        />
+    );
+});
 
 const GalleryBentoGrid = memo(function GalleryBentoGrid({
     images,
     isActive,
+    onImageClick,
 }: {
     images: GallerySlide["images"];
     isActive: boolean;
+    onImageClick: (image: GalleryImage) => void;
 }) {
     return (
         <div
             className={cn(BENTO_GRID_HEIGHT_CLASS, getBentoGridClass([...images]))}
         >
             {images.map((image, index) => (
-                <div
+                <GalleryImageButton
                     key={`${image.src}-${index}`}
-                    className="relative min-h-0 overflow-hidden rounded-2xl bg-ink md:rounded-3xl"
-                >
-                    <img
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className={GALLERY_IMAGE_CLASS}
-                        loading={isActive ? "eager" : "lazy"}
-                        decoding={isActive ? "sync" : "async"}
-                        fetchPriority={isActive ? "high" : "low"}
-                        draggable={false}
-                    />
-                </div>
+                    image={image}
+                    isActive={isActive}
+                    onOpen={onImageClick}
+                    className="min-h-0 rounded-2xl md:rounded-3xl"
+                />
             ))}
         </div>
     );
@@ -202,13 +378,53 @@ function CarouselNavButton({
 }
 
 const Gallery = () => {
+    const isDesktop = useIsDesktopGallery();
+    const slideCount = isDesktop
+        ? GALLERY_SLIDES.length
+        : SINGLE_IMAGE_GALLERY_SLIDES.length;
+
     const [emblaRef, emblaApi] = useEmblaCarousel(EMBLA_OPTIONS);
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+    const openLightbox = useCallback((image: GalleryImage) => {
+        const index = findGalleryImageIndex(image);
+        if (index >= 0) setLightboxIndex(index);
+    }, []);
+
+    const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+
+    const showLightboxPrev = useCallback(() => {
+        setLightboxIndex(
+            (index) =>
+                index === null
+                    ? null
+                    : (index - 1 + ALL_GALLERY_IMAGES.length) %
+                    ALL_GALLERY_IMAGES.length,
+        );
+    }, []);
+
+    const showLightboxNext = useCallback(() => {
+        setLightboxIndex(
+            (index) =>
+                index === null
+                    ? null
+                    : (index + 1) % ALL_GALLERY_IMAGES.length,
+        );
+    }, []);
 
     const slidesInView = useMemo(
-        () => getNeighborSlideIndices(selectedIndex, GALLERY_SLIDES.length),
-        [selectedIndex],
+        () => getNeighborSlideIndices(selectedIndex, slideCount),
+        [selectedIndex, slideCount],
     );
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        emblaApi.reInit();
+        if (emblaApi.selectedScrollSnap() >= slideCount) {
+            emblaApi.scrollTo(0);
+        }
+    }, [isDesktop, emblaApi, slideCount]);
 
     const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -251,30 +467,65 @@ const Gallery = () => {
                             aria-roledescription="carousel"
                         >
                             <div className="flex touch-pan-y backface-hidden will-change-transform">
-                                {GALLERY_SLIDES.map((slide, slideIndex) => {
-                                    const isRendered = slidesInView.has(slideIndex);
-                                    const isActive = slideIndex === selectedIndex;
+                                {!isDesktop &&
+                                    SINGLE_IMAGE_GALLERY_SLIDES.map((image, slideIndex) => {
+                                        const isRendered =
+                                            slidesInView.has(slideIndex);
+                                        const isActive =
+                                            slideIndex === selectedIndex;
 
-                                    return (
-                                        <div
-                                            key={slideIndex}
-                                            className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
-                                            role="group"
-                                            aria-roledescription="slide"
-                                            aria-label={`${slideIndex + 1} of ${GALLERY_SLIDES.length}`}
-                                            aria-hidden={!isActive}
-                                        >
-                                            {isRendered ? (
-                                                <GalleryBentoGrid
-                                                    images={slide.images}
-                                                    isActive={isActive}
-                                                />
-                                            ) : (
-                                                <GallerySlidePlaceholder />
-                                            )}
-                                        </div>
-                                    );
-                                })}
+                                        return (
+                                            <div
+                                                key={image.src}
+                                                className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
+                                                role="group"
+                                                aria-roledescription="slide"
+                                                aria-label={`${slideIndex + 1} of ${slideCount}`}
+                                                aria-hidden={!isActive}
+                                            >
+                                                {isRendered ? (
+                                                    <GallerySingleImage
+                                                        image={image}
+                                                        isActive={isActive}
+                                                        onImageClick={openLightbox}
+                                                    />
+                                                ) : (
+                                                    <div
+                                                        className={MOBILE_IMAGE_HEIGHT_CLASS}
+                                                        aria-hidden
+                                                    />
+                                                )}
+                                            </div>
+                                        );
+                                    })}
+                                {isDesktop &&
+                                    GALLERY_SLIDES.map((slide, slideIndex) => {
+                                        const isRendered =
+                                            slidesInView.has(slideIndex);
+                                        const isActive =
+                                            slideIndex === selectedIndex;
+
+                                        return (
+                                            <div
+                                                key={slideIndex}
+                                                className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
+                                                role="group"
+                                                aria-roledescription="slide"
+                                                aria-label={`${slideIndex + 1} of ${slideCount}`}
+                                                aria-hidden={!isActive}
+                                            >
+                                                {isRendered ? (
+                                                    <GalleryBentoGrid
+                                                        images={slide.images}
+                                                        isActive={isActive}
+                                                        onImageClick={openLightbox}
+                                                    />
+                                                ) : (
+                                                    <GallerySlidePlaceholder />
+                                                )}
+                                            </div>
+                                        );
+                                    })}
                             </div>
                         </div>
 
@@ -286,7 +537,7 @@ const Gallery = () => {
                         role="tablist"
                         aria-label="Gallery slides"
                     >
-                        {GALLERY_SLIDES.map((_, index) => {
+                        {Array.from({ length: slideCount }, (_, index) => {
                             const isActive = selectedIndex === index;
                             return (
                                 <button
@@ -308,6 +559,15 @@ const Gallery = () => {
                     </div>
                 </div>
             </div>
+
+            {lightboxIndex !== null && (
+                <GalleryLightbox
+                    imageIndex={lightboxIndex}
+                    onClose={closeLightbox}
+                    onPrev={showLightboxPrev}
+                    onNext={showLightboxNext}
+                />
+            )}
         </section>
     );
 };
