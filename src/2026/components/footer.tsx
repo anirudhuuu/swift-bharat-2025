@@ -64,12 +64,22 @@ const Footer = () => {
             <ul className="mt-4 flex flex-col gap-2 text-sm text-white/80">
               <li>
                 <a
+                  href="https://x.com/arkade_club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-lime"
+                >
+                  Arkade Club ~ Design
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://x.com/nirudhuuu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-lime"
                 >
-                  Anirudh Jwala
+                  Anirudh Jwala ~ Code
                 </a>
               </li>
             </ul>
