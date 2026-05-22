@@ -1,12 +1,16 @@
 import { useSiteRoutes } from "@/lib/use-site-routes";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "Schedule", href: "#schedule" },
-  { label: "Tickets", href: "#tickets" },
+  { label: "About", sectionId: "about" },
+  { label: "Speakers", sectionId: "speakers" },
+  { label: "Schedule", sectionId: "schedule" },
+  { label: "Tickets", sectionId: "tickets" },
 ] as const;
+
+const scrollToSection = (sectionId: string) => {
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+};
 
 const socialLinks = [
   { label: "Linkedin", href: "https://www.linkedin.com/company/swift-bharat/" },
@@ -16,6 +20,7 @@ const socialLinks = [
 
 const Footer = () => {
   const routes = useSiteRoutes();
+  const { pathname } = useLocation();
 
   return (
     <footer className="bg-footer px-6 py-14 text-white md:px-12 md:py-16">
@@ -33,9 +38,17 @@ const Footer = () => {
             <ul className="mt-4 flex flex-col gap-2 text-sm text-white/80">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="hover:text-lime">
+                  <Link
+                    to={{ pathname: routes.home, hash: `#${link.sectionId}` }}
+                    className="hover:text-lime"
+                    onClick={() => {
+                      if (pathname === routes.home) {
+                        scrollToSection(link.sectionId);
+                      }
+                    }}
+                  >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

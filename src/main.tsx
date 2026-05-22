@@ -5,6 +5,7 @@ import CallForSpeakers from "@/2025/pages/call-for-speakers";
 import TermsAndCondition from "@/2025/pages/terms";
 import App2026 from "@/2026/App";
 import Site2026Layout from "@/2026/layout";
+import RedirectCallForSpeakers from "@/2026/pages/redirect-call-for-speakers";
 import TermsAndCondition2026 from "@/2026/pages/terms";
 import ErrorBoundary from "@/components/error-boundary";
 import NotFoundPage from "@/components/not-found-page";
@@ -20,6 +21,10 @@ const siteRoutes = [
     element: <Site2026Layout />,
     children: [
       { index: true, element: <App2026 /> },
+      {
+        path: "call-for-speakers",
+        element: <RedirectCallForSpeakers />,
+      },
       { path: "terms-and-conditions", element: <TermsAndCondition2026 /> },
       { path: "*", element: <NotFoundPage /> },
     ],

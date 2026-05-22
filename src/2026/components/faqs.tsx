@@ -1,6 +1,5 @@
+import { CALL_FOR_SPEAKERS_URL } from "@/2026/constants/urls";
 import { useState, type ReactNode } from "react";
-
-const CALL_FOR_SPEAKERS_URL = "https://www.papercall.io/swiftbharat-2026";
 
 type Faq = {
   id: number;
@@ -46,7 +45,7 @@ const faqs: Faq[] = [
     id: 4,
     question: "Will sessions be recorded?",
     answer:
-      "As of now, no — we're optimizing for a great in-person experience since it's our very first edition.",
+      "As of now, no — we're optimizing for a great in-person experience at the conference.",
   },
   {
     id: 5,
