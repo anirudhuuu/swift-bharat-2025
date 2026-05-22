@@ -1,7 +1,7 @@
 import Footer from "@/2026/components/footer";
 import swiftLogo from "@/assets/2026/svg/swift-logo.svg";
 import { useSiteRoutes } from "@/lib/use-site-routes";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router";
 
 type TermItem = {
@@ -177,6 +177,10 @@ function TermsBlock({ heading, terms }: TermsBlockData) {
 
 const TermsAndCondition = () => {
     const routes = useSiteRoutes();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="flex min-h-screen flex-col bg-lime text-foreground">

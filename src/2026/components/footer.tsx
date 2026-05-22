@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const quickLinks = [
   { label: "About", href: "#about" },
   { label: "Speakers", href: "#speakers" },
-  { label: "Schedule", href: "#about" },
+  { label: "Schedule", href: "#schedule" },
   { label: "Tickets", href: "#tickets" },
 ] as const;
 
@@ -117,7 +117,11 @@ const Footer = () => {
       </div>
 
       <p className="mx-auto mt-12 max-w-7xl text-right text-sm text-white/60">
-        <Link to={routes.terms} className="hover:text-lime">
+        <Link
+          to={routes.terms}
+          className="hover:text-lime"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           Event Terms
         </Link>
       </p>
