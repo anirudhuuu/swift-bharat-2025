@@ -26,16 +26,42 @@
   --text-body-mobile: 16px;
   --text-caption-mobile: 14px;
 
-  /* Colors */
-  --color-background: #f5db9f;
-  --color-primary: #000000;
-  --color-secondary: #000000/60;
-  --color-brand-green: #053020;
-  --color-brand-orange: #cb6a31;
+  /*
+   * Swift Bharat 2025 — archived palette
+   * Use Tailwind utilities: bg-2025-brand-green, text-2025-cream, etc.
+   * Or wrap content in .site-2025 to alias legacy names (brand-green, …).
+   */
+  --color-2025-background: #f5db9f;
+  --color-2025-cream: #f5db9f;
+  --color-2025-cream-light: #fce5af;
+  --color-2025-cream-hover: #fce5af;
+  --color-2025-cream-soft: #fce5afcc;
+  --color-2025-brand-green: #053020;
+  --color-2025-teal: #0d3a3f;
+  --color-2025-forest: #0a451c;
+  --color-2025-brand-orange: #cb6a31;
+  --color-2025-gold: #fbdd93;
+  --color-2025-ink: #0c0c11;
+  --color-2025-sand: #faf8f5;
+
+  /* Swift Bharat 2026 — body/UI text (scoped via .site-2026 in fonts.css) */
+  --font-2026-sans: "Google Sans Flex", system-ui, sans-serif;
+  --font-gochi-hand: "Gochi Hand", cursive;
+
+  /* Swift Bharat — main site palette */
+  --color-lime: #d9ff00;
+  --color-footer: #1a1a1a;
+  --color-card-accent: #f73d5d;
+  --color-ink: #1a1a1a;
 }
 
-body {
-  background-color: #f5db9f;
+/* Remap legacy utility names inside the 2025 site shell only */
+.site-2025 {
+  --color-background: var(--color-2025-background);
+  --color-brand-green: var(--color-2025-brand-green);
+  --color-brand-orange: var(--color-2025-brand-orange);
+  background-color: var(--color-2025-background);
+  color: var(--color-2025-ink);
 }
 
 @theme inline {
@@ -78,20 +104,20 @@ body {
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: #d9ff00;
+  --foreground: #1a1a1a;
+  --card: #f73d5d;
+  --card-foreground: #ffffff;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1a1a1a;
+  --primary-foreground: #d9ff00;
+  --secondary: #f73d5d;
+  --secondary-foreground: #ffffff;
+  --muted: #c8e600;
+  --muted-foreground: #1a1a1a99;
+  --accent: #d9ff00;
+  --accent-foreground: #1a1a1a;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);

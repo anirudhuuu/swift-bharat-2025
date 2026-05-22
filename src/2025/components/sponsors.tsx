@@ -71,7 +71,7 @@ const Sponsors = () => {
 
       {/* Platinum Sponsor */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
-        <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
+        <div className="absolute top-1/2 left-1/2 bg-2025-gold px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
           Platinum Sponsor
         </div>
         <img
@@ -108,7 +108,7 @@ const Sponsors = () => {
 
       {/* Gold Sponsors */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
-        <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
+        <div className="absolute top-1/2 left-1/2 bg-2025-gold px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
           Gold Sponsors
         </div>
         <img
@@ -160,7 +160,7 @@ const Sponsors = () => {
 
       {/* Silver Sponsors */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
-        <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
+        <div className="absolute top-1/2 left-1/2 bg-2025-gold px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
           Silver Sponsors
         </div>
         <img
@@ -223,7 +223,7 @@ const Sponsors = () => {
 
       {/* Community Sponsors */}
       <div className="w-full my-4 flex flex-col items-center justify-center relative mb-8">
-        <div className="absolute top-1/2 left-1/2 bg-[#FBDD93] px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
+        <div className="absolute top-1/2 left-1/2 bg-2025-gold px-2 sm:px-4 -translate-x-1/2 -translate-y-1/2 z-10 font-thin uppercase text-sm sm:text-lg text-black/60">
           Community Sponsors
         </div>
         <img

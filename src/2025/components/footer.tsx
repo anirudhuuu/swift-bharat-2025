@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer
       aria-label="Footer"
-      className="flex flex-col lg:flex-row min-h-72 bg-brand-green text-white px-4 sm:px-8 lg:px-20 py-8 lg:py-12 lg:justify-between gap-8 lg:gap-0"
+      className="flex flex-col lg:flex-row min-h-72 bg-2025-brand-green text-white px-4 sm:px-8 lg:px-20 py-8 lg:py-12 lg:justify-between gap-8 lg:gap-0"
     >
       <div className="flex-1">
         <h4 className="text-2xl lg:text-3xl mb-3 font-bold font-samarkan">

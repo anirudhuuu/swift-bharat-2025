@@ -22,7 +22,7 @@ const CallForSpeakers = () => {
               loading="lazy"
               className="w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
             />
-            <span className="font-samarkan text-3xl md:text-5xl text-[#0A451C]">
+            <span className="font-samarkan text-3xl md:text-5xl text-2025-forest">
               Swift Bharat
             </span>
           </Link>
@@ -51,11 +51,11 @@ const CallForSpeakers = () => {
             </div>
 
             <div className="text-center flex flex-col gap-y-2">
-              <p className="uppercase font-normal text-xs md:text-sm text-[#FCE5AFCC]">
+              <p className="uppercase font-normal text-xs md:text-sm text-2025-cream-soft">
                 Submissions close on August 15, 2025
               </p>
               <h2
-                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-7 md:mb-8 text-[#FCE5AF] cursor-pointer hover:underline"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-7 md:mb-8 text-2025-cream-light cursor-pointer hover:underline"
                 onClick={() =>
                   window.open(
                     "https://www.papercall.io/swift-bharat-2025",

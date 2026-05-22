@@ -211,7 +211,7 @@ const SpeakerCard = ({
 }: {
   speaker: (typeof speakersOfEvents)[0];
 }) => (
-  <div className="relative bg-[#FCE5AF] rounded-2xl flex flex-col shadow-md mt-8 w-full">
+  <div className="relative bg-2025-cream-light rounded-2xl flex flex-col shadow-md mt-8 w-full">
     <div className="flex items-end justify-between relative px-3">
       <picture>
         <source media="(max-width: 640px)" srcSet={speaker.imageMobile} />
@@ -235,7 +235,7 @@ const SpeakerCard = ({
                 href={speaker.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#F5DB9F] p-3 rounded-full hover:bg-[#F5DB9F]/80 transition-colors"
+                className="bg-2025-cream p-3 rounded-full hover:bg-2025-cream/80 transition-colors"
                 aria-label={`Follow ${speaker.name} on Twitter`}
               >
                 <FaXTwitter className="w-3 h-3 md:w-5 md:h-5 text-black" />
@@ -247,7 +247,7 @@ const SpeakerCard = ({
                   href={speaker.socials.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#F5DB9F] p-3 rounded-full hover:bg-[#F5DB9F]/80 transition-colors"
+                  className="bg-2025-cream p-3 rounded-full hover:bg-2025-cream/80 transition-colors"
                   aria-label={`Follow ${speaker.name} on LinkedIn`}
                 >
                   <FaLinkedin className="w-3 h-3 md:w-5 md:h-5 text-black" />
@@ -260,7 +260,7 @@ const SpeakerCard = ({
     {/* Info below */}
     <div className="flex flex-col items-start px-6 py-6 mt-2">
       <h3 className="text-xl font-medium text-black">{speaker.name}</h3>
-      <p className="text-[#CB6A31] text-sm font-medium mt-1">{speaker.role}</p>
+      <p className="text-2025-brand-orange text-sm font-medium mt-1">{speaker.role}</p>
     </div>
   </div>
 );
@@ -285,7 +285,7 @@ const Speakers = () => {
         />
         <h2
           id="speakers-heading"
-          className="font-bold text-3xl md:text-4xl lg:text-5xl text-[#F5DB9F]"
+          className="font-bold text-3xl md:text-4xl lg:text-5xl text-2025-cream"
         >
           Speakers
         </h2>

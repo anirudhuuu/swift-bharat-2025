@@ -33,7 +33,7 @@ const Hero = () => {
         onClick={() => scrollToSection("tickets")}
         type="button"
         aria-label="Get tickets for Swift Bharat 2025"
-        className="relative flex items-center gap-8 text-[#FAF8F5] font-medium py-4 pl-7 pr-18 rounded-2xl cursor-pointer mb-4 overflow-hidden hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-[#F5DB9F] focus:ring-offset-2"
+        className="relative flex items-center gap-8 text-2025-sand font-medium py-4 pl-7 pr-18 rounded-2xl cursor-pointer mb-4 overflow-hidden hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-2025-cream focus:ring-offset-2"
       >
         <img
           src={ticketBackground}

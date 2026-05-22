@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("/fonts/GoogleSansFlex.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gochi Hand";
+  src: url("/fonts/GochiHand.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.site-2026 {
+  --font-display: "Google Sans Flex", system-ui, sans-serif;
+  font-family: "Google Sans Flex", system-ui, sans-serif;
+}
