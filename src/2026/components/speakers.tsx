@@ -11,7 +11,12 @@ import speaker3_2x from "@/assets/2026/speakers/speaker-3@2x.webp";
 import speaker3_3x from "@/assets/2026/speakers/speaker-3@3x.webp";
 import stamp from "@/assets/2026/svg/stamp.svg";
 import { cn } from "@/lib/utils";
-import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import {
+  FaGlobe,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+} from "react-icons/fa6";
 
 /** Shared card + stamp width (208px → 256px → 288px). */
 const SPEAKER_CARD_CLASS = "w-full max-w-52 sm:max-w-64 md:max-w-72";
@@ -30,6 +35,22 @@ type ResponsiveImage = {
   sizes: string;
   width: number;
   height: number;
+};
+
+type SpeakerSocials = {
+  twitter?: string;
+  instagram?: string;
+  linkedIn?: string;
+  website?: string;
+};
+
+type Speaker = {
+  firstName: string;
+  lastName: string;
+  role: string;
+  socials: SpeakerSocials;
+  imagePosition: string;
+  image: ResponsiveImage;
 };
 
 function responsiveSpeakerPhoto(
@@ -51,14 +72,16 @@ function responsiveSpeakerPhoto(
   };
 }
 
-const speakers = [
+const speakers: Speaker[] = [
   {
     firstName: "Donny",
     lastName: "Wals",
     role: "Indie Developer, Consultant, and Content Creator",
     socials: {
-      twitter: "https://x.com/donnywals",
+      twitter: "https://x.com/DonnyWals",
+      instagram: "https://www.instagram.com/donnywalsdev/",
       linkedIn: "https://www.linkedin.com/in/donny-wals-33660014/",
+      website: "https://www.donnywals.com",
     },
     imagePosition: "object-[18%_center]",
     image: responsiveSpeakerPhoto(
@@ -75,6 +98,7 @@ const speakers = [
     role: "Software engineer at RevenueCat & Conference organizer",
     socials: {
       twitter: "https://x.com/monika_mateska",
+      instagram: "https://www.instagram.com/monika.mateska/",
       linkedIn: "https://www.linkedin.com/in/monika-mateska-54796b185/",
     },
     imagePosition: "object-[48%_center]",
@@ -92,7 +116,9 @@ const speakers = [
     role: "Open Source, building Notepad.exe & senior engineer GoodNotes",
     socials: {
       twitter: "https://x.com/krzyzanowskim",
+      instagram: "https://www.instagram.com/marcin.krzyzanowski/",
       linkedIn: "https://www.linkedin.com/in/marcinkrzyzanowski/",
+      website: "https://krzyzanowskim.com",
     },
     imagePosition: "object-[78%_center]",
     image: responsiveSpeakerPhoto(
@@ -103,7 +129,7 @@ const speakers = [
       speaker3_3x,
     ),
   },
-] as const;
+];
 
 const Speakers = () => (
   <section
@@ -143,7 +169,7 @@ const Speakers = () => (
 function SpeakerCard({
   speaker,
 }: {
-  speaker: (typeof speakers)[number];
+  speaker: Speaker;
 }) {
   return (
     <article className="flex w-full flex-col">
@@ -184,40 +210,40 @@ function SpeakerCard({
   );
 }
 
+const SPEAKER_SOCIAL_LINKS = [
+  { key: "twitter", label: "X", icon: FaXTwitter },
+  { key: "instagram", label: "Instagram", icon: FaInstagram },
+  { key: "linkedIn", label: "LinkedIn", icon: FaLinkedin },
+  { key: "website", label: "Website", icon: FaGlobe },
+] as const;
+
 function SpeakerSocialLinks({
   speaker,
 }: {
-  speaker: (typeof speakers)[number];
+  speaker: Speaker;
 }) {
-  const { twitter, linkedIn } = speaker.socials;
   const fullName = `${speaker.firstName} ${speaker.lastName}`;
+  const links = SPEAKER_SOCIAL_LINKS.flatMap(({ key, label, icon }) => {
+    const href = speaker.socials[key as keyof SpeakerSocials];
+    return href ? [{ href, label, icon }] : [];
+  });
 
-  if (!twitter && !linkedIn) return null;
+  if (links.length === 0) return null;
 
   return (
-    <div className="mt-3 flex gap-3 sm:mt-4">
-      {twitter && (
+    <div className="mt-3 flex flex-wrap gap-3 sm:mt-4">
+      {links.map(({ href, label, icon: Icon }) => (
         <a
-          href={twitter}
+          key={href}
+          href={href}
           target="_blank"
           rel="noopener noreferrer"
           className="text-lime transition-colors hover:text-white"
-          aria-label={`Follow ${fullName} on X`}
+          aria-label={`${fullName} on ${label}`}
         >
-          <FaXTwitter className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
         </a>
-      )}
-      {linkedIn && (
-        <a
-          href={linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-lime transition-colors hover:text-white"
-          aria-label={`Follow ${fullName} on LinkedIn`}
-        >
-          <FaLinkedin className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
-        </a>
-      )}
+      ))}
     </div>
   );
 }
