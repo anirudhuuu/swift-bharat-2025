@@ -196,9 +196,24 @@
   will-change: transform;
 }
 
+@keyframes venue-ticket-sea-slide {
+  from {
+    transform: translate3d(-3%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-venue-ticket-sea-slide {
+  animation: venue-ticket-sea-slide 0.95s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-title-rise,
-  .animate-hero-building-zoom {
+  .animate-hero-building-zoom,
+  .animate-venue-ticket-sea-slide {
     animation: none;
     transform: none;
   }
