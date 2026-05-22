@@ -1,6 +1,11 @@
-import navDivider from "@/assets/2025/svg/nav-divider.svg";
 import swiftLogo from "@/assets/2026/svg/swift-logo.svg";
 import { Fragment, useEffect, useState } from "react";
+
+const MobileNavDivider = () => (
+  <li aria-hidden className="lg:hidden">
+    <div className="h-px w-full bg-foreground/20" />
+  </li>
+);
 
 const navItems = [
   { label: "Schedule", sectionId: "schedule" },
@@ -18,12 +23,7 @@ const NavLinks = ({ onNavigate }: { onNavigate?: () => void }) => (
   <>
     {navItems.map((item, index) => (
       <Fragment key={item.label}>
-        <img
-          src={navDivider}
-          alt=""
-          className="block w-full max-w-[280px] opacity-40 lg:hidden"
-          aria-hidden
-        />
+        {index > 0 && <MobileNavDivider />}
         <li>
           <button
             type="button"
@@ -36,14 +36,6 @@ const NavLinks = ({ onNavigate }: { onNavigate?: () => void }) => (
             {item.label}
           </button>
         </li>
-        {index === navItems.length - 1 && (
-          <img
-            src={navDivider}
-            alt=""
-            className="block w-full max-w-[280px] opacity-40 lg:hidden"
-            aria-hidden
-          />
-        )}
       </Fragment>
     ))}
   </>
