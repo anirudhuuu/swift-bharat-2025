@@ -167,6 +167,43 @@
   }
 }
 
+@keyframes hero-title-rise {
+  from {
+    transform: translate3d(0, 48%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-hero-title-rise {
+  animation: hero-title-rise 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s both;
+  will-change: transform;
+}
+
+@keyframes hero-building-zoom {
+  from {
+    transform: scale3d(1.2, 1.2, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animate-hero-building-zoom {
+  animation: hero-building-zoom 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s both;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-title-rise,
+  .animate-hero-building-zoom {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Optimize image rendering */
 img {
   image-rendering: -webkit-optimize-contrast;

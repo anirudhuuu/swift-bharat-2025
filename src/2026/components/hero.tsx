@@ -6,16 +6,8 @@ const Hero = () => (
     id="about"
     className="relative overflow-x-hidden bg-background pt-24 sm:pt-28 md:pt-32"
   >
-    <div className="relative z-20 w-full">
-      <img
-        src={heroBuildingSealink}
-        alt="Building and sea link"
-        width={1440}
-        height={727}
-        className="block aspect-1440/727 h-auto w-full"
-        aria-hidden
-      />
-      <div className="pointer-events-none absolute inset-x-0 top-3 z-30 flex w-full flex-col items-center gap-[clamp(1rem,2.5vw,3rem)] px-4 sm:top-[4%] md:top-[6%] lg:top-[8%]">
+    <div className="relative isolate w-full overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-3 z-10 flex w-full animate-hero-title-rise flex-col items-center gap-[clamp(1rem,2.5vw,3rem)] px-4 sm:top-[4%] md:top-[6%] lg:top-[8%]">
         <img
           src={swiftBharatTitle}
           alt="Swift Bharat"
@@ -30,6 +22,14 @@ const Hero = () => (
           2026
         </span>
       </div>
+      <img
+        src={heroBuildingSealink}
+        alt="Building and sea link"
+        width={1440}
+        height={727}
+        className="relative z-20 block aspect-1440/727 h-auto w-full animate-hero-building-zoom"
+        aria-hidden
+      />
     </div>
   </section>
 );
