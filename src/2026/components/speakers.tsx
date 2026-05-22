@@ -1,4 +1,5 @@
 import SectionTitle from "@/2026/components/section-title";
+import { SECTION_PADDING, SECTION_SHELL } from "@/2026/constants/section-styles";
 import speaker1 from "@/assets/2026/speakers/speaker-1.webp";
 import speaker1_2x from "@/assets/2026/speakers/speaker-1@2x.webp";
 import speaker1_3x from "@/assets/2026/speakers/speaker-1@3x.webp";
@@ -9,6 +10,7 @@ import speaker3 from "@/assets/2026/speakers/speaker-3@1x.webp";
 import speaker3_2x from "@/assets/2026/speakers/speaker-3@2x.webp";
 import speaker3_3x from "@/assets/2026/speakers/speaker-3@3x.webp";
 import stamp from "@/assets/2026/svg/stamp.svg";
+import { cn } from "@/lib/utils";
 
 /** Shared card + stamp width (208px → 256px → 288px). */
 const SPEAKER_CARD_CLASS = "w-full max-w-52 sm:max-w-64 md:max-w-72";
@@ -93,9 +95,9 @@ const speakers = [
 const Speakers = () => (
   <section
     id="speakers"
-    className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24"
+    className={SECTION_PADDING}
   >
-    <div className="mx-auto w-full max-w-[1222px] rounded-4xl bg-card-accent px-4 py-8 sm:rounded-[3rem] sm:px-6 sm:py-10 md:rounded-[4rem] md:px-10 md:py-14 lg:rounded-[5rem] lg:px-12 lg:py-16 xl:rounded-[6.375rem]">
+    <div className={cn(SECTION_SHELL, "bg-card-accent")}>
       <SectionTitle className="mx-auto block w-fit text-center text-lime">
         speakers
       </SectionTitle>

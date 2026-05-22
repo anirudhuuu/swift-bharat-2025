@@ -1,4 +1,6 @@
 import SectionTitle from "@/2026/components/section-title";
+import { SECTION_PADDING, SECTION_SHELL } from "@/2026/constants/section-styles";
+import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 type ScheduleDay = "nov-19" | "nov-20";
@@ -26,9 +28,9 @@ const Schedule = () => {
     return (
         <section
             id="schedule"
-            className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24"
+            className={SECTION_PADDING}
         >
-            <div className="mx-auto w-full max-w-[1222px] rounded-4xl bg-lime px-4 py-8 sm:rounded-[3rem] sm:px-6 sm:py-10 md:rounded-[4rem] md:px-10 md:py-14 lg:rounded-[5rem] lg:px-12 lg:py-16 xl:rounded-[6.375rem]">
+            <div className={cn(SECTION_SHELL, "bg-lime")}>
                 <SectionTitle className="mx-auto block w-fit text-center text-foreground">
                     schedule
                 </SectionTitle>

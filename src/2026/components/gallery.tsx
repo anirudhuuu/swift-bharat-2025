@@ -1,4 +1,6 @@
 import SectionTitle from "@/2026/components/section-title";
+import { SECTION_PADDING, SECTION_SHELL } from "@/2026/constants/section-styles";
+import { useMediaQuery } from "@/2026/hooks/use-media-query";
 import gallery1 from "@/assets/2026/gallery/1.webp";
 import gallery10 from "@/assets/2026/gallery/10.webp";
 import gallery11 from "@/assets/2026/gallery/11.webp";
@@ -15,7 +17,14 @@ import gallery9 from "@/assets/2026/gallery/9.webp";
 import { cn } from "@/lib/utils";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import {
+    memo,
+    useCallback,
+    useEffect,
+    useMemo,
+    useState,
+    type ReactNode,
+} from "react";
 import { createPortal } from "react-dom";
 
 const EMBLA_OPTIONS = {
@@ -134,26 +143,11 @@ const ALL_GALLERY_IMAGES: GalleryImage[] = (
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const
 ).map((key) => GALLERY_IMAGE_ENTRIES[key]);
 
-const SINGLE_IMAGE_GALLERY_SLIDES = ALL_GALLERY_IMAGES;
-
 const DESKTOP_GALLERY_MEDIA_QUERY = "(min-width: 1024px)";
 
-function useIsDesktopGallery() {
-    const [isDesktop, setIsDesktop] = useState(
-        () =>
-            typeof window !== "undefined" &&
-            window.matchMedia(DESKTOP_GALLERY_MEDIA_QUERY).matches,
-    );
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia(DESKTOP_GALLERY_MEDIA_QUERY);
-        const onChange = () => setIsDesktop(mediaQuery.matches);
-        onChange();
-        mediaQuery.addEventListener("change", onChange);
-        return () => mediaQuery.removeEventListener("change", onChange);
-    }, []);
-
-    return isDesktop;
+function wrapGalleryIndex(index: number, offset: number) {
+    const total = ALL_GALLERY_IMAGES.length;
+    return (index + offset + total) % total;
 }
 
 const GALLERY_IMAGE_CLASS =
@@ -203,6 +197,9 @@ const GalleryImageButton = memo(function GalleryImageButton({
         </button>
     );
 });
+
+const LIGHTBOX_NAV_BUTTON_CLASS =
+    "absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:h-12 sm:w-12";
 
 type GalleryLightboxProps = {
     imageIndex: number;
@@ -265,7 +262,7 @@ function GalleryLightbox({
                     onPrev();
                 }}
                 aria-label="Previous image"
-                className="absolute top-1/2 left-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-4 sm:h-12 sm:w-12"
+                className={cn(LIGHTBOX_NAV_BUTTON_CLASS, "left-2 sm:left-4")}
             >
                 <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} aria-hidden />
             </button>
@@ -277,7 +274,7 @@ function GalleryLightbox({
                     onNext();
                 }}
                 aria-label="Next image"
-                className="absolute top-1/2 right-2 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-4 sm:h-12 sm:w-12"
+                className={cn(LIGHTBOX_NAV_BUTTON_CLASS, "right-2 sm:right-4")}
             >
                 <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.5} aria-hidden />
             </button>
@@ -295,25 +292,6 @@ function GalleryLightbox({
         document.body,
     );
 }
-
-const GallerySingleImage = memo(function GallerySingleImage({
-    image,
-    isActive,
-    onImageClick,
-}: {
-    image: GalleryImage;
-    isActive: boolean;
-    onImageClick: (image: GalleryImage) => void;
-}) {
-    return (
-        <GalleryImageButton
-            image={image}
-            isActive={isActive}
-            onOpen={onImageClick}
-            className={MOBILE_IMAGE_HEIGHT_CLASS}
-        />
-    );
-});
 
 const GalleryBentoGrid = memo(function GalleryBentoGrid({
     images,
@@ -350,6 +328,36 @@ function GallerySlidePlaceholder() {
     );
 }
 
+type GalleryCarouselSlideProps = {
+    slideIndex: number;
+    slideCount: number;
+    isRendered: boolean;
+    isActive: boolean;
+    children: ReactNode;
+    placeholder: ReactNode;
+};
+
+function GalleryCarouselSlide({
+    slideIndex,
+    slideCount,
+    isRendered,
+    isActive,
+    children,
+    placeholder,
+}: GalleryCarouselSlideProps) {
+    return (
+        <div
+            className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${slideIndex + 1} of ${slideCount}`}
+            aria-hidden={!isActive}
+        >
+            {isRendered ? children : placeholder}
+        </div>
+    );
+}
+
 type CarouselNavButtonProps = {
     direction: "prev" | "next";
     onClick: () => void;
@@ -378,10 +386,10 @@ function CarouselNavButton({
 }
 
 const Gallery = () => {
-    const isDesktop = useIsDesktopGallery();
+    const isDesktop = useMediaQuery(DESKTOP_GALLERY_MEDIA_QUERY);
     const slideCount = isDesktop
         ? GALLERY_SLIDES.length
-        : SINGLE_IMAGE_GALLERY_SLIDES.length;
+        : ALL_GALLERY_IMAGES.length;
 
     const [emblaRef, emblaApi] = useEmblaCarousel(EMBLA_OPTIONS);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -395,21 +403,14 @@ const Gallery = () => {
     const closeLightbox = useCallback(() => setLightboxIndex(null), []);
 
     const showLightboxPrev = useCallback(() => {
-        setLightboxIndex(
-            (index) =>
-                index === null
-                    ? null
-                    : (index - 1 + ALL_GALLERY_IMAGES.length) %
-                    ALL_GALLERY_IMAGES.length,
+        setLightboxIndex((index) =>
+            index === null ? null : wrapGalleryIndex(index, -1),
         );
     }, []);
 
     const showLightboxNext = useCallback(() => {
-        setLightboxIndex(
-            (index) =>
-                index === null
-                    ? null
-                    : (index + 1) % ALL_GALLERY_IMAGES.length,
+        setLightboxIndex((index) =>
+            index === null ? null : wrapGalleryIndex(index, 1),
         );
     }, []);
 
@@ -450,9 +451,9 @@ const Gallery = () => {
     return (
         <section
             id="gallery"
-            className="px-4 py-12 sm:px-6 sm:py-16 md:px-8 md:py-20 lg:px-10 lg:py-24"
+            className={SECTION_PADDING}
         >
-            <div className="mx-auto w-full max-w-[1222px] rounded-4xl bg-lime px-4 py-8 sm:rounded-[3rem] sm:px-6 sm:py-10 md:rounded-[4rem] md:px-10 md:py-14 lg:rounded-[5rem] lg:px-12 lg:py-16 xl:rounded-[6.375rem]">
+            <div className={cn(SECTION_SHELL, "bg-lime")}>
                 <SectionTitle className="mx-auto block w-fit text-center text-foreground">
                     gallery
                 </SectionTitle>
@@ -468,64 +469,45 @@ const Gallery = () => {
                         >
                             <div className="flex touch-pan-y backface-hidden will-change-transform">
                                 {!isDesktop &&
-                                    SINGLE_IMAGE_GALLERY_SLIDES.map((image, slideIndex) => {
-                                        const isRendered =
-                                            slidesInView.has(slideIndex);
-                                        const isActive =
-                                            slideIndex === selectedIndex;
-
-                                        return (
-                                            <div
-                                                key={image.src}
-                                                className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
-                                                role="group"
-                                                aria-roledescription="slide"
-                                                aria-label={`${slideIndex + 1} of ${slideCount}`}
-                                                aria-hidden={!isActive}
-                                            >
-                                                {isRendered ? (
-                                                    <GallerySingleImage
-                                                        image={image}
-                                                        isActive={isActive}
-                                                        onImageClick={openLightbox}
-                                                    />
-                                                ) : (
-                                                    <div
-                                                        className={MOBILE_IMAGE_HEIGHT_CLASS}
-                                                        aria-hidden
-                                                    />
-                                                )}
-                                            </div>
-                                        );
-                                    })}
+                                    ALL_GALLERY_IMAGES.map((image, slideIndex) => (
+                                        <GalleryCarouselSlide
+                                            key={image.src}
+                                            slideIndex={slideIndex}
+                                            slideCount={slideCount}
+                                            isRendered={slidesInView.has(slideIndex)}
+                                            isActive={slideIndex === selectedIndex}
+                                            placeholder={
+                                                <div
+                                                    className={MOBILE_IMAGE_HEIGHT_CLASS}
+                                                    aria-hidden
+                                                />
+                                            }
+                                        >
+                                            <GalleryImageButton
+                                                image={image}
+                                                isActive={slideIndex === selectedIndex}
+                                                onOpen={openLightbox}
+                                                className={MOBILE_IMAGE_HEIGHT_CLASS}
+                                            />
+                                        </GalleryCarouselSlide>
+                                    ))}
                                 {isDesktop &&
-                                    GALLERY_SLIDES.map((slide, slideIndex) => {
-                                        const isRendered =
-                                            slidesInView.has(slideIndex);
-                                        const isActive =
-                                            slideIndex === selectedIndex;
-
-                                        return (
-                                            <div
-                                                key={slideIndex}
-                                                className="min-w-0 flex-[0_0_100%] contain-[layout_paint]"
-                                                role="group"
-                                                aria-roledescription="slide"
-                                                aria-label={`${slideIndex + 1} of ${slideCount}`}
-                                                aria-hidden={!isActive}
-                                            >
-                                                {isRendered ? (
-                                                    <GalleryBentoGrid
-                                                        images={slide.images}
-                                                        isActive={isActive}
-                                                        onImageClick={openLightbox}
-                                                    />
-                                                ) : (
-                                                    <GallerySlidePlaceholder />
-                                                )}
-                                            </div>
-                                        );
-                                    })}
+                                    GALLERY_SLIDES.map((slide, slideIndex) => (
+                                        <GalleryCarouselSlide
+                                            key={slideIndex}
+                                            slideIndex={slideIndex}
+                                            slideCount={slideCount}
+                                            isRendered={slidesInView.has(slideIndex)}
+                                            isActive={slideIndex === selectedIndex}
+                                            placeholder={<GallerySlidePlaceholder />}
+                                        >
+                                            <GalleryBentoGrid
+                                                images={slide.images}
+                                                isActive={slideIndex === selectedIndex}
+                                                onImageClick={openLightbox}
+                                            />
+                                        </GalleryCarouselSlide>
+                                    ))}
                             </div>
                         </div>
 

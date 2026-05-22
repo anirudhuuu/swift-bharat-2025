@@ -1,5 +1,5 @@
 import { useSiteRoutes } from "@/lib/use-site-routes";
-import { useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router";
 
 type Faq = {
@@ -8,11 +8,8 @@ type Faq = {
   answer: ReactNode;
 };
 
-const Faqs = () => {
-  const routes = useSiteRoutes();
-  const [openId, setOpenId] = useState<number | null>(null);
-
-  const faqs: Faq[] = [
+function buildFaqs(callForSpeakersPath: string): Faq[] {
+  return [
     {
       id: 1,
       question: "Who should attend Swift Conference India 2026?",
@@ -59,7 +56,7 @@ const Faqs = () => {
         <>
           We&apos;d love to hear from you! Visit our{" "}
           <Link
-            to={routes.callForSpeakers}
+            to={callForSpeakersPath}
             className="underline hover:opacity-80"
           >
             Call for Speakers
@@ -75,6 +72,15 @@ const Faqs = () => {
         "There is no formal dress code for the conference. We recommend comfortable attire suitable for a tech event. Many attendees opt for casual or business casual clothing.",
     },
   ];
+}
+
+const Faqs = () => {
+  const routes = useSiteRoutes();
+  const faqs = useMemo(
+    () => buildFaqs(routes.callForSpeakers),
+    [routes.callForSpeakers],
+  );
+  const [openId, setOpenId] = useState<number | null>(null);
 
   return (
     <section id="faqs" className="px-6 py-16 md:px-12 md:py-24">

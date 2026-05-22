@@ -7,7 +7,7 @@ import Speakers from "@/2026/components/speakers";
 import Sponsors from "@/2026/components/sponsors";
 import Tickets from "@/2026/components/tickets";
 import Venue from "@/2026/components/venue";
-import Gallery from "./components/gallery";
+import Gallery from "@/2026/components/gallery";
 
 const App = () => (
   <div className="flex min-h-screen flex-col bg-background text-foreground">
