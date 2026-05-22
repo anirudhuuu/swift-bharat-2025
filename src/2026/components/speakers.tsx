@@ -11,6 +11,7 @@ import speaker3_2x from "@/assets/2026/speakers/speaker-3@2x.webp";
 import speaker3_3x from "@/assets/2026/speakers/speaker-3@3x.webp";
 import stamp from "@/assets/2026/svg/stamp.svg";
 import { cn } from "@/lib/utils";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 /** Shared card + stamp width (208px → 256px → 288px). */
 const SPEAKER_CARD_CLASS = "w-full max-w-52 sm:max-w-64 md:max-w-72";
@@ -55,6 +56,10 @@ const speakers = [
     firstName: "Donny",
     lastName: "Wals",
     role: "Indie Developer, Consultant, and Content Creator",
+    socials: {
+      twitter: "https://x.com/donnywals",
+      linkedIn: "https://www.linkedin.com/in/donny-wals-33660014/",
+    },
     imagePosition: "object-[18%_center]",
     image: responsiveSpeakerPhoto(
       speaker1,
@@ -68,6 +73,10 @@ const speakers = [
     firstName: "Monika",
     lastName: "Mateska",
     role: "Software engineer at RevenueCat & Conference organizer",
+    socials: {
+      twitter: "https://x.com/monika_mateska",
+      linkedIn: "https://www.linkedin.com/in/monika-mateska-54796b185/",
+    },
     imagePosition: "object-[48%_center]",
     image: responsiveSpeakerPhoto(
       speaker2,
@@ -81,6 +90,10 @@ const speakers = [
     firstName: "Marcin",
     lastName: "Krzyzanowski",
     role: "Open Source, building Notepad.exe & senior engineer GoodNotes",
+    socials: {
+      twitter: "https://x.com/krzyzanowskim",
+      linkedIn: "https://www.linkedin.com/in/marcinkrzyzanowski/",
+    },
     imagePosition: "object-[78%_center]",
     image: responsiveSpeakerPhoto(
       speaker3,
@@ -165,8 +178,47 @@ function SpeakerCard({
         <p className="mt-2 text-sm font-light text-lime sm:text-base md:text-lg">
           {speaker.role}
         </p>
+        <SpeakerSocialLinks speaker={speaker} />
       </div>
     </article>
+  );
+}
+
+function SpeakerSocialLinks({
+  speaker,
+}: {
+  speaker: (typeof speakers)[number];
+}) {
+  const { twitter, linkedIn } = speaker.socials;
+  const fullName = `${speaker.firstName} ${speaker.lastName}`;
+
+  if (!twitter && !linkedIn) return null;
+
+  return (
+    <div className="mt-3 flex gap-3 sm:mt-4">
+      {twitter && (
+        <a
+          href={twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lime transition-colors hover:text-white"
+          aria-label={`Follow ${fullName} on X`}
+        >
+          <FaXTwitter className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
+        </a>
+      )}
+      {linkedIn && (
+        <a
+          href={linkedIn}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lime transition-colors hover:text-white"
+          aria-label={`Follow ${fullName} on LinkedIn`}
+        >
+          <FaLinkedin className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
+        </a>
+      )}
+    </div>
   );
 }
 
