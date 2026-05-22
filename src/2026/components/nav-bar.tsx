@@ -19,6 +19,19 @@ const scrollToSection = (sectionId: string) => {
   document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
 };
 
+const NAV_LINK_CLASS =
+  "group w-full cursor-pointer text-left text-lg font-medium lg:w-auto";
+
+const NavLinkLabel = ({ children }: { children: string }) => (
+  <span className="relative inline-block">
+    {children}
+    <span
+      aria-hidden
+      className="absolute -bottom-0.5 left-0 h-0.5 w-full origin-left scale-x-0 rounded-full bg-card-accent transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
+    />
+  </span>
+);
+
 const NavLinks = ({ onNavigate }: { onNavigate?: () => void }) => (
   <>
     {navItems.map((item, index) => (
@@ -31,9 +44,9 @@ const NavLinks = ({ onNavigate }: { onNavigate?: () => void }) => (
               scrollToSection(item.sectionId);
               onNavigate?.();
             }}
-            className="w-full cursor-pointer text-left text-lg font-medium transition-opacity hover:opacity-70 lg:w-auto"
+            className={NAV_LINK_CLASS}
           >
-            {item.label}
+            <NavLinkLabel>{item.label}</NavLinkLabel>
           </button>
         </li>
       </Fragment>
