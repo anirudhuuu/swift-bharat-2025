@@ -27,7 +27,7 @@ const Hero = () => (
         alt="Building and sea link"
         width={1440}
         height={727}
-        className="relative z-20 block aspect-1440/727 h-auto w-full animate-hero-building-zoom"
+        className="relative z-20 mt-14 block aspect-1440/727 h-auto w-full animate-hero-building-zoom sm:mt-0"
         aria-hidden
       />
     </div>
