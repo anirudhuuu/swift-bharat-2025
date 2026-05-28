@@ -15,7 +15,7 @@ const scrollToSection = (sectionId: string) => {
 const socialLinks = [
   { label: "Linkedin", href: "https://www.linkedin.com/company/swift-bharat/" },
   { label: "X (Twitter)", href: "https://x.com/swiftbharat" },
-  { label: "Instagram", href: "https://www.instagram.com/swiftbharat/" },
+  { label: "Instagram", href: "https://www.instagram.com/swift.bharat/" },
 ] as const;
 
 const Footer = () => {
